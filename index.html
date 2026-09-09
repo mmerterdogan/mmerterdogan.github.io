@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhammet Mert Erdoğan — Makine Mühendisi</title>
+<meta name="description" content="Tasarım ve yapısal analiz (FEA) üzerine çalışan bir makine mühendisi. SolidWorks, ANSYS Mechanical, topoloji optimizasyonu ve yapısal doğrulama." />
+<meta name="author" content="Muhammet Mert Erdoğan" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── Palet: sıcak kâğıt zemin, mürekkep laciverti, teknik mavi vurgu ── */
+:root{
+  --bg:       #eceae4;   /* sıcak gri-bej zemin */
+  --surface:  #f7f6f2;   /* kart yüzeyi — zeminden açık */
+  --surface-2:#e3e0d8;   /* şerit / vurgulu blok */
+  --fg:       #1a2332;
+  --fg-dim:   #515c6b;
+  --fg-faint: #757f8e;
+  --accent:   #2c5f8d;
+  --accent-lo:#eaeff5;   /* mavinin çok açık tonu */
+  --rule:     rgba(26,35,50,0.15);
+  --shadow:   0 1px 2px rgba(26,35,50,.05), 0 3px 10px rgba(26,35,50,.045);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans:  'Manrope', system-ui, -apple-system, sans-serif;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  background:var(--bg); color:var(--fg);
+  font-family:var(--sans); line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{ background:var(--accent); color:#ffffff; }
+a{ color:inherit; text-decoration:none; }
+
+.wrap{ max-width:940px; margin:0 auto; padding:0 clamp(22px,5vw,40px); }
+
+/* ── Menü ── */
+.nav{
+  position:sticky; top:0; z-index:20;
+  background:rgba(236,234,228,.93);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.nav__in{
+  max-width:940px; margin:0 auto; padding:15px clamp(22px,5vw,40px);
+  display:flex; align-items:center; gap:26px;
+}
+.nav__brand{
+  font-family:var(--serif); font-size:16px; font-weight:450;
+  margin-right:auto; white-space:nowrap;
+}
+@media(max-width:420px){ .nav__brand{ font-size:14px; } }
+.nav__brand b{ color:var(--accent); font-weight:450; }
+.nav a.lnk{ font-size:13px; color:var(--fg-dim); transition:color .2s; }
+.nav a.lnk:hover{ color:var(--fg); }
+.nav__cv{
+  font-size:13px; font-weight:600; color:#fff !important;
+  background:var(--accent); padding:7px 15px; border-radius:4px;
+  transition:background .2s;
+}
+.nav__cv:hover{ background:#22496d; }
+@media(max-width:640px){ .nav a.lnk{ display:none; } }
+
+/* ── Hero ── */
+.hero{ padding:clamp(48px,7vh,76px) 0 clamp(34px,4.5vh,44px); }
+.hero__eyebrow{
+  font-size:11.5px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--accent); margin-bottom:20px;
+}
+.hero h1{
+  font-family:var(--serif); font-weight:380;
+  font-size:clamp(38px,6.4vw,64px); line-height:1.08;
+  letter-spacing:-.02em; margin-bottom:26px;
+}
+.hero h1 i{ font-style:italic; color:var(--accent); font-weight:380; }
+.hero p{
+  font-size:clamp(15.5px,1.6vw,17.5px); color:var(--fg-dim);
+  max-width:56ch; margin-bottom:32px;
+}
+.hero__cta{ display:flex; gap:12px; flex-wrap:wrap; }
+.btn{
+  font-size:14px; font-weight:600; padding:11px 22px;
+  border-radius:5px; transition:all .2s;
+}
+.btn--solid{ background:var(--accent); color:#fff; }
+.btn--solid:hover{ background:#22496d; }
+.btn--line{ border:1px solid rgba(26,35,50,.22); color:var(--fg); }
+.btn--line:hover{ border-color:var(--accent); color:var(--accent); }
+
+/* ── Sayı şeridi ── */
+.stats{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px; margin-bottom:8px;
+}
+.stat{
+  padding:22px 14px; text-align:center;
+  background:var(--surface); border:1px solid var(--rule);
+  border-radius:7px; box-shadow:var(--shadow);
+}
+.stat b{
+  display:block; font-family:var(--serif); font-weight:400;
+  font-size:31px; color:var(--accent); line-height:1.15; letter-spacing:-.01em;
+}
+.stat span{ font-size:11.5px; color:var(--fg-faint); letter-spacing:.04em; }
+
+/* ── Bölümler ── */
+section{ padding:clamp(40px,5.5vh,58px) 0; border-bottom:1px solid var(--rule); }
+h2{
+  font-family:var(--serif); font-weight:400;
+  font-size:clamp(24px,3.2vw,34px); letter-spacing:-.015em;
+  margin-bottom:34px;
+}
+h2 span{ color:var(--accent); font-size:.62em; font-family:var(--sans);
+  font-weight:600; letter-spacing:.12em; margin-right:12px; vertical-align:middle; }
+
+/* ── Hakkımda ── */
+.about{ display:grid; grid-template-columns:1.25fr .9fr; gap:clamp(30px,5vw,64px); }
+.about p{ color:var(--fg-dim); margin-bottom:1.1em; max-width:52ch; }
+.about p:last-child{ margin-bottom:0; }
+.about strong{ color:var(--fg); font-weight:500; }
+.facts{
+  font-size:13.5px; background:var(--surface);
+  border:1px solid var(--rule); border-radius:8px;
+  padding:6px 20px; box-shadow:var(--shadow); align-self:start;
+}
+.facts div{
+  display:flex; justify-content:space-between; gap:16px;
+  padding:13px 0; border-bottom:1px solid var(--rule);
+}
+.facts div:last-child{ border-bottom:none; }
+.facts dt{ color:var(--fg-faint); }
+.facts dd{ text-align:right; }
+.facts dd b{ color:var(--accent); font-weight:500; }
+@media(max-width:720px){ .about{ grid-template-columns:1fr; gap:34px; } }
+
+/* ── Projeler (kart ızgarası) ── */
+.projects{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  gap:16px;
+}
+.proj{
+  background:var(--surface); border:1px solid var(--rule);
+  border-radius:8px; padding:22px 22px 20px;
+  box-shadow:var(--shadow);
+  display:flex; flex-direction:column;
+  transition:border-color .2s, transform .2s, box-shadow .2s;
+}
+.proj:hover{
+  border-color:var(--accent); transform:translateY(-2px);
+  box-shadow:0 2px 4px rgba(26,35,50,.06), 0 8px 20px rgba(26,35,50,.08);
+}
+.proj .yr{
+  font-size:11px; color:var(--fg-faint); letter-spacing:.06em;
+  text-transform:uppercase; margin-bottom:8px;
+}
+.proj h3{
+  font-family:var(--serif); font-weight:430; font-size:18.5px;
+  letter-spacing:-.01em; line-height:1.28;
+}
+.proj .metric{
+  display:inline-block; align-self:flex-start; margin-top:11px;
+  font-size:11.5px; font-weight:600; letter-spacing:.04em;
+  color:var(--accent); background:var(--accent-lo);
+  border:1px solid rgba(44,95,141,.28); padding:4px 11px; border-radius:20px;
+}
+.proj p{ margin-top:11px; font-size:13.5px; color:var(--fg-dim); flex:1; }
+.proj .tags{ margin-top:15px; display:flex; flex-wrap:wrap; gap:6px; }
+.tag{
+  font-size:11px; color:var(--fg-faint);
+  border:1px solid var(--rule); padding:3px 9px; border-radius:3px;
+}
+.tag--nda{ border-style:dashed; }
+
+/* ── Deneyim ── */
+.jobs{
+  background:var(--surface); border:1px solid var(--rule);
+  border-radius:8px; padding:4px 26px; box-shadow:var(--shadow);
+}
+.job{
+  display:grid; grid-template-columns:168px 1fr; gap:8px 30px;
+  padding:22px 0; border-bottom:1px solid var(--rule);
+}
+.job:last-child{ border-bottom:none; }
+.job .when{ font-size:12px; color:var(--accent); font-weight:500; }
+.job .who{ font-family:var(--serif); font-size:18px; font-weight:420; }
+.job .role{ font-size:12px; color:var(--fg-faint); margin-top:2px; }
+.job p{ font-size:14px; color:var(--fg-dim); margin-top:8px; max-width:62ch; }
+@media(max-width:620px){ .job{ grid-template-columns:1fr; gap:4px; } }
+
+/* ── Yetkinlikler ── */
+.skills{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+.skills > div{
+  background:var(--surface); border:1px solid var(--rule);
+  border-radius:8px; padding:20px 22px; box-shadow:var(--shadow);
+}
+.skills h3{
+  font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); margin-bottom:13px; font-weight:600;
+}
+.skills li{ list-style:none; font-size:14px; display:flex; justify-content:space-between;
+  gap:12px; padding:7px 0; border-bottom:1px solid rgba(26,35,50,.07); }
+.skills li:last-child{ border-bottom:none; }
+.skills li span{ color:var(--fg-faint); font-size:11.5px; }
+.cloud{ display:flex; flex-wrap:wrap; gap:7px; margin-top:30px; }
+.cloud span{ font-size:12.5px; color:var(--fg-dim);
+  border:1px solid var(--rule); padding:5px 12px; border-radius:20px; }
+
+/* ── Eğitim ── */
+.edu{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.edu > div{
+  background:var(--surface); border:1px solid var(--rule);
+  border-radius:8px; padding:22px 24px; box-shadow:var(--shadow);
+}
+.edu h3{
+  font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--fg-faint); margin-bottom:18px; padding-bottom:11px;
+  border-bottom:1px solid var(--rule);
+}
+.ei{ margin-bottom:19px; }
+.ei:last-child{ margin-bottom:0; }
+.ei .t{ font-family:var(--serif); font-size:16.5px; font-weight:430; }
+.ei .s{ font-size:13px; color:var(--fg-dim); margin-top:3px; }
+.ei .d{ font-size:11.5px; color:var(--accent); margin-top:5px; }
+.certs li{ list-style:none; font-size:13.5px; color:var(--fg-dim);
+  padding:9px 0 9px 15px; position:relative; border-bottom:1px solid rgba(26,35,50,.07); }
+.certs li:last-child{ border-bottom:none; }
+.certs li::before{ content:""; position:absolute; left:0; top:17px;
+  width:4px; height:4px; background:var(--accent); }
+.certs em{ font-style:normal; color:var(--fg-faint); font-size:11.5px; }
+@media(max-width:720px){ .edu{ grid-template-columns:1fr; } }
+
+/* ── İletişim ── */
+.mail{
+  display:inline-block; font-family:var(--serif); font-weight:400;
+  font-size:clamp(22px,4.2vw,40px); letter-spacing:-.02em;
+  margin:6px 0 30px; word-break:break-word; transition:color .2s;
+}
+.mail:hover{ color:var(--accent); }
+.contact-row{ display:flex; gap:30px; flex-wrap:wrap; font-size:14px; }
+.contact-row a{ color:var(--fg-dim); border-bottom:1px solid var(--rule); padding-bottom:2px; transition:all .2s; }
+.contact-row a:hover{ color:var(--accent); border-color:var(--accent); }
+
+/* ── Footer ── */
+footer{ padding:30px 0 40px; display:flex; justify-content:space-between;
+  gap:16px; flex-wrap:wrap; font-size:12px; color:var(--fg-faint); }
+
+/* ── Erişilebilirlik / baskı ── */
+@media (prefers-reduced-motion: reduce){
+  *{ transition-duration:.01ms !important; }
+  html{ scroll-behavior:auto; }
+}
+@media print{
+  .nav, .hero__cta{ display:none; }
+  body{ background:#fff; color:#000; }
+  .hero p, .about p, .proj p, .job p, .facts dt, .skills li span{ color:#333; }
+  h2, .hero h1, .proj h3, .job .who{ color:#000; }
+  section{ page-break-inside:avoid; border-color:#ccc; }
+  .stat b, .proj .metric, .job .when, .ei .d, .skills h3, .hero__eyebrow{ color:#22496d; }
+  .stat, .proj, .facts, .jobs, .skills > div, .edu > div{
+    background:#fff; box-shadow:none; border-color:#ddd;
+  }
+  .proj{ page-break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top">Muhammet Mert <b>Erdoğan</b></a>
+    <a class="lnk" href="#hakkimda">Hakkımda</a>
+    <a class="lnk" href="#projeler">Projeler</a>
+    <a class="lnk" href="#deneyim">Deneyim</a>
+    <a class="lnk" href="#iletisim">İletişim</a>
+    <a class="nav__cv" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap">
+    <div class="hero">
+      <p class="hero__eyebrow">Makine Mühendisi — Tasarım &amp; Yapısal Analiz</p>
+      <h1>Yük altında <i>biçimlenen</i> mühendislik.</h1>
+      <p>
+        SolidWorks ile tasarlar, ANSYS ile doğrular, 3B baskıyla elime alırım.
+        Bir tasarımı, neden öyle olması gerektiğini anlatabildiğimde bitmiş sayarım.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="mailto:mmert1erdogan@gmail.com">E-posta gönder</a>
+        <a class="btn btn--line" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV'yi indir</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>4</b><span>sanayi stajı</span></div>
+      <div class="stat"><b>6</b><span>tasarım &amp; analiz projesi</span></div>
+      <div class="stat"><b>%3,2</b><span>FEA–analitik sapma (altında)</span></div>
+      <div class="stat"><b>%91,3</b><span>ML model doğruluğu</span></div>
+    </div>
+
+    <section id="hakkimda">
+      <h2><span>001</span>Nasıl çalışıyorum</h2>
+      <div class="about">
+        <div>
+          <p>
+            Bir sonuca, onu iki ayrı yoldan aynı yere çıkarana kadar güvenmem.
+            Nükleer reaktör gövdesi çalışmasında gerilmeleri önce elle hesapladım,
+            sonra ANSYS'te modelledim; ikisi arasındaki fark
+            <strong>%3,2'nin altında</strong> kalınca sonucun doğru olduğunu biliyordum.
+            Bu alışkanlık her projeye taşındı — analiz sonucu tek başına bir kanıt değil,
+            doğrulanması gereken bir iddia.
+          </p>
+          <p>
+            Ekranda biten iş bana yarım geliyor. İHA iniş takımını modelleyip analiz ettikten
+            sonra PLA, ABS ve ASA ile basıp elime aldım; malzemenin nasıl davrandığını
+            ancak kırılanı gördükten sonra anladım. Tasarımı üretimden ayırmadan düşünmek,
+            <strong>şartname hedefinin yarısı ağırlıkta</strong> bir parça çıkarmamı sağladı.
+          </p>
+          <p>
+            Sahada dört staj yaptım — Festo'da arızalı bir robot hattını, Beko'da montaj
+            kayıplarını çözerken şunu gördüm: problemin göründüğü yer, çıktığı yer değil.
+            Şimdi <strong>tezli yüksek lisansa</strong> devam ediyor, aynı soruyu
+            daha derin bir teorik zeminde sormayı öğreniyorum.
+          </p>
+        </div>
+        <dl class="facts">
+          <div><dt>Eğitim</dt><dd>İÜC Makine Mühendisliği</dd></div>
+          <div><dt>Durum</dt><dd><b>Tezli YL — 2026</b></dd></div>
+          <div><dt>Odak</dt><dd>FEA · topoloji opt.<br>yapısal doğrulama</dd></div>
+          <div><dt>Dil</dt><dd>Türkçe · İngilizce B2</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="projeler">
+      <h2><span>002</span>Projeler</h2>
+
+      <div class="projects">
+        <article class="proj">
+          <div class="yr">Eki 2025 — Tem 2026</div>
+          <h3>Bitirme Projesi — Beyaz Eşya Sektörü</h3>
+          <p>Metal parçanın mühendislik plastiğine dönüşümünü tasarladım. Topoloji optimizasyonu ve statik FEA ile yapısal doğrulamayı, ardından maliyet fizibilitesini yürüttüm.</p>
+          <div class="tags"><span class="tag">Topoloji Optimizasyonu</span><span class="tag">Statik FEA</span><span class="tag tag--nda">Gizlilik Sözleşmesi</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="yr">Eki 2025 — Tem 2026</div>
+          <h3>Tasarım Projesi — Ticari Araç Üreticisi</h3>
+          <p>Otobüsler için ergonomik bagaj yükleme sistemi alternatiflerini araştırıp bir tasarım geliştirdim. Tasarımı statik ve modal FEA ile doğruladım.</p>
+          <div class="tags"><span class="tag">Ergonomi</span><span class="tag">Modal Analiz</span><span class="tag tag--nda">Gizlilik Sözleşmesi</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="yr">Akademik</div>
+          <h3>Nükleer Reaktör Gövdesi — Analitik Gerilme Analizi</h3>
+          <span class="metric">%3,2'nin altında sapma</span>
+          <p>Yüksek basınçlı reaktör gövdesinin analitik gerilme hesaplarını ANSYS FEA modeliyle doğruladım. Çalışma akademik makaleye dönüştürüldü; yayın süreci hazırlık aşamasında.</p>
+          <div class="tags"><span class="tag">ANSYS</span><span class="tag">Basınçlı Kap Teorisi</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="yr">Eyl 2023 — Tem 2026</div>
+          <h3>İÜC Racing — Formula Student</h3>
+          <span class="metric">%15 ağırlık azalması</span>
+          <p>Zincir korumasını SolidWorks'te tasarlayıp ANSYS statik analiziyle dayanımını doğruladım. Braket tasarımını revize ederek ağırlık kazancı sağladım.</p>
+          <div class="tags"><span class="tag">SolidWorks</span><span class="tag">ANSYS</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="yr">Ağu 2024 — Ağu 2025</div>
+          <h3>TEKNOFEST — İHA İniş Takımı</h3>
+          <span class="metric">Şartname hedefinin %50 altı</span>
+          <p>İniş takımını SolidWorks'te parametrik modelleyip ANSYS statik FEA ile optimize ettim. PLA, ABS ve ASA ile FDM baskı yaparak ürettiğim parçalarda nihai ağırlığı hedefin altında tuttum.</p>
+          <div class="tags"><span class="tag">Parametrik CAD</span><span class="tag">FDM Üretim</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="yr">Akademik</div>
+          <h3>Çelik Üretiminde Hata Tahmini — Makine Öğrenmesi</h3>
+          <span class="metric">%91,3 model doğruluğu</span>
+          <p>R diliyle Random Forest ve Gradient Boosting algoritmalarını kullanarak hata türü ve oranını tahmin eden bir sınıflandırma modeli geliştirdim.</p>
+          <div class="tags"><span class="tag">R</span><span class="tag">Random Forest</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="deneyim">
+      <h2><span>003</span>Deneyim</h2>
+
+      <div class="jobs">
+      <div class="job">
+        <div>
+          <div class="when">Ağu — Eyl 2025</div>
+        </div>
+        <div>
+          <div class="who">FESTO</div>
+          <div class="role">Stajyer</div>
+          <p>Devre dışı kalmış robotlu sistemde mekanik, elektrik ve yazılım kaynaklı arızaları multidisipliner kök neden analiziyle teşhis ettim. Geliştirdiğim çözümleri sahada uygulayarak sistemi yeniden devreye aldım.</p>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><div class="when">Tem — Ağu 2025</div></div>
+        <div>
+          <div class="who">BEKO</div>
+          <div class="role">Üretim Stajyeri</div>
+          <p>Montaj hattında verimliliği düşüren 5 kritik istasyonda kök neden analizi (RCA) yürüterek kayıp kaynaklarını tespit ettim. Ar-Ge ve Üretim departmanlarıyla 2 iyileştirme önerisi hazırlayıp sundum.</p>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><div class="when">Ağu — Eyl 2024</div></div>
+        <div>
+          <div class="who">Midas Makina Sanayi</div>
+          <div class="role">Tasarım Stajyeri</div>
+          <p>Müşteri talepleri doğrultusunda mevcut parçaların 3B modellerini SolidWorks'te revize edip imalata giden teknik resimleri ölçülendirme ve toleranslandırma standartlarına uygun hazırladım.</p>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><div class="when">Tem 2024</div></div>
+        <div>
+          <div class="who">Yılmaz Redüktör</div>
+          <div class="role">Atölye Stajyeri</div>
+          <p>Redüktör imalat hattında CNC torna, freze, ısıl işlem ve taşlama operasyonlarını yerinde analiz ederek dişli toleransları ve kalite kontrol protokollerinin uygulanışını inceledim.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="yetkinlikler">
+      <h2><span>004</span>Yetkinlikler</h2>
+      <div class="skills">
+        <div>
+          <h3>Tasarım</h3>
+          <ul>
+            <li>SolidWorks <span>İleri</span></li>
+            <li>AutoCAD <span>Orta</span></li>
+            <li>Fusion 360 <span>Başlangıç</span></li>
+            <li>Siemens NX <span>Başlangıç</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Analiz</h3>
+          <ul>
+            <li>ANSYS Mechanical <span>İleri</span></li>
+            <li>Statik &amp; Modal FEA <span>Uygulama</span></li>
+            <li>Topoloji Optimizasyonu <span>Proje</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Üretim &amp; Veri</h3>
+          <ul>
+            <li>FDM 3B Baskı <span>Uygulama</span></li>
+            <li>R <span>Orta</span></li>
+            <li>MS Excel <span>Orta</span></li>
+            <li>MATLAB / Simulink <span>Başlangıç</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cloud">
+        <span>Yapısal doğrulama</span>
+        <span>Topoloji optimizasyonu</span>
+        <span>Eklemeli imalat / FDM</span>
+        <span>Kök neden analizi (RCA)</span>
+        <span>Üretilebilirlik için tasarım (DFM)</span>
+        <span>Teknik resim ve toleranslandırma</span>
+      </div>
+    </section>
+
+    <section id="egitim">
+      <h2><span>005</span>Eğitim &amp; Sertifikalar</h2>
+      <div class="edu">
+        <div>
+          <h3>Eğitim</h3>
+          <div class="ei">
+            <div class="t">İstanbul Üniversitesi-Cerrahpaşa</div>
+            <div class="s">Makine Mühendisliği Tezli Yüksek Lisans</div>
+            <div class="d">2026 — Devam ediyor</div>
+          </div>
+          <div class="ei">
+            <div class="t">İstanbul Üniversitesi-Cerrahpaşa</div>
+            <div class="s">Makine Mühendisliği Lisans (%30 İngilizce)</div>
+            <div class="d">Eyl 2021 — Tem 2026</div>
+          </div>
+          <div class="ei" style="margin-top:26px;">
+            <div class="t">İÜC Kariyer Kulübü</div>
+            <div class="s">Yönetim Kurulu Başkanı — 300+ üyeli kulübün yıllık faaliyet planını oluşturup 8+ etkinliği koordine ettim.</div>
+            <div class="d">Ağu 2024 — Ağu 2025</div>
+          </div>
+        </div>
+        <div>
+          <h3>Sertifikalar</h3>
+          <ul class="certs">
+            <li>Additive Manufacturing Specialization — Arizona State University <em>· devam</em></li>
+            <li>NUMESYS Yapısal Analiz Kampı <em>· devam</em></li>
+            <li>İHA Yapımı ve Tasarımı — TEİ Havacılık Motor Okulları</li>
+            <li>McKinsey &amp; Company Forward Programı</li>
+            <li>R ile Veri Analizi</li>
+            <li>İş'te Yapay Zeka</li>
+            <li>Spark Fellowship by FAB</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim" style="border-bottom:none;">
+      <h2><span>006</span>İletişim</h2>
+      <a class="mail" href="mailto:mmert1erdogan@gmail.com">mmert1erdogan@gmail.com</a>
+      <div class="contact-row">
+        <a href="https://linkedin.com/in/mmerterdogan/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>Muhammet Mert Erdoğan — Makine Mühendisi</span>
+      <span>İstanbul · 2026</span>
+    </footer>
+
+  </div>
+</main>
+
+</body>
+</html>
