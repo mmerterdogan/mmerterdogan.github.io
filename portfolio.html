@@ -25,9 +25,9 @@
 
 <main class="wrap">
 
-  <!-- ───────────── Cover ───────────── -->
+  <!-- Cover -->
   <section class="cover">
-    <p class="hero__eyebrow">Engineering portfolio · 2026</p>
+    <p class="kicker">Engineering portfolio · 2026</p>
     <h1>Muhammet Mert Erdoğan</h1>
     <p class="sub">Mechanical engineer working on design, structural analysis and manufacturing. BSc Mechanical Engineering,
       thesis MSc in progress at Istanbul University-Cerrahpaşa. Certified SOLIDWORKS Professional (CSWP).</p>
@@ -44,184 +44,216 @@
     </div>
   </section>
 
-  <!-- ───────────── 1. Pressure vessel: structural ───────────── -->
-  <section class="case" id="pressure-vessel">
-    <div class="case__head">
-      <div><div class="case__kicker">01 · Structural analysis</div><h2>Pressure vessel and bolted head: where is the design governed?</h2></div>
-      <div class="case__meta">Mechanical System Design project, İÜC · Oct 2025 - Jan 2026<br>Advisor: Dr. Murat Bozkurt · individual work</div>
+  <!-- 01 Pressure vessel · A -->
+  <section class="sheet" id="pressure-vessel">
+    <div class="sheet__head">
+      <div><p class="kicker">01 · Pressure vessel · structural analysis</p><h2>Where is the design really governed?</h2></div>
+      <div class="meta">Mechanical System Design project, İÜC · Oct 2025 - Jan 2026<br>Advisor: Dr. Murat Bozkurt · individual work</div>
     </div>
-    <p class="case__lead">A cylindrical pressure vessel with a bolted head under internal pressure. Shell theory gives a comfortable
-      safety factor for the shell. The question was whether that number holds once the real geometry of the head and flange is modelled.</p>
+    <p class="lead">Shell theory gave the vessel a comfortable margin. The ANSYS model of the real head and flange showed where that margin is actually lost.</p>
     <div class="kpis">
       <div class="kpi"><b>11.2</b><span>safety factor, shell membrane (theory)</span></div>
-      <div class="kpi"><b>3.05</b><span>minimum safety factor, FEA</span></div>
-      <div class="kpi"><b>68.9 MPa</b><span>peak von Mises at the head</span></div>
-      <div class="kpi"><b>0.597 MPa</b><span>internal pressure</span></div>
+      <div class="kpi"><b>3.05</b><span>minimum safety factor (FEA)</span></div>
+      <div class="kpi"><b>68.9 MPa</b><span>peak von Mises, at the head</span></div>
+      <div class="kpi"><b>0.597 MPa</b><span>internal pressure, SA-516 Gr.70</span></div>
     </div>
-    <div class="case__grid">
-      <div>
-        <figure class="fig"><img src="assets/img/pressure-vessel/von-mises.jpg" alt="Equivalent stress map">
-          <figcaption>Equivalent (von Mises) stress. The peak sits at the head and flange, not in the shell.</figcaption></figure>
-        <div class="figrow">
-          <figure class="fig print-hide"><img src="assets/img/pressure-vessel/mesh.jpg" alt="Mesh"><figcaption>Mesh with local refinement at the discontinuities</figcaption></figure>
-          <figure class="fig"><img src="assets/img/pressure-vessel/safety-factor.jpg" alt="Safety factor map"><figcaption>Safety factor map, minimum 3.05</figcaption></figure>
-        </div>
-      </div>
-      <div>
-        <h3>Problem</h3>
-        <p>Shell r = 450 mm, t = 10 mm, head 12 mm, L = 1600 mm, SA-516 Gr.70 (yield 260 MPa), internal pressure 0.597 MPa.
-          Find the stresses, the deformation and the real margin against yield.</p>
-        <h3>Approach</h3>
-        <ul>
-          <li><strong>Hand calculation:</strong> thin-wall shell theory for hoop, axial and von Mises stress, radial growth (0.051 mm) and the head membrane stress.</li>
-          <li><strong>FEA:</strong> static structural model in ANSYS Mechanical 2022 R1, linear elastic, pressure on the inner faces, mesh refined at the flange and head.</li>
-          <li><strong>Comparison logic:</strong> theory describes the shell away from the ends, FEA peaks include bending and notch effects at discontinuities. I compared them at two levels instead of forcing one number onto both.</li>
-        </ul>
-        <h3>Result</h3>
-        <p>The shell membrane is far from yield (factor 11.2), but the head and flange region governs the design with a minimum factor of
-          <strong>3.05</strong>, consistent with yield over the peak principal stress (260 / 85.3).</p>
-        <figure class="fig fig--sm"><img src="assets/img/pressure-vessel/global-vs-local.png" alt="Theory vs FEA stresses"><figcaption>Shell theory against FEA peak values (data from the project report)</figcaption></figure>
-        <h3>What I would do next</h3>
-        <p>A mesh independence study at the peak, a minimum-constraint boundary condition instead of the fixed base, and a radial
-          displacement check at mid-shell against the 0.051 mm hand result.</p>
+    <div class="duo">
+      <figure class="fig fig--hero"><div class="frame"><img src="assets/img/pressure-vessel/von-mises.jpg" alt="Von Mises stress map"></div>
+        <figcaption>Equivalent stress: the peak sits at the head and flange, not in the shell</figcaption></figure>
+      <div class="stack">
+        <figure class="fig"><div class="frame"><img src="assets/img/pressure-vessel/safety-factor.jpg" alt="Safety factor map"></div>
+          <figcaption>Safety factor map, minimum 3.05</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/pressure-vessel/mesh.jpg" alt="Mesh"></div>
+          <figcaption>Mesh, refined at the discontinuities</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <!-- ───────────── 1b. Pressure vessel: burst consequence ───────────── -->
-  <section class="case case--cont" id="pressure-vessel-burst">
-    <div class="case__head">
-      <div><div class="case__kicker">01 · Continued</div><h2>From stress to safety distance</h2></div>
-      <div class="case__meta">Article in preparation with Dr. Murat Bozkurt</div>
+  <!-- 01 Pressure vessel · B -->
+  <section class="sheet" id="pressure-vessel-method">
+    <div class="sheet__head">
+      <div><p class="kicker">01 · Pressure vessel · how I got there</p><h2>Two routes, one honest comparison</h2></div>
     </div>
-    <p class="case__lead">A safe stress level at working pressure does not say how far people should stand if the vessel ruptures. I extended the
-      same vessel with a consequence chain: stored energy, TNT equivalent and blast overpressure distance.</p>
+    <div class="duo duo--even">
+      <div class="points">
+        <h3>Problem</h3>
+        <p>Shell r = 450 mm, t = 10 mm, head 12 mm, L = 1600 mm, SA-516 Gr.70 (yield 260 MPa), internal pressure 0.597 MPa.</p>
+        <h3>Approach</h3>
+        <ul>
+          <li><strong>Hand calculation:</strong> thin-wall shell theory for hoop, axial and von Mises stress (23.3 MPa) and radial growth (0.051 mm).</li>
+          <li><strong>FEA:</strong> linear static model of the vessel and its bolted head in ANSYS Mechanical 2022 R1.</li>
+          <li><strong>Comparison:</strong> theory describes the shell away from the ends, FEA peaks include bending at discontinuities, so I compared them at two levels.</li>
+        </ul>
+        <h3>Result</h3>
+        <p>The shell is far from yield, but the head and flange govern the design with a safety factor of <strong>3.05</strong> (260 / 85.3 MPa peak principal stress).</p>
+        <h3>Next</h3>
+        <p>Mesh independence at the peak and a minimum-constraint support instead of the fixed base.</p>
+      </div>
+      <div class="stack">
+        <figure class="fig"><div class="frame"><img src="assets/img/pressure-vessel/global-vs-local.png" alt="Theory vs FEA stresses"></div>
+          <figcaption>Shell theory against FEA peak values</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/pressure-vessel/head-deformation.jpg" alt="Bolted head deformation"></div>
+          <figcaption>Bolted head model, total deformation</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 Pressure vessel · C -->
+  <section class="sheet" id="pressure-vessel-burst">
+    <div class="sheet__head">
+      <div><p class="kicker">01 · Pressure vessel · burst consequence</p><h2>From stress to a safety distance</h2></div>
+      <div class="meta">Article in preparation with Dr. Murat Bozkurt</div>
+    </div>
+    <p class="lead">A safe stress level does not say how far people should stand if the vessel ruptures. I added a consequence chain to the same vessel.</p>
     <div class="kpis">
       <div class="kpi"><b>0.81 MJ</b><span>stored energy at working pressure</span></div>
       <div class="kpi"><b>0.19 kg</b><span>TNT equivalent</span></div>
       <div class="kpi"><b>14.5 m</b><span>0.5 psi distance, working pressure</span></div>
       <div class="kpi"><b>45.8 m</b><span>0.5 psi distance, burst case</span></div>
     </div>
-    <div class="case__grid case__grid--rev">
-      <div>
+    <div class="duo">
+      <figure class="fig fig--hero"><div class="frame"><img src="assets/img/pressure-vessel/blast-distance.png" alt="Blast safety distance by scenario"></div>
+        <figcaption>Blast safety distance by pressure scenario and overpressure threshold (V = 1.1 m³)</figcaption></figure>
+      <div class="points">
         <h3>Method</h3>
         <ul>
-          <li><strong>Stored energy:</strong> isentropic expansion of an ideal gas (k = 1.4), internal volume about 1.1 m³.</li>
-          <li><strong>TNT equivalent:</strong> energy divided by 4.184 MJ/kg, with the 4.68 MJ/kg bound reported as uncertainty.</li>
-          <li><strong>Distance:</strong> Hopkinson-Cranz scaling, R = Z·W<sup>1/3</sup>, with Z for 0.5, 1, 2 and 5 psi from the Kinney-Graham free-air correlation.</li>
-          <li><strong>Scenarios:</strong> 1x to 3x working pressure, yield onset (about 5.78 MPa from shell theory) and an estimated burst pressure of 12.3 MPa.</li>
+          <li><strong>Stored energy:</strong> isentropic expansion of an ideal gas (k = 1.4).</li>
+          <li><strong>TNT equivalent:</strong> 4.184 MJ/kg, with 4.68 MJ/kg as the uncertainty bound.</li>
+          <li><strong>Distance:</strong> Hopkinson-Cranz scaling with Kinney-Graham overpressure values.</li>
+          <li><strong>Scenarios:</strong> 1x to 3x working pressure, yield onset and an estimated 12.3 MPa burst.</li>
         </ul>
-        <h3>Why it matters</h3>
-        <p>The results were turned into layered safety zones on a conceptual site layout. The study also states its limits clearly:
-          fragment throw, which often governs real burst events, was discussed qualitatively because the data needed to calculate it was not available.</p>
-        <p class="note">Academic pre-engineering assessment, not a site safety study. Fluid type, volume and burst pressure are stated assumptions.</p>
-      </div>
-      <div>
-        <figure class="fig"><img src="assets/img/pressure-vessel/blast-distance.png" alt="Blast safety distance by scenario"><figcaption>Blast safety distance by pressure scenario and overpressure threshold (V = 1.1 m³)</figcaption></figure>
-        <figure class="fig"><img src="assets/img/pressure-vessel/head-deformation.jpg" alt="Bolted head deformation"><figcaption>Bolted head model used in the study, total deformation</figcaption></figure>
+        <p class="note">Academic pre-engineering assessment. Fragment throw was discussed qualitatively because the data to calculate it was not available.</p>
       </div>
     </div>
   </section>
 
-  <!-- ───────────── 2. UAV landing gear ───────────── -->
-  <section class="case" id="uav">
-    <div class="case__head">
-      <div><div class="case__kicker">02 · Design and manufacturing</div><h2>TEKNOFEST UAV: a skid landing gear that survives the landing</h2></div>
-      <div class="case__meta">TEKNOFEST International UAV Competition · Aug 2024 - Aug 2025<br>Team project · my part: landing gear</div>
+  <!-- 02 UAV · A -->
+  <section class="sheet" id="uav">
+    <div class="sheet__head">
+      <div><p class="kicker">02 · TEKNOFEST UAV · design and manufacturing</p><h2>A skid landing gear that survives the landing</h2></div>
+      <div class="meta">TEKNOFEST International UAV Competition · Aug 2024 - Aug 2025<br>Team project · my part: landing gear</div>
     </div>
-    <p class="case__lead">A 7 kg X-frame quadcopter needs a landing gear that is light, stiff enough to keep the camera clear and tough enough to
-      absorb a hard landing. I designed the skid gear and its printed joints.</p>
+    <p class="lead">A 7 kg X-frame quadcopter needed a landing gear that is light, keeps the camera clear and absorbs a hard landing. I designed it.</p>
     <div class="kpis">
-      <div class="kpi"><b>7.05 kg</b><span>take-off mass of the UAV</span></div>
-      <div class="kpi"><b>2.32 kg</b><span>frame mass</span></div>
-      <div class="kpi"><b>292 mm</b><span>landing gear height</span></div>
       <div class="kpi"><b>50%</b><span>below the specification weight target</span></div>
+      <div class="kpi"><b>7.05 kg</b><span>take-off mass of the UAV</span></div>
+      <div class="kpi"><b>292 mm</b><span>landing gear height</span></div>
+      <div class="kpi"><b>415 mm</b><span>landing gear width</span></div>
     </div>
-    <div class="case__grid">
-      <div>
-        <figure class="fig"><img src="assets/img/uav/uav-render.jpg" alt="Quadcopter render"><figcaption>Full UAV assembly in SolidWorks</figcaption></figure>
-        <div class="figrow">
-          <figure class="fig"><img src="assets/img/uav/landing-gear.jpg" alt="Landing gear legs"><figcaption>Skid legs: carbon tubes, printed T-joints and rubber pads</figcaption></figure>
-          <figure class="fig print-hide"><img src="assets/img/uav/arm-clamp.jpg" alt="Printed joint"><figcaption>3D-printed joint detail</figcaption></figure>
-        </div>
+    <div class="duo">
+      <figure class="fig fig--hero"><div class="frame"><img src="assets/img/uav/uav-render.jpg" alt="Quadcopter render"></div>
+        <figcaption>Full UAV assembly in SolidWorks</figcaption></figure>
+      <div class="stack">
+        <figure class="fig"><div class="frame"><img src="assets/img/uav/landing-gear.jpg" alt="Landing gear legs"></div>
+          <figcaption>Skid legs: carbon tubes, printed T-joints, rubber pads</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/uav/drawing.jpg" alt="Technical drawing"></div>
+          <figcaption>Drawing sheet with frame, arm and gear dimensions</figcaption></figure>
       </div>
-      <div>
+    </div>
+  </section>
+
+  <!-- 02 UAV · B -->
+  <section class="sheet" id="uav-design">
+    <div class="sheet__head">
+      <div><p class="kicker">02 · TEKNOFEST UAV · design decisions</p><h2>Light, stiff and easy to replace</h2></div>
+    </div>
+    <div class="duo duo--even">
+      <div class="points">
         <h3>Design decisions</h3>
         <ul>
-          <li><strong>Skid instead of arm-mounted legs:</strong> keeps the gear out of the camera's view and spreads the landing load over a larger contact area.</li>
-          <li><strong>Carbon-fibre tubes</strong> (5 mm wall on the legs, thicker than the arms) for stiffness at low mass, sourced from a local manufacturer.</li>
-          <li><strong>Printed T-joints and angled flanges:</strong> ABS was chosen for its strength-to-weight and easy printing. Rubber pads on the skids reduce the landing shock.</li>
-          <li><strong>Easy to fit and remove:</strong> the gear is bolted to the frame, like the other parts, for easy assembly.</li>
+          <li><strong>Skid gear</strong> instead of arm-mounted legs: keeps it out of the camera's view and spreads the landing load over a larger area.</li>
+          <li><strong>Carbon-fibre tubes</strong> with a 5 mm wall on the legs, thicker than the arms, from a local manufacturer.</li>
+          <li><strong>3D-printed T-joints and angled flanges</strong> in ABS for strength-to-weight and easy printing.</li>
+          <li><strong>Rubber pads</strong> on the skids to soften the landing shock.</li>
+          <li><strong>Bolted to the frame</strong> like the other parts, for easy assembly.</li>
         </ul>
         <h3>Tools</h3>
-        <p>SolidWorks (parametric parts, assembly and drawings), ANSYS static structural analysis of the landing gear, FDM printing in PLA, ABS and ASA.</p>
-        <figure class="fig"><img src="assets/img/uav/drawing.jpg" alt="Technical drawing"><figcaption>Drawing sheet: frame, arm and landing gear dimensions</figcaption></figure>
+        <p>SolidWorks parametric parts, assembly and drawings. ANSYS static structural analysis of the landing gear. FDM printing in PLA, ABS and ASA.</p>
+        <h3>Result</h3>
+        <p>The final landing gear came in <strong>50% below the specification weight target</strong>.</p>
+      </div>
+      <div class="stack">
+        <figure class="fig"><div class="frame"><img src="assets/img/uav/arm-clamp.jpg" alt="Printed joint"></div>
+          <figcaption>3D-printed joint detail</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/uav/assembly-bom.jpg" alt="Assembly drawing with bill of materials"></div>
+          <figcaption>Assembly drawing with bill of materials</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <!-- ───────────── 3. Machine learning ───────────── -->
-  <section class="case" id="ml">
-    <div class="case__head">
-      <div><div class="case__kicker">03 · Data</div><h2>Predicting steel plate defects before they reach the customer</h2></div>
-      <div class="case__meta">Machine learning course project · Feb 2025 - Jun 2025<br>Individual work · R</div>
+  <!-- 03 ML · A -->
+  <section class="sheet" id="ml">
+    <div class="sheet__head">
+      <div><p class="kicker">03 · Machine learning · quality</p><h2>Predicting steel plate defects</h2></div>
+      <div class="meta">Machine learning course project · Feb 2025 - Jun 2025<br>Individual work · R</div>
     </div>
-    <p class="case__lead">Seven fault types appear on steel plates in production. The goal was a classifier that tells them apart from the inspection
-      measurements, so that defective output can be caught and traced back to the process.</p>
+    <p class="lead">A classifier that tells steel plate fault types apart from inspection measurements, so defective output can be caught and traced back to the process.</p>
     <div class="kpis">
       <div class="kpi"><b>91.3%</b><span>voting ensemble accuracy</span></div>
       <div class="kpi"><b>0.895</b><span>macro F1-score</span></div>
       <div class="kpi"><b>7</b><span>models compared</span></div>
       <div class="kpi"><b>27</b><span>input features</span></div>
     </div>
-    <div class="case__grid">
-      <div>
-        <div class="figrow">
-          <figure class="fig"><img src="assets/img/ml/model-accuracy.jpg" alt="Model accuracy comparison"><figcaption>Test accuracy of the seven models</figcaption></figure>
-          <figure class="fig"><img src="assets/img/ml/confusion-matrix.jpg" alt="Confusion matrix"><figcaption>Confusion matrix (XGBoost)</figcaption></figure>
-        </div>
-        <figure class="fig"><img src="assets/img/ml/feature-importance.jpg" alt="Feature importance"><figcaption>Random forest feature importance: conveyor length and plate geometry dominate</figcaption></figure>
-      </div>
-      <div>
-        <h3>Data and preparation</h3>
-        <p>UCI Steel Plates Faults data, 27 geometric and luminosity features per plate. The ambiguous "Other faults" class was left out,
-          the data was split 80/20, scaled, the minority classes were oversampled and Boruta selected the informative features.</p>
-        <h3>Models</h3>
-        <p>Logistic regression, decision tree, random forest, k-NN, naive Bayes, SVM (radial kernel, 5-fold cross-validation for C) and XGBoost.
-          XGBoost (91%), random forest (90%) and SVM (88%) were combined by majority vote, which reached <strong>91.3%</strong> with
-          macro precision 0.909 and recall 0.891.</p>
-        <h3>What the model says about the process</h3>
-        <p>K-scratch and bumps are recognised well, while Z-scratch is often confused with other classes. Conveyor length ranks highest,
-          followed by plate position and area features, so the model relies mostly on line and geometry measurements.</p>
+    <div class="duo">
+      <figure class="fig fig--hero"><div class="frame"><img src="assets/img/ml/model-accuracy.jpg" alt="Model accuracy comparison"></div>
+        <figcaption>Test accuracy of the seven models</figcaption></figure>
+      <div class="stack">
+        <figure class="fig"><div class="frame"><img src="assets/img/ml/confusion-matrix.jpg" alt="Confusion matrix"></div>
+          <figcaption>Confusion matrix (XGBoost)</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/ml/feature-importance.jpg" alt="Feature importance"></div>
+          <figcaption>Random forest feature importance</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <!-- ───────────── More ───────────── -->
-  <section class="case" id="more">
-    <div class="case__head">
-      <div><div class="case__kicker">04 · More work</div><h2>Formula Student and industry</h2></div>
+  <!-- 03 ML · B -->
+  <section class="sheet" id="ml-method">
+    <div class="sheet__head">
+      <div><p class="kicker">03 · Machine learning · method</p><h2>From raw measurements to a voting ensemble</h2></div>
     </div>
-    <div class="case__grid">
-      <div>
-        <h3>İÜC Racing Formula Student · Powertrain team · 2023 - 2026</h3>
-        <p>Designed the chain guard in SolidWorks and verified its strength with static analysis in ANSYS. Revised the bracket design for a
-          <strong>15% weight reduction</strong>.</p>
+    <div class="duo duo--even">
+      <div class="points">
+        <h3>Data and preparation</h3>
+        <p>UCI Steel Plates Faults data, 27 geometric and luminosity features per plate. The ambiguous "other faults" class was left out,
+          the data was split 80/20 and scaled, minority classes were oversampled and Boruta selected the informative features.</p>
+        <h3>Models</h3>
+        <p>Logistic regression, decision tree, random forest, k-NN, naive Bayes, SVM (5-fold cross-validation for C) and XGBoost.
+          XGBoost (91%), random forest (90%) and SVM (88%) were combined by majority vote: <strong>91.3%</strong>, precision 0.909, recall 0.891.</p>
+        <h3>What it says about the process</h3>
+        <p>K-scratch and bumps are recognised well, Z-scratch is often confused. Conveyor length ranks highest, so the model leans on line and geometry measurements.</p>
+      </div>
+      <div class="stack">
+        <figure class="fig"><div class="frame"><img src="assets/img/ml/pca.jpg" alt="PCA plot"></div>
+          <figcaption>PCA view: K-scratch separates, other faults overlap</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/ml/radar.jpg" alt="Fault types by steel type"></div>
+          <figcaption>Fault profile by steel type (A300 vs A400)</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- More work -->
+  <section class="sheet" id="more">
+    <div class="sheet__head">
+      <div><p class="kicker">04 · More work</p><h2>Formula Student and industry</h2></div>
+    </div>
+    <div class="duo duo--even">
+      <div class="points">
+        <h3>İÜC Racing Formula Student · powertrain team · 2023 - 2026</h3>
+        <p>Designed the chain guard in SolidWorks and verified its strength with static analysis in ANSYS. Revised the bracket design for a <strong>15% weight reduction</strong>.</p>
         <h3>Internships</h3>
         <ul>
           <li><strong>FESTO</strong>, 2025: traced mechanical, pneumatic, electrical and software faults in a robotic system and recommissioned it.</li>
           <li><strong>BEKO</strong>, manufacturing, 2025: found loss sources at 5 critical assembly stations and proposed 2 improvements.</li>
-          <li><strong>Midas Makina</strong>, design, 2024: revised SolidWorks models and prepared manufacturing drawings to tolerancing standards.</li>
-          <li><strong>Yılmaz Redüktör</strong>, workshop, 2024: CNC turning, milling, heat treatment, grinding and gear quality control on site.</li>
+          <li><strong>Midas Makina</strong>, design, 2024: revised SolidWorks models and prepared manufacturing drawings.</li>
+          <li><strong>Yılmaz Redüktör</strong>, workshop, 2024: machining, heat treatment and gear quality control on site.</li>
         </ul>
       </div>
-      <div>
+      <div class="points">
         <h3>Skills</h3>
-        <p>SolidWorks (CSWP), ANSYS Mechanical, AutoCAD, Siemens NX, CATIA, Fusion 360, MATLAB/Simulink, R, MS Excel.
-          Static and modal FEA, topology optimisation, technical drawing and GD&amp;T, design for manufacturability, design for injection
-          moulding, sheet metal design, root cause analysis, lean manufacturing.</p>
+        <p>SolidWorks (CSWP), ANSYS Mechanical, AutoCAD, Siemens NX, CATIA, Fusion 360, MATLAB/Simulink, R, MS Excel.</p>
+        <p>Static and modal FEA, topology optimisation, technical drawing and GD&amp;T, design for manufacturability, design for injection moulding, sheet metal design, root cause analysis, lean manufacturing.</p>
         <h3>Contact</h3>
-        <p>mmert1erdogan@gmail.com · linkedin.com/in/mmerterdogan · mmerterdogan.github.io</p>
+        <p>mmert1erdogan@gmail.com<br>linkedin.com/in/mmerterdogan<br>mmerterdogan.github.io</p>
       </div>
     </div>
   </section>
