@@ -1,26 +1,21 @@
-# Muhammet Mert Erdoğan — Kişisel Portfolyo
+# Muhammet Mert Erdoğan · personal site and portfolio
 
-Makine mühendisliği portfolyo sitesi. Tasarım ve yapısal analiz (FEA)
-projelerini, saha deneyimini ve yetkinlikleri sunar.
-
-## İçerik
-
-- **Projeler** — FEA doğrulama, topoloji optimizasyonu, eklemeli imalat ve
-  makine öğrenmesi çalışmaları
-- **Deneyim** — dört sanayi stajı
-- **Yetkinlikler** — SolidWorks, ANSYS Mechanical, FDM üretim, R
-
-## Teknik
-
-Tek dosyalık statik sayfa. Harici JavaScript yok; yalnızca Google Fonts
-(Fraunces + Manrope) dışarıdan yükleniyor. Mobil uyumlu, `Ctrl+P` ile
-temiz PDF çıktısı verir.
+Mechanical engineering site: design, structural analysis (FEA) and manufacturing projects.
 
 ```
-index.html                       sayfa
-Muhammet_Mert_Erdogan_CV.pdf     özgeçmiş
+index.html                           home page (about, projects, experience, skills)
+portfolio.html                       case studies; printed to the PDF below
+assets/site.css                      shared styles (screen + A4 landscape print)
+assets/img/<project>/                figures
+Muhammet_Mert_Erdogan_CV.pdf         CV (public copy, no references)
+Muhammet_Mert_Erdogan_Portfolio.pdf  portfolio PDF
 ```
 
-## Yayın
+Regenerate the PDF after editing `portfolio.html` (serve the folder, then print with Chrome):
 
-GitHub Pages ile yayınlanır — `main` dalına yapılan her push canlıya çıkar.
+```
+python -m http.server 8790
+chrome --headless=new --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf=Muhammet_Mert_Erdogan_Portfolio.pdf http://localhost:8790/portfolio.html
+```
+
+Published with GitHub Pages: every push to `main` goes live.
