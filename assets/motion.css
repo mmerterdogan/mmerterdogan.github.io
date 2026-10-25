@@ -341,3 +341,18 @@ h1, h2, h3, .nav__brand, .kpi b, .stat b, .job .who, .ei .t, .mail, .cover h1, .
   .fig .frame img.print-only{ display:none; }
   #more .fs-fig, #more .fs-pair{ max-width:760px; }
 }
+
+/* ── hero, About and Experience before the 3D tour ── */
+@media screen{
+  .before{ position:relative; z-index:3; background:var(--bg); }
+  .hero2{ min-height:88svh; display:flex; flex-direction:column; justify-content:flex-end; padding:120px 0 40px; border-bottom:1px solid var(--rule); }
+  .hero2 .hx__name{ margin-bottom:20px; }
+  .hero2 .hx__lead{ margin-bottom:24px; }
+  .hero2__stats{ display:grid; grid-template-columns:repeat(4,1fr); margin-top:48px; border-top:1px solid var(--rule); }
+  .hero2__stats div{ padding:16px 18px 0 0; }
+  .hero2__stats b{ display:block; font-family:var(--serif); font-size:clamp(24px,2.4vw,34px); font-weight:700; color:var(--pop); line-height:1.1; }
+  .hero2__stats span{ font-size:13px; color:var(--fg-faint); }
+  .chap__title{ font-size:clamp(28px,3vw,42px); }
+}
+@media screen and (max-width:760px){ .hero2__stats{ grid-template-columns:1fr 1fr; gap:6px 0; } }
+@media screen{ .before{ box-shadow:0 0 0 100vmax var(--bg); clip-path:inset(0 -100vmax); } }

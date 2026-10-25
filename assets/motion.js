@@ -58,9 +58,9 @@
     requestAnimationFrame(step);
   };
   const io2 = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { e.target.querySelectorAll('.kpi b').forEach(count); io2.unobserve(e.target); }
+    if (e.isIntersecting) { e.target.querySelectorAll('.kpi b, .hero2__stats b').forEach(count); io2.unobserve(e.target); }
   }), { threshold: .3 });
-  document.querySelectorAll('.kpis').forEach(e => io2.observe(e));
+  document.querySelectorAll('.kpis, .hero2__stats').forEach(e => io2.observe(e));
 
   // image trail in the hero
   const hero = document.querySelector('.hx'), trail = document.querySelector('.hx__trail');

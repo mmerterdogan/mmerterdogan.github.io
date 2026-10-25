@@ -211,9 +211,16 @@
     "Powertrain assembly with the chain guards, SolidWorks": "Zincir korumalarıyla güç aktarma montajı, SolidWorks",
     "Open guard with bolted flange": "Cıvatalı flanşlı açık koruma",
     "Closed ring guard": "Kapalı halka koruma",
+    "Selected work": "Seçilmiş projeler",
+    "Four projects, one walk through the hall": "Dört proje, salonda tek bir yürüyüş",
+    "Scroll to move from exhibit to exhibit. Each stop links to the full case study further down.": "Kaydırdıkça bir sergiden diğerine geçersin. Her durak, aşağıdaki ayrıntılı vaka çalışmasına bağlanıyor.",
+    "local safety factor found by FEA, against 11.2 from shell theory": "FEA ile bulunan yerel emniyet katsayısı, kabuk teorisinde 11,2",
+    "under the weight target, UAV landing gear": "ağırlık hedefinin altında, İHA iniş takımı",
+    "accuracy, steel defect classifier": "doğruluk, çelik hata sınıflandırıcı",
+    "industrial internships": "endüstriyel staj",
   });
   const SEL = 'h1 .ln, h2, h3, p, li, figcaption, dt, dd, summary, .btn, .lnk, .nav__cv, .chip, .kpi span, .chap__n span, ' +
-    '.contact-row a, .tl__go, .chap__go, .skip-tour, footer span, .facts dd b, .meta, .stat span';
+    '.contact-row a, .tl__go, .chap__go, .skip-tour, footer span, .facts dd b, .meta, .stat span, .hero2__stats span';
   const norm = h => h.replace(/\s+/g, ' ').replace(/<br\/?>/g, '<br>').trim();
   document.querySelectorAll(SEL).forEach(el => {
     if (el.closest('.print-only')) return;
@@ -226,7 +233,7 @@
   document.querySelectorAll('.tl__when, .meta, .chap__k').forEach(el => {
     el.innerHTML = el.innerHTML.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g, m => M[m]).replace('present', 'devam ediyor');
   });
-  document.querySelectorAll('.kpi b, .chap__n b').forEach(el => {
+  document.querySelectorAll('.kpi b, .chap__n b, .hero2__stats b').forEach(el => {
     el.textContent = el.textContent.replace(/(\d)\.(\d)/g, '$1,$2').replace(/^([\d,]+)%$/, '%$1');
   });
   const chap = { 'Structural analysis, 2025 - 2026': 'Yapısal analiz, 2025 - 2026', 'Design and manufacturing, 2024 - 2025, team': 'Tasarım ve üretim, 2024 - 2025, takım',
