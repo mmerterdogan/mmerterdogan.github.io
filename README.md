@@ -5,8 +5,7 @@ Mechanical engineering site: design, structural analysis (FEA) and manufacturing
 ```
 index.html                           single page: 3D tour, case studies, about, experience, skills, contact
                                      (also the source of the portfolio PDF, print styles in site.css)
-assets/sequence.js                   pressure vessel scene above its case study, scroll-scrubbed frames (no libraries)
-assets/seq/vessel/                   96 frames rendered in Blender from the ANSYS model (scripts: portfolio-work/render)
+assets/img/hero-vessel.webp          vessel rendered in Blender from the ANSYS model (scripts: portfolio-work/render)
 assets/motion.css, motion.js         layout and screen effects (off in print and with reduced motion)
 assets/analytics.js                  GoatCounter events (project views, case opens, PDF downloads)
 dashboard.html                       visitor dashboard, reads mmerterdogan.goatcounter.com (not linked, noindex)

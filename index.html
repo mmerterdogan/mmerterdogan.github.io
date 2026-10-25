@@ -23,8 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=24">
-<link rel="stylesheet" href="assets/motion.css?v=24">
+<link rel="stylesheet" href="assets/site.css?v=25">
+<link rel="stylesheet" href="assets/motion.css?v=25">
 </head>
 <body>
 <a class="skip screen-only" href="#work">Skip to projects</a>
@@ -34,9 +34,9 @@
     <a class="nav__brand" href="#top">Mert Erdoğan</a>
     <button type="button" class="nav__menu" aria-expanded="false" aria-controls="navlinks">Menu</button>
     <nav class="nav__links" id="navlinks" aria-label="Sections">
-      <a class="lnk" href="#work">Work</a>
-      <a class="lnk" href="#experience">Experience</a>
       <a class="lnk" href="#about">About</a>
+      <a class="lnk" href="#experience">Experience</a>
+      <a class="lnk" href="#work">Work</a>
       <a class="lnk" href="#contact">Contact</a>
     </nav>
     <a class="lang-switch" href="?lang=tr" hreflang="tr">TR</a>
@@ -60,7 +60,7 @@
     </div>
   </section>
 
-  <!-- Hero and project cards (screen) -->
+  <!-- Hero, About, Experience, project cards (screen) -->
   <div class="before screen-only">
   <section class="hero2" aria-label="Introduction">
     <div class="hero2__text">
@@ -79,6 +79,126 @@
       <img src="assets/img/hero-vessel.webp" width="1280" height="720" alt="Pressure vessel rendered from my ANSYS model, coloured by von Mises stress">
       <figcaption>Pressure vessel, rendered from my ANSYS model and coloured by its von Mises result</figcaption>
     </figure>
+  </section>
+
+  <section id="about" class="screen-only">
+    <h2>About</h2>
+    <div class="about about--photo">
+      <figure class="portrait"><img src="assets/img/profile.jpg" alt="Muhammet Mert Erdoğan" loading="lazy" width="500" height="600"></figure>
+      <div>
+        <p>I trust a result once two different routes agree on it, and I want to understand why they disagree when they don't.
+          A design is not finished for me until I know how it will be built.</p>
+        <p>I am doing a <strong>thesis MSc</strong> at İÜC, which takes one day a week. The rest of the week is free for full-time work.</p>
+        <dl class="facts">
+          <div><dt>Now</dt><dd><b>MSc (Thesis), İÜC, 2026 -</b></dd></div>
+          <div><dt>Languages</dt><dd>Turkish, English (C1)</dd></div>
+          <div><dt>Based in</dt><dd>Istanbul, open to relocation</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="screen-only">
+    <h2>Experience</h2>
+    <p class="tl__intro">Internships, school and leadership, newest first. The projects follow below.</p>
+    <ol class="tl">
+        <li class="tl__year" aria-hidden="true">2026</li>
+        <li class="tl__item" data-kind="edu" data-skills="SolidWorks">
+          <div class="tl__when">Oct 2026</div>
+          <div class="tl__card">
+            <span class="tl__logo tl__logo--mono" role="img" aria-label="CSWP">CSWP</span>
+            <div class="tl__body">
+              <h3>Certified SOLIDWORKS Professional</h3>
+              <p class="tl__org">Dassault Systèmes</p>
+              <div class="tl__chips"><span class="tag">SolidWorks</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__item" data-kind="edu" data-skills="">
+          <div class="tl__when">Sep 2026 - present</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="Istanbul University-Cerrahpaşa"></span>
+            <div class="tl__body">
+              <h3>MSc in Mechanical Engineering (Thesis)</h3>
+              <p class="tl__org">Istanbul University-Cerrahpaşa</p>
+            </div>
+          </div>
+        </li>
+        <li class="tl__year" aria-hidden="true">2025</li>
+        <li class="tl__item" data-kind="work" data-skills="Root cause analysis|Pneumatics|Commissioning">
+          <div class="tl__when">Aug - Sep 2025</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/festo.svg)" role="img" aria-label="FESTO"></span>
+            <div class="tl__body">
+              <h3>Intern</h3>
+              <p class="tl__org">FESTO <span>Industrial automation</span></p>
+              <p class="tl__text">Traced mechanical, pneumatic, electrical and software faults in an out-of-service robotic system through root cause analysis and recommissioned it.</p>
+              <div class="tl__chips"><span class="tag">Root cause analysis</span><span class="tag">Pneumatics</span><span class="tag">Commissioning</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__item" data-kind="work" data-skills="Lean manufacturing|Root cause analysis|Assembly lines">
+          <div class="tl__when">Jul - Aug 2025</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/beko.svg)" role="img" aria-label="BEKO"></span>
+            <div class="tl__body">
+              <h3>Manufacturing Intern</h3>
+              <p class="tl__org">BEKO <span>Home appliances</span></p>
+              <p class="tl__text">Found loss sources at 5 critical assembly line stations through waste and root cause analysis and proposed 2 improvements with R&amp;D and Production.</p>
+              <div class="tl__chips"><span class="tag">Lean manufacturing</span><span class="tag">Root cause analysis</span><span class="tag">Assembly lines</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__year" aria-hidden="true">2024</li>
+        <li class="tl__item" data-kind="edu" data-skills="Leadership">
+          <div class="tl__when">Aug 2024 - Aug 2025</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="İÜC"></span>
+            <div class="tl__body">
+              <h3>Chair of the Board</h3>
+              <p class="tl__org">İÜC Career Club <span>300+ members</span></p>
+              <p class="tl__text">Planned the year of the club and delivered 8+ events.</p>
+              <div class="tl__chips"><span class="tag">Leadership</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__item" data-kind="work" data-skills="SolidWorks|Technical drawing|Tolerancing">
+          <div class="tl__when">Aug - Sep 2024</div>
+          <div class="tl__card">
+            <span class="tl__logo tl__logo--mono" role="img" aria-label="Midas Makina Sanayi">M</span>
+            <div class="tl__body">
+              <h3>Design Intern</h3>
+              <p class="tl__org">Midas Makina Sanayi <span>Machinery</span></p>
+              <p class="tl__text">Revised 3D models of existing parts in SolidWorks and prepared manufacturing drawings to dimensioning and tolerancing standards.</p>
+              <div class="tl__chips"><span class="tag">SolidWorks</span><span class="tag">Technical drawing</span><span class="tag">Tolerancing</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__item" data-kind="work" data-skills="CNC machining|Heat treatment|Quality control">
+          <div class="tl__when">Jul 2024</div>
+          <div class="tl__card">
+            <span class="tl__logo tl__logo--mono" role="img" aria-label="Yılmaz Redüktör">YR</span>
+            <div class="tl__body">
+              <h3>Workshop Intern</h3>
+              <p class="tl__org">Yılmaz Redüktör <span>Gearboxes</span></p>
+              <p class="tl__text">Observed CNC turning, milling, heat treatment and grinding operations and gear quality control on a gearbox production line.</p>
+              <div class="tl__chips"><span class="tag">CNC machining</span><span class="tag">Heat treatment</span><span class="tag">Quality control</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__year" aria-hidden="true">2021</li>
+        <li class="tl__item" data-kind="edu" data-skills="">
+          <div class="tl__when">Sep 2021 - Jul 2026</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="Istanbul University-Cerrahpaşa"></span>
+            <div class="tl__body">
+              <h3>BSc in Mechanical Engineering</h3>
+              <p class="tl__org">Istanbul University-Cerrahpaşa <span>30% English-medium</span></p>
+            </div>
+          </div>
+        </li>
+    </ol>
+    <p class="tl__note">Company and university logos are trademarks of their owners, shown only to identify where I studied and worked.</p>
   </section>
 
   <section id="work" class="work" aria-labelledby="work-h">
@@ -126,16 +246,6 @@
   </div>
 
   <div class="after">
-  <section class="journey screen-only" aria-label="Pressure vessel, rendered from the ANSYS model">
-    <div class="seq" aria-hidden="true"><canvas class="seq__vessel"></canvas></div>
-    <div class="chap" data-id="pressure-vessel" data-at="0-1.01">
-      <p class="chap__k">From the ANSYS model</p>
-      <p class="chap__lead">Scroll: the bolted head lifts off, then the surface takes the colours of the von Mises result.</p>
-    </div>
-    <p class="journey__tag">Rendered in Blender from the mesh and results of my ANSYS model.</p>
-  </section>
-
-
   <!-- ═════════ 01 Pressure vessel ═════════ -->
   <div class="case-block" data-case="pv">
   <section class="sheet sheet--first" id="pressure-vessel">
@@ -354,126 +464,6 @@
   </section>
 
   <!-- ═════════ Screen-only sections ═════════ -->
-  <section id="experience" class="screen-only">
-    <h2>Experience</h2>
-    <p class="tl__intro">Internships, school and leadership, newest first. The projects are above.</p>
-    <ol class="tl">
-        <li class="tl__year" aria-hidden="true">2026</li>
-        <li class="tl__item" data-kind="edu" data-skills="SolidWorks">
-          <div class="tl__when">Oct 2026</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="CSWP">CSWP</span>
-            <div class="tl__body">
-              <h3>Certified SOLIDWORKS Professional</h3>
-              <p class="tl__org">Dassault Systèmes</p>
-              <div class="tl__chips"><span class="tag">SolidWorks</span></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="edu" data-skills="">
-          <div class="tl__when">Sep 2026 - present</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="Istanbul University-Cerrahpaşa"></span>
-            <div class="tl__body">
-              <h3>MSc in Mechanical Engineering (Thesis)</h3>
-              <p class="tl__org">Istanbul University-Cerrahpaşa</p>
-            </div>
-          </div>
-        </li>
-        <li class="tl__year" aria-hidden="true">2025</li>
-        <li class="tl__item" data-kind="work" data-skills="Root cause analysis|Pneumatics|Commissioning">
-          <div class="tl__when">Aug - Sep 2025</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/festo.svg)" role="img" aria-label="FESTO"></span>
-            <div class="tl__body">
-              <h3>Intern</h3>
-              <p class="tl__org">FESTO <span>Industrial automation</span></p>
-              <p class="tl__text">Traced mechanical, pneumatic, electrical and software faults in an out-of-service robotic system through root cause analysis and recommissioned it.</p>
-              <div class="tl__chips"><span class="tag">Root cause analysis</span><span class="tag">Pneumatics</span><span class="tag">Commissioning</span></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="work" data-skills="Lean manufacturing|Root cause analysis|Assembly lines">
-          <div class="tl__when">Jul - Aug 2025</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/beko.svg)" role="img" aria-label="BEKO"></span>
-            <div class="tl__body">
-              <h3>Manufacturing Intern</h3>
-              <p class="tl__org">BEKO <span>Home appliances</span></p>
-              <p class="tl__text">Found loss sources at 5 critical assembly line stations through waste and root cause analysis and proposed 2 improvements with R&amp;D and Production.</p>
-              <div class="tl__chips"><span class="tag">Lean manufacturing</span><span class="tag">Root cause analysis</span><span class="tag">Assembly lines</span></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__year" aria-hidden="true">2024</li>
-        <li class="tl__item" data-kind="edu" data-skills="Leadership">
-          <div class="tl__when">Aug 2024 - Aug 2025</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="İÜC"></span>
-            <div class="tl__body">
-              <h3>Chair of the Board</h3>
-              <p class="tl__org">İÜC Career Club <span>300+ members</span></p>
-              <p class="tl__text">Planned the year of the club and delivered 8+ events.</p>
-              <div class="tl__chips"><span class="tag">Leadership</span></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="work" data-skills="SolidWorks|Technical drawing|Tolerancing">
-          <div class="tl__when">Aug - Sep 2024</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="Midas Makina Sanayi">M</span>
-            <div class="tl__body">
-              <h3>Design Intern</h3>
-              <p class="tl__org">Midas Makina Sanayi <span>Machinery</span></p>
-              <p class="tl__text">Revised 3D models of existing parts in SolidWorks and prepared manufacturing drawings to dimensioning and tolerancing standards.</p>
-              <div class="tl__chips"><span class="tag">SolidWorks</span><span class="tag">Technical drawing</span><span class="tag">Tolerancing</span></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="work" data-skills="CNC machining|Heat treatment|Quality control">
-          <div class="tl__when">Jul 2024</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="Yılmaz Redüktör">YR</span>
-            <div class="tl__body">
-              <h3>Workshop Intern</h3>
-              <p class="tl__org">Yılmaz Redüktör <span>Gearboxes</span></p>
-              <p class="tl__text">Observed CNC turning, milling, heat treatment and grinding operations and gear quality control on a gearbox production line.</p>
-              <div class="tl__chips"><span class="tag">CNC machining</span><span class="tag">Heat treatment</span><span class="tag">Quality control</span></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__year" aria-hidden="true">2021</li>
-        <li class="tl__item" data-kind="edu" data-skills="">
-          <div class="tl__when">Sep 2021 - Jul 2026</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="Istanbul University-Cerrahpaşa"></span>
-            <div class="tl__body">
-              <h3>BSc in Mechanical Engineering</h3>
-              <p class="tl__org">Istanbul University-Cerrahpaşa <span>30% English-medium</span></p>
-            </div>
-          </div>
-        </li>
-    </ol>
-    <p class="tl__note">Company and university logos are trademarks of their owners, shown only to identify where I studied and worked.</p>
-  </section>
-
-  <section id="about" class="screen-only">
-    <h2>About</h2>
-    <div class="about about--photo">
-      <figure class="portrait"><img src="assets/img/profile.jpg" alt="Muhammet Mert Erdoğan" loading="lazy" width="500" height="600"></figure>
-      <div>
-        <p>I trust a result once two different routes agree on it, and I want to understand why they disagree when they don't.
-          A design is not finished for me until I know how it will be built.</p>
-        <p>I am doing a <strong>thesis MSc</strong> at İÜC, which takes one day a week. The rest of the week is free for full-time work.</p>
-        <dl class="facts">
-          <div><dt>Now</dt><dd><b>MSc (Thesis), İÜC, 2026 -</b></dd></div>
-          <div><dt>Languages</dt><dd>Turkish, English (C1)</dd></div>
-          <div><dt>Based in</dt><dd>Istanbul, open to relocation</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
   <section id="skills" class="screen-only">
     <h2>Skills and certifications</h2>
     <div class="skills">
@@ -549,10 +539,9 @@
   }), { rootMargin: '-45% 0px -50% 0px' });
   ['work', 'experience', 'about', 'contact'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
 </script>
-<script src="assets/i18n.js?v=5"></script>
-<script src="assets/motion.js?v=24"></script>
+<script src="assets/i18n.js?v=6"></script>
+<script src="assets/motion.js?v=25"></script>
 <script src="assets/analytics.js?v=3"></script>
 <script data-goatcounter="https://mmerterdogan.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script src="assets/sequence.js?v=4"></script>
 </body>
 </html>

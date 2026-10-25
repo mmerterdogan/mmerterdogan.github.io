@@ -229,7 +229,7 @@
   "minimum safety factor at the head (yield / max principal stress 85.3 MPa)": "kapakta en düşük emniyet katsayısı (akma / maks. asal gerilme 85,3 MPa)",
   "safety factor of the shell (von Mises, thin-wall theory)": "gövdenin emniyet katsayısı (von Mises, ince cidar teorisi)",
   "peak von Mises stress (FEA)": "en yüksek von Mises gerilmesi (FEA)",
-  "Internships, school and leadership, newest first. The projects are above.": "Stajlar, okul ve liderlik, en yenisi üstte. Projeler yukarıda.",
+  "Internships, school and leadership, newest first. The projects follow below.": "Stajlar, okul ve liderlik, en yenisi üstte. Projeler aşağıda.",
   "I am doing a <strong>thesis MSc</strong> at İÜC, which takes one day a week. The rest of the week is free for full-time work.": "İÜC'de <strong>tezli yüksek lisans</strong> yapıyorum, haftada bir günümü alıyor. Haftanın geri kalanında tam zamanlı çalışabilirim."
 });
   Object.assign(T, {
