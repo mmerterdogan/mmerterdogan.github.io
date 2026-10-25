@@ -4,8 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Muhammet Mert Erdoğan · Mechanical Engineer</title>
-<meta name="description" content="Mechanical engineer working on design, structural analysis (FEA) and manufacturing. SolidWorks (CSWP), ANSYS Mechanical, design for manufacturability." />
+<meta name="description" content="Mechanical engineer working on design, structural analysis (FEA) and manufacturing. Portfolio: pressure vessel FEA and burst assessment, UAV landing gear, steel defect classification." />
 <meta name="author" content="Muhammet Mert Erdoğan" />
+<meta property="og:title" content="Muhammet Mert Erdoğan · Mechanical Engineer" />
+<meta property="og:description" content="Design, structural analysis (FEA) and manufacturing. Engineering portfolio and CV." />
+<meta property="og:image" content="https://mmerterdogan.github.io/assets/img/pressure-vessel/von-mises.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,210 +16,349 @@
 </head>
 <body>
 
-<header class="nav">
+<header class="nav screen-only">
   <div class="nav__in">
     <a class="nav__brand" href="#top">Muhammet Mert <b>Erdoğan</b></a>
+    <a class="lnk" href="#work">Work</a>
     <a class="lnk" href="#about">About</a>
-    <a class="lnk" href="#projects">Projects</a>
     <a class="lnk" href="#experience">Experience</a>
-    <a class="lnk" href="portfolio.html">Portfolio</a>
+    <a class="lnk" href="#contact">Contact</a>
     <a class="nav__cv" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV</a>
   </div>
 </header>
 
-<main id="top">
-  <div class="wrap">
-    <div class="hero">
+<main id="top" class="wrap">
+
+  <!-- Print cover (PDF only) -->
+  <section class="cover print-only">
+    <img class="photo" src="assets/img/profile.jpg" alt="Muhammet Mert Erdoğan">
+    <p class="kicker">Engineering portfolio · 2026</p>
+    <h1>Muhammet Mert Erdoğan</h1>
+    <p class="sub">Mechanical engineer working on design, structural analysis and manufacturing. BSc Mechanical Engineering,
+      thesis MSc in progress at Istanbul University-Cerrahpaşa. Certified SOLIDWORKS Professional (CSWP).</p>
+    <div class="contact">
+      <a href="mailto:mmert1erdogan@gmail.com">mmert1erdogan@gmail.com</a>
+      <a href="https://www.linkedin.com/in/mmerterdogan/">linkedin.com/in/mmerterdogan</a>
+      <a href="https://mmerterdogan.github.io">mmerterdogan.github.io</a>
+    </div>
+  </section>
+
+  <!-- Hero (screen) -->
+  <section class="hero hero--v3 screen-only" style="border-bottom:none;">
+    <div>
       <p class="hero__eyebrow">Mechanical Engineer · Design, Analysis and Manufacturing</p>
-      <h1>Engineering that takes shape <i>under load.</i></h1>
-      <p>
-        I design in SolidWorks, check the design with hand calculations and FEA in ANSYS, and think about how
-        it will be made before it leaves the screen. I want to bring that habit to any engineering team.
-      </p>
+      <h1>I design parts, prove them with <i>analysis</i> and think about how they are made.</h1>
+      <p class="tagline">BSc Mechanical Engineering, thesis MSc in progress. SolidWorks (CSWP), ANSYS Mechanical, four industrial internships. Based in Istanbul, open to relocation.</p>
       <div class="hero__cta">
-        <a class="btn btn--solid" href="portfolio.html">View portfolio</a>
-        <a class="btn btn--line" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn btn--solid" href="#work">See my work</a>
+        <a class="btn btn--line" href="Muhammet_Mert_Erdogan_Portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF</a>
+        <a class="btn btn--line" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV</a>
       </div>
     </div>
+    <img class="photo" src="assets/img/profile.jpg" alt="Muhammet Mert Erdoğan">
+  </section>
+
+  <div class="stats screen-only">
+    <div class="stat"><b>3.05</b><span>local safety factor found by FEA, vs 11.2 from shell theory</span></div>
+    <div class="stat"><b>50%</b><span>below the weight target, UAV landing gear</span></div>
+    <div class="stat"><b>91.3%</b><span>accuracy, steel defect classifier</span></div>
+    <div class="stat"><b>CSWP</b><span>Certified SOLIDWORKS Professional</span></div>
   </div>
 
-  <div class="wrap">
-    <div class="stats">
-      <div class="stat"><b>4</b><span>industrial internships</span></div>
-      <div class="stat"><b>CSWP</b><span>Certified SOLIDWORKS Professional</span></div>
-      <div class="stat"><b>3.05</b><span>local safety factor found by FEA (vs 11.2 by shell theory)</span></div>
-      <div class="stat"><b>91.3%</b><span>ensemble accuracy, steel defect classifier</span></div>
+  <div class="work-intro screen-only" id="work">
+    <h2><span>001</span>Selected work</h2>
+    <p>Three projects, each with the result first and the method underneath. Open "Method and details" for the full story.</p>
+  </div>
+
+  <!-- ═════════ 01 Pressure vessel ═════════ -->
+  <section class="sheet sheet--first" id="pressure-vessel">
+    <div class="sheet__head">
+      <div><p class="kicker">01 · Pressure vessel · structural analysis</p><h2>Shell theory said 11.2. The real head said 3.05.</h2></div>
+      <div class="meta">Mechanical System Design project, İÜC · Oct 2025 - Jan 2026<br>Advisor: Dr. Murat Bozkurt · individual work</div>
     </div>
-
-    <section id="about">
-      <h2><span>001</span>How I work</h2>
-      <div class="about">
-        <div>
-          <p>
-            I trust a result once two different routes agree on it, and I want to understand why they disagree
-            when they don't. On a pressure vessel project I calculated the shell stresses by hand, then built the
-            ANSYS model. The model showed that the <strong>flange and head discontinuities</strong>, not the
-            shell membrane, set the safety factor: 3.05 locally, against 11.2 from shell theory.
-          </p>
-          <p>
-            A design is not finished for me until I know how it will be built. In the TEKNOFEST UAV team I worked
-            on a landing gear made of carbon-fibre tubes and 3D-printed joints, and in four internships I saw parts
-            go from the design office to the machine shop and the assembly line.
-          </p>
-          <p>
-            At FESTO and BEKO I learnt that a problem rarely starts where it shows up. I am now doing a
-            <strong>thesis MSc</strong> in Mechanical Engineering and looking for a team where I can keep learning
-            by building real things.
-          </p>
-        </div>
-        <dl class="facts">
-          <div><dt>Education</dt><dd>BSc Mechanical Eng., İÜC</dd></div>
-          <div><dt>Now</dt><dd><b>MSc (Thesis), 2026 -</b></dd></div>
-          <div><dt>Focus</dt><dd>Design · FEA<br>design for manufacturing</dd></div>
-          <div><dt>Languages</dt><dd>Turkish · English (C1)</dd></div>
-          <div><dt>Based in</dt><dd>Istanbul, open to relocation</dd></div>
-        </dl>
+    <p class="lead">I calculated the stresses of a pressure vessel by hand, built an ANSYS model of the vessel and its bolted head and showed that the head-flange region, not the shell, sets the safety margin.</p>
+    <div class="kpis">
+      <div class="kpi"><b>3.05</b><span>minimum safety factor (FEA, at the head)</span></div>
+      <div class="kpi"><b>11.2</b><span>safety factor of the shell membrane (theory)</span></div>
+      <div class="kpi"><b>68.9 MPa</b><span>peak von Mises stress</span></div>
+      <div class="kpi"><b>45.8 m</b><span>worst-case blast safety distance</span></div>
+    </div>
+    <div class="duo">
+      <figure class="fig fig--hero"><div class="frame"><img src="assets/img/pressure-vessel/von-mises.jpg" alt="Von Mises stress map with annotations"></div>
+        <figcaption>Equivalent stress, ANSYS Mechanical 2022 R1</figcaption></figure>
+      <div class="stack">
+        <figure class="fig"><div class="frame"><img src="assets/img/pressure-vessel/safety-factor.jpg" alt="Safety factor map"></div>
+          <figcaption>Safety factor map</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/pressure-vessel/global-vs-local.png" alt="Theory vs FEA stresses"></div>
+          <figcaption>Shell theory against FEA peak values</figcaption></figure>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects">
-      <h2><span>002</span>Projects</h2>
-      <div class="projects">
-        <article class="proj">
-          <a class="proj__img" href="portfolio.html#pressure-vessel"><img src="assets/img/pressure-vessel/von-mises.jpg" alt="Von Mises stress map of the pressure vessel in ANSYS"></a>
-          <div class="yr">Oct 2025 - Jan 2026 · article in preparation</div>
-          <h3>Pressure Vessel and Head: Shell Theory vs FEA</h3>
-          <span class="metric">Local safety factor 3.05 vs 11.2</span>
-          <p>Hand-calculated the membrane stresses, modelled the vessel and its bolted head in ANSYS and showed where the design is really governed. Extended the study to stored energy, TNT equivalent and blast safety distances.</p>
-          <a class="more" href="portfolio.html#pressure-vessel">Read the case study →</a>
-        </article>
-
-        <article class="proj">
-          <a class="proj__img" href="portfolio.html#uav"><img src="assets/img/uav/uav-render.jpg" alt="CAD render of the TEKNOFEST quadcopter"></a>
-          <div class="yr">Aug 2024 - Aug 2025</div>
-          <h3>TEKNOFEST UAV Landing Gear</h3>
-          <span class="metric">Skid gear, carbon tubes + printed joints</span>
-          <p>Parametric SolidWorks model of a skid landing gear with 3D-printed T-joints and angled flanges, checked with static FEA in ANSYS for a 7 kg quadcopter.</p>
-          <a class="more" href="portfolio.html#uav">Read the case study →</a>
-        </article>
-
-        <article class="proj">
-          <a class="proj__img" href="portfolio.html#ml"><img src="assets/img/ml/confusion-matrix.jpg" alt="Confusion matrix of the steel defect classifier"></a>
-          <div class="yr">Feb 2025 - Jun 2025</div>
-          <h3>Steel Plate Defect Classification</h3>
-          <span class="metric">91.3% ensemble accuracy</span>
-          <p>Six-class defect classifier in R on the UCI Steel Plates Faults data: oversampling, Boruta feature selection, seven models compared and a voting ensemble.</p>
-          <a class="more" href="portfolio.html#ml">Read the case study →</a>
-        </article>
-
-        <article class="proj">
-          <div class="yr">Sep 2023 - Jul 2026</div>
-          <h3>İÜC Racing Formula Student, Powertrain Team</h3>
-          <span class="metric">15% lighter bracket</span>
-          <p>Designed the chain guard in SolidWorks and verified its strength with static analysis in ANSYS. Revised the bracket design for a 15% weight reduction.</p>
-          <div class="tags"><span class="tag">SolidWorks</span><span class="tag">ANSYS</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2><span>003</span>Experience</h2>
-      <div class="jobs">
-        <div class="job">
-          <div><div class="when">Aug - Sep 2025</div></div>
-          <div>
-            <div class="who">FESTO</div>
-            <div class="role">Intern</div>
-            <p>Traced mechanical, pneumatic, electrical and software faults in an out-of-service robotic system through root cause analysis and recommissioned it.</p>
-          </div>
-        </div>
-        <div class="job">
-          <div><div class="when">Jul - Aug 2025</div></div>
-          <div>
-            <div class="who">BEKO</div>
-            <div class="role">Manufacturing Intern</div>
-            <p>Found loss sources at 5 critical assembly line stations through waste and root cause analysis and proposed 2 improvements with R&amp;D and Production.</p>
-          </div>
-        </div>
-        <div class="job">
-          <div><div class="when">Aug - Sep 2024</div></div>
-          <div>
-            <div class="who">Midas Makina Sanayi</div>
-            <div class="role">Design Intern</div>
-            <p>Revised 3D models of existing parts in SolidWorks and prepared manufacturing drawings to dimensioning and tolerancing standards.</p>
-          </div>
-        </div>
-        <div class="job">
-          <div><div class="when">Jul 2024</div></div>
-          <div>
-            <div class="who">Yılmaz Redüktör</div>
-            <div class="role">Workshop Intern</div>
-            <p>Observed CNC turning, milling, heat treatment and grinding operations and gear quality control on a gearbox production line.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2><span>004</span>Skills</h2>
-      <div class="skills">
-        <div>
-          <h3>Design</h3>
-          <ul><li>SolidWorks <span>CSWP</span></li><li>AutoCAD</li><li>Siemens NX</li><li>CATIA</li><li>Fusion 360</li></ul>
-        </div>
-        <div>
-          <h3>Analysis</h3>
-          <ul><li>ANSYS Mechanical</li><li>Static and modal FEA</li><li>Topology optimisation</li><li>MATLAB / Simulink</li></ul>
-        </div>
-        <div>
-          <h3>Manufacturing and data</h3>
-          <ul><li>Design for manufacturability</li><li>Root cause analysis</li><li>R, MS Excel</li><li>FDM 3D printing</li></ul>
-        </div>
-      </div>
-      <div class="cloud">
-        <span>Technical drawing and GD&amp;T</span>
-        <span>Sheet metal design</span>
-        <span>Design for injection moulding</span>
-        <span>Lean manufacturing</span>
-        <span>Machining processes</span>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2><span>005</span>Education and certifications</h2>
-      <div class="edu">
-        <div>
-          <h3>Education</h3>
-          <div class="ei"><div class="t">Istanbul University-Cerrahpaşa</div><div class="s">MSc in Mechanical Engineering (Thesis)</div><div class="d">Sep 2026 - present</div></div>
-          <div class="ei"><div class="t">Istanbul University-Cerrahpaşa</div><div class="s">BSc in Mechanical Engineering (30% English-medium)</div><div class="d">Sep 2021 - Jul 2026</div></div>
-          <div class="ei" style="margin-top:26px;"><div class="t">İÜC Career Club</div><div class="s">Chair of the Board. Built the annual plan of a 300+ member student club and coordinated 8+ events.</div><div class="d">Aug 2024 - Aug 2025</div></div>
-        </div>
-        <div>
-          <h3>Certifications and training</h3>
-          <ul class="certs">
-            <li>CSWP - Certified SOLIDWORKS Professional (Dassault Systèmes) <em>· Oct 2026</em></li>
-            <li>UAV Design and Build Training - TEİ Aviation Engine Schools</li>
-            <li>McKinsey &amp; Company Forward Program</li>
+  <details class="more">
+    <summary class="screen-only">Method and details</summary>
+    <section class="sheet" id="pressure-vessel-method">
+      <div class="sheet__head"><div><p class="kicker">01 · Pressure vessel · method</p><h2>Two routes, compared at the right level</h2></div></div>
+      <ol class="flow">
+        <li><b>1 · Hand calculation</b>Hoop, axial and von Mises stress, radial growth</li>
+        <li><b>2 · FEA model</b>Vessel and bolted head, linear static, refined mesh</li>
+        <li><b>3 · Two-level check</b>Membrane vs theory, peaks at discontinuities</li>
+        <li><b>4 · Consequence</b>Stored energy, TNT equivalent, safety distance</li>
+      </ol>
+      <div class="duo duo--even">
+        <div class="points">
+          <h3>Problem</h3>
+          <p>Shell r = 450 mm, t = 10 mm, head 12 mm, L = 1600 mm, SA-516 Gr.70 (yield 260 MPa), internal pressure 0.597 MPa.</p>
+          <h3>What I did</h3>
+          <ul>
+            <li><strong>Calculated</strong> the shell stresses with thin-wall theory: von Mises 23.3 MPa, radial growth 0.051 mm.</li>
+            <li><strong>Modelled</strong> the vessel and bolted head in ANSYS Mechanical with mesh refinement at the flange and head.</li>
+            <li><strong>Compared</strong> theory with the shell membrane and read the FEA peaks as bending at discontinuities, instead of forcing one number onto both.</li>
+            <li><strong>Extended</strong> the study with stored energy (isentropic gas), TNT equivalent and Hopkinson-Cranz blast distances. Article in preparation.</li>
           </ul>
+          <h3>What I would do next</h3>
+          <p>A mesh independence study at the peak and a minimum-constraint support instead of the fixed base.</p>
+        </div>
+        <div class="stack">
+          <figure class="fig"><div class="frame"><img src="assets/img/pressure-vessel/blast-distance.png" alt="Blast safety distance by scenario"></div>
+            <figcaption>Blast safety distance by pressure scenario (V = 1.1 m³)</figcaption></figure>
+          <figure class="fig"><div class="frame"><img src="assets/img/pressure-vessel/mesh.jpg" alt="Mesh"></div>
+            <figcaption>Mesh, refined at the discontinuities</figcaption></figure>
         </div>
       </div>
     </section>
+  </details>
 
-    <section id="contact" style="border-bottom:none;">
-      <h2><span>006</span>Contact</h2>
-      <a class="mail" href="mailto:mmert1erdogan@gmail.com">mmert1erdogan@gmail.com</a>
-      <div class="contact-row">
-        <a href="https://www.linkedin.com/in/mmerterdogan/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-        <a href="Muhammet_Mert_Erdogan_Portfolio.pdf" target="_blank" rel="noopener">Portfolio (PDF)</a>
+  <!-- ═════════ 02 UAV ═════════ -->
+  <section class="sheet sheet--first" id="uav">
+    <div class="sheet__head">
+      <div><p class="kicker">02 · TEKNOFEST UAV · design and manufacturing</p><h2>A landing gear 50% under its weight target</h2></div>
+      <div class="meta">TEKNOFEST International UAV Competition · Aug 2024 - Aug 2025<br>Team project · I designed the landing gear</div>
+    </div>
+    <p class="lead">For a 7 kg quadcopter I designed a skid landing gear from carbon-fibre tubes and 3D-printed joints, checked it with static FEA and brought it in 50% below the specification weight target.</p>
+    <div class="kpis">
+      <div class="kpi"><b>50%</b><span>below the specification weight target</span></div>
+      <div class="kpi"><b>7.05 kg</b><span>take-off mass of the UAV</span></div>
+      <div class="kpi"><b>292 mm</b><span>landing gear height</span></div>
+      <div class="kpi"><b>415 mm</b><span>landing gear width</span></div>
+    </div>
+    <div class="duo">
+      <figure class="fig fig--hero"><div class="frame"><img src="assets/img/uav/uav-render.jpg" alt="Quadcopter render"></div>
+        <figcaption>The whole system: UAV assembly in SolidWorks</figcaption></figure>
+      <div class="stack">
+        <figure class="fig"><div class="frame"><img src="assets/img/uav/landing-gear.jpg" alt="Landing gear legs"></div>
+          <figcaption>My subsystem: skid legs, carbon tubes, printed T-joints</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/uav/drawing.jpg" alt="Technical drawing"></div>
+          <figcaption>Drawing sheet with gear dimensions</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <details class="more">
+    <summary class="screen-only">Method and details</summary>
+    <section class="sheet" id="uav-design">
+      <div class="sheet__head"><div><p class="kicker">02 · TEKNOFEST UAV · method</p><h2>Light, stiff and easy to fit</h2></div></div>
+      <ol class="flow">
+        <li><b>1 · Requirements</b>7 kg take-off mass, camera clearance, hard landings</li>
+        <li><b>2 · Parametric CAD</b>Skid legs, T-joints and flanges in SolidWorks</li>
+        <li><b>3 · Static FEA</b>Landing loads on the gear in ANSYS</li>
+        <li><b>4 · Build</b>Carbon tubes, FDM joints in PLA, ABS and ASA</li>
+      </ol>
+      <div class="duo duo--even">
+        <div class="points">
+          <h3>Design decisions</h3>
+          <ul>
+            <li><strong>Skid gear</strong> instead of arm-mounted legs: out of the camera's view and spreads the landing load over a larger area.</li>
+            <li><strong>Carbon-fibre tubes</strong> with a 5 mm wall on the legs, thicker than the arms, from a local manufacturer.</li>
+            <li><strong>3D-printed T-joints and angled flanges</strong> in ABS for strength-to-weight and easy printing.</li>
+            <li><strong>Rubber pads</strong> on the skids to soften the landing shock.</li>
+            <li><strong>Bolted to the frame</strong> like the other parts, for easy assembly.</li>
+          </ul>
+          <h3>Skills</h3>
+          <div class="skills-bar"><span>Parametric CAD</span><span>Static FEA</span><span>FDM printing</span><span>Material selection</span><span>Drawings</span></div>
+        </div>
+        <div class="stack">
+          <figure class="fig"><div class="frame"><img src="assets/img/uav/arm-clamp.jpg" alt="Printed joint"></div>
+            <figcaption>3D-printed joint detail</figcaption></figure>
+          <figure class="fig"><div class="frame"><img src="assets/img/uav/assembly-bom.jpg" alt="Assembly drawing with bill of materials"></div>
+            <figcaption>Assembly drawing with bill of materials</figcaption></figure>
+          <!-- Photo of the printed landing gear goes here when available:
+          <figure class="fig"><div class="frame"><img src="assets/img/uav/printed-gear.jpg" alt="Printed landing gear"></div><figcaption>Printed and assembled landing gear</figcaption></figure> -->
+        </div>
       </div>
     </section>
+  </details>
 
-    <footer>
-      <span>Muhammet Mert Erdoğan · Mechanical Engineer</span>
-      <span>Istanbul · 2026</span>
-    </footer>
-  </div>
+  <!-- ═════════ 03 ML ═════════ -->
+  <section class="sheet sheet--first" id="ml">
+    <div class="sheet__head">
+      <div><p class="kicker">03 · Machine learning · quality</p><h2>Telling steel plate defects apart at 91.3%</h2></div>
+      <div class="meta">Machine learning course project · Feb 2025 - Jun 2025<br>Individual work · R</div>
+    </div>
+    <p class="lead">I compared seven classifiers on steel plate inspection data and combined the best three into a voting ensemble that identifies the fault type with 91.3% accuracy.</p>
+    <div class="kpis">
+      <div class="kpi"><b>91.3%</b><span>voting ensemble accuracy</span></div>
+      <div class="kpi"><b>0.895</b><span>macro F1-score</span></div>
+      <div class="kpi"><b>7</b><span>models compared</span></div>
+      <div class="kpi"><b>27</b><span>input features</span></div>
+    </div>
+    <div class="duo">
+      <figure class="fig fig--hero"><div class="frame"><img src="assets/img/ml/model-accuracy.jpg" alt="Model accuracy comparison"></div>
+        <figcaption>Test accuracy of the seven models</figcaption></figure>
+      <div class="stack">
+        <figure class="fig"><div class="frame"><img src="assets/img/ml/confusion-matrix.jpg" alt="Confusion matrix"></div>
+          <figcaption>Confusion matrix (XGBoost)</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/ml/feature-importance.jpg" alt="Feature importance"></div>
+          <figcaption>Random forest feature importance</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <details class="more">
+    <summary class="screen-only">Method and details</summary>
+    <section class="sheet" id="ml-method">
+      <div class="sheet__head"><div><p class="kicker">03 · Machine learning · method</p><h2>From raw measurements to a voting ensemble</h2></div></div>
+      <ol class="flow">
+        <li><b>1 · Data</b>UCI Steel Plates Faults, 27 features per plate</li>
+        <li><b>2 · Preparation</b>80/20 split, scaling, oversampling, Boruta selection</li>
+        <li><b>3 · Seven models</b>From logistic regression to XGBoost</li>
+        <li><b>4 · Ensemble</b>Majority vote of XGBoost, random forest and SVM</li>
+      </ol>
+      <div class="duo duo--even">
+        <div class="points">
+          <h3>What I did</h3>
+          <ul>
+            <li><strong>Cleaned</strong> the data, left out the ambiguous "other faults" class and balanced the minority classes by oversampling.</li>
+            <li><strong>Selected</strong> the informative features with Boruta.</li>
+            <li><strong>Compared</strong> logistic regression, decision tree, random forest, k-NN, naive Bayes, SVM (5-fold CV for C) and XGBoost.</li>
+            <li><strong>Combined</strong> XGBoost (91%), random forest (90%) and SVM (88%) by majority vote: 91.3%, precision 0.909, recall 0.891.</li>
+          </ul>
+          <h3>What it says about the process</h3>
+          <p>K-scratch and bumps are recognised well, Z-scratch is often confused. Conveyor length ranks highest, so the model leans on line and geometry measurements.</p>
+        </div>
+        <div class="stack">
+          <figure class="fig"><div class="frame"><img src="assets/img/ml/pca.jpg" alt="PCA plot"></div>
+            <figcaption>PCA view: K-scratch separates, other faults overlap</figcaption></figure>
+          <figure class="fig"><div class="frame"><img src="assets/img/ml/radar.jpg" alt="Fault types by steel type"></div>
+            <figcaption>Fault profile by steel type (A300 vs A400)</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </details>
+
+  <!-- ═════════ 04 More work (print summary + screen) ═════════ -->
+  <section class="sheet" id="more">
+    <div class="sheet__head"><div><p class="kicker">04 · More work</p><h2>Formula Student</h2></div></div>
+    <div class="duo duo--even">
+      <div class="points">
+        <h3>İÜC Racing Formula Student · powertrain team · 2023 - 2026</h3>
+        <p><strong>Designed</strong> the chain guard in SolidWorks and verified its strength with static analysis in ANSYS. Revised the bracket design for a <strong>15% weight reduction</strong>.</p>
+        <div class="skills-bar"><span>SolidWorks</span><span>Static FEA</span><span>Lightweighting</span></div>
+        <!-- Formula Student photo goes here when available:
+        <figure class="fig" style="margin-top:14px"><div class="frame"><img src="assets/img/fs/car.jpg" alt="İÜC Racing car"></div><figcaption>İÜC Racing car</figcaption></figure> -->
+      </div>
+      <div class="points print-only">
+        <h3>Internships</h3>
+        <ul>
+          <li><strong>FESTO</strong>, 2025: traced mechanical, pneumatic, electrical and software faults in a robotic system and recommissioned it.</li>
+          <li><strong>BEKO</strong>, manufacturing, 2025: found loss sources at 5 critical assembly stations and proposed 2 improvements.</li>
+          <li><strong>Midas Makina</strong>, design, 2024: revised SolidWorks models and prepared manufacturing drawings.</li>
+          <li><strong>Yılmaz Redüktör</strong>, workshop, 2024: machining, heat treatment and gear quality control on site.</li>
+        </ul>
+        <h3>Skills</h3>
+        <p>SolidWorks (CSWP), ANSYS Mechanical, AutoCAD, Siemens NX, CATIA, Fusion 360, MATLAB/Simulink, R, MS Excel. Static and modal FEA, topology optimisation, GD&amp;T, design for manufacturability, injection moulding and sheet metal design, root cause analysis, lean manufacturing.</p>
+        <h3>Contact</h3>
+        <p>mmert1erdogan@gmail.com · linkedin.com/in/mmerterdogan · mmerterdogan.github.io</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ Screen-only sections ═════════ -->
+  <section id="about" class="screen-only">
+    <h2><span>002</span>About</h2>
+    <div class="about">
+      <div>
+        <p>I trust a result once two different routes agree on it, and I want to understand why they disagree when they don't.
+          A design is not finished for me until I know how it will be built.</p>
+        <p>Four internships took me from a design office (Midas) to a machine shop (Yılmaz Redüktör), an assembly line (BEKO)
+          and on-site troubleshooting (FESTO). I am now doing a <strong>thesis MSc</strong> in Mechanical Engineering and looking
+          for a team where I can keep learning by building real things.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Education</dt><dd>BSc Mechanical Eng., İÜC</dd></div>
+        <div><dt>Now</dt><dd><b>MSc (Thesis), 2026 -</b></dd></div>
+        <div><dt>Languages</dt><dd>Turkish · English (C1)</dd></div>
+        <div><dt>Based in</dt><dd>Istanbul, open to relocation</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="experience" class="screen-only">
+    <h2><span>003</span>Experience</h2>
+    <div class="jobs">
+      <div class="job"><div><div class="when">Aug - Sep 2025</div></div><div><div class="who">FESTO</div><div class="role">Intern</div>
+        <p>Traced mechanical, pneumatic, electrical and software faults in an out-of-service robotic system through root cause analysis and recommissioned it.</p></div></div>
+      <div class="job"><div><div class="when">Jul - Aug 2025</div></div><div><div class="who">BEKO</div><div class="role">Manufacturing Intern</div>
+        <p>Found loss sources at 5 critical assembly line stations through waste and root cause analysis and proposed 2 improvements with R&amp;D and Production.</p></div></div>
+      <div class="job"><div><div class="when">Aug - Sep 2024</div></div><div><div class="who">Midas Makina Sanayi</div><div class="role">Design Intern</div>
+        <p>Revised 3D models of existing parts in SolidWorks and prepared manufacturing drawings to dimensioning and tolerancing standards.</p></div></div>
+      <div class="job"><div><div class="when">Jul 2024</div></div><div><div class="who">Yılmaz Redüktör</div><div class="role">Workshop Intern</div>
+        <p>Observed CNC turning, milling, heat treatment and grinding operations and gear quality control on a gearbox production line.</p></div></div>
+    </div>
+  </section>
+
+  <section id="skills" class="screen-only">
+    <h2><span>004</span>Skills and education</h2>
+    <div class="skills">
+      <div><h3>Design</h3><ul><li>SolidWorks <span>CSWP</span></li><li>AutoCAD</li><li>Siemens NX</li><li>CATIA</li><li>Fusion 360</li></ul></div>
+      <div><h3>Analysis</h3><ul><li>ANSYS Mechanical</li><li>Static and modal FEA</li><li>Topology optimisation</li><li>MATLAB / Simulink</li></ul></div>
+      <div><h3>Manufacturing and data</h3><ul><li>Design for manufacturability</li><li>Root cause analysis</li><li>Lean manufacturing</li><li>R, MS Excel</li></ul></div>
+    </div>
+    <div class="edu" style="margin-top:16px;">
+      <div>
+        <h3>Education</h3>
+        <div class="ei"><div class="t">Istanbul University-Cerrahpaşa</div><div class="s">MSc in Mechanical Engineering (Thesis)</div><div class="d">Sep 2026 - present</div></div>
+        <div class="ei"><div class="t">Istanbul University-Cerrahpaşa</div><div class="s">BSc in Mechanical Engineering (30% English-medium)</div><div class="d">Sep 2021 - Jul 2026</div></div>
+      </div>
+      <div>
+        <h3>Certifications and leadership</h3>
+        <ul class="certs">
+          <li>CSWP - Certified SOLIDWORKS Professional <em>· Oct 2026</em></li>
+          <li>UAV Design and Build Training - TEİ Aviation Engine Schools</li>
+          <li>McKinsey &amp; Company Forward Program</li>
+          <li>Chair of the Board, İÜC Career Club (300+ members, 8+ events) <em>· 2024-2025</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="screen-only" style="border-bottom:none;">
+    <h2><span>005</span>Contact</h2>
+    <a class="mail" href="mailto:mmert1erdogan@gmail.com">mmert1erdogan@gmail.com</a>
+    <div class="contact-row">
+      <a href="https://www.linkedin.com/in/mmerterdogan/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      <a href="Muhammet_Mert_Erdogan_Portfolio.pdf" target="_blank" rel="noopener">Portfolio (PDF)</a>
+    </div>
+  </section>
+
+  <footer class="screen-only">
+    <span>Muhammet Mert Erdoğan · Mechanical Engineer</span>
+    <span>Istanbul · 2026</span>
+  </footer>
 </main>
+
+<script>
+  // open all "Method and details" blocks for printing (and for ?print, used to build the PDF)
+  const openAll = () => document.querySelectorAll('details.more').forEach(d => d.open = true);
+  if (location.search.includes('print')) openAll();
+  window.addEventListener('beforeprint', openAll);
+  // highlight the nav link of the section in view
+  const links = [...document.querySelectorAll('.nav a.lnk')];
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['work', 'about', 'experience', 'contact'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+</script>
 </body>
 </html>
