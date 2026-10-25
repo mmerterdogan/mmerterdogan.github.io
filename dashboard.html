@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Ziyaret paneli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#121212; --card:#1a1a1a; --line:rgba(242,238,230,.12); --fg:#f2eee6; --dim:#bdb6a8; --faint:#8a8478; --gold:#c9a24b; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--fg); font:15px/1.5 Archivo, system-ui, sans-serif; padding:clamp(20px,5vw,56px) clamp(16px,5vw,56px) 60px; }
+  .wrap{ max-width:1080px; margin:0 auto; }
+  header{ display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
+  h1{ font-size:clamp(28px,3.4vw,40px); font-weight:750; font-stretch:108%; color:var(--gold); letter-spacing:-.02em; line-height:1.1; }
+  header p{ color:var(--faint); font-size:14px; margin-top:4px; }
+  .range{ display:flex; gap:6px; }
+  .range button{ background:none; border:1px solid var(--line); color:var(--dim); font:inherit; font-size:13px; padding:7px 14px; border-radius:999px; cursor:pointer; }
+  .range button[aria-pressed="true"]{ border-color:var(--gold); color:var(--gold); }
+  .cards{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:12px; }
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 18px 16px; min-height:112px; }
+  .card h2{ font-size:13px; font-weight:500; color:var(--faint); margin-bottom:10px; }
+  .card b{ display:block; font-size:clamp(26px,2.6vw,36px); font-weight:700; color:var(--gold); line-height:1.1; }
+  .card small{ color:var(--faint); font-size:12.5px; }
+  .card--wide{ grid-column:span 2; }
+  table{ width:100%; border-collapse:collapse; }
+  .panel{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-top:12px; overflow-x:auto; }
+  .panel h2{ font-size:18px; font-weight:650; margin-bottom:10px; }
+  th{ text-align:left; font-weight:500; color:var(--faint); font-size:13px; padding:8px 10px 8px 0; border-bottom:1px solid var(--line); }
+  td{ padding:12px 10px 12px 0; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; vertical-align:middle; white-space:nowrap; }
+  tr:last-child td{ border-bottom:none; }
+  .bar{ display:flex; align-items:center; gap:10px; min-width:150px; }
+  .bar i{ display:block; height:6px; border-radius:3px; background:var(--gold); min-width:2px; transition:width .6s; }
+  .note{ color:var(--faint); font-size:13px; margin-top:18px; }
+  .note a{ color:var(--gold); }
+  .err{ color:#e8a06a; }
+  @media (max-width:760px){ .cards{ grid-template-columns:1fr 1fr; } .card--wide{ grid-column:span 2; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Ziyaret paneli</h1>
+      <p>mmerterdogan.github.io · <span id="updated">yükleniyor…</span></p>
+    </div>
+    <div class="range" role="group" aria-label="Zaman aralığı">
+      <button data-start="" aria-pressed="true">Tümü</button>
+      <button data-start="month">Son 30 gün</button>
+      <button data-start="week">Son 7 gün</button>
+    </div>
+  </header>
+
+  <div class="cards">
+    <div class="card"><h2>Toplam ziyaret</h2><b id="c-total">–</b><small>sayfa görüntüleme</small></div>
+    <div class="card"><h2>Proje incelemesi</h2><b id="c-views">–</b><small>3D turda görülen proje sayısı</small></div>
+    <div class="card"><h2>PDF indirme</h2><b id="c-dl">–</b><small>CV ve portfolyo</small></div>
+    <div class="card"><h2>En çok bakılan</h2><b id="c-top" style="font-size:22px">–</b><small id="c-top-n"></small></div>
+  </div>
+
+  <div class="panel">
+    <h2>Projeler</h2>
+    <table>
+      <thead><tr><th>Proje</th><th>3D turda görüldü</th><th>“Read the case” tıklandı</th><th>Ayrıntılar açıldı</th></tr></thead>
+      <tbody id="projects"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <h2>İndirmeler</h2>
+    <table>
+      <thead><tr><th>Dosya</th><th>Açılma</th></tr></thead>
+      <tbody id="downloads"></tbody>
+    </table>
+  </div>
+
+  <p class="note">Sayılar GoatCounter'dan gelir ve en fazla 4 saat gecikmeli güncellenir. Ayrıntılı istatistik (ülke, tarayıcı, nereden gelindiği):
+    <a href="https://mmerterdogan.goatcounter.com" target="_blank" rel="noopener">mmerterdogan.goatcounter.com</a></p>
+  <p class="note err" id="err" hidden></p>
+</div>
+
+<script>
+  const BASE = 'https://mmerterdogan.goatcounter.com';
+  const PROJECTS = [['pressure-vessel', 'Basınçlı kap'], ['uav', 'İHA iniş takımı'], ['ml', 'Çelik hata sınıflandırma'], ['formula-student', 'Formula Student']];
+  const FILES = [['cv', 'CV'], ['portfolio', 'Portfolyo'], ['portfolio_design', 'Portfolyo (tasarım önce)']];
+  const num = s => parseInt(String(s).replace(/\D/g, ''), 10) || 0;
+  let start = '', failed = 0;
+
+  async function count(path) {
+    const q = start ? '?start=' + start : '';
+    for (const p of path === 'TOTAL' ? ['TOTAL'] : [path, '/' + path]) {
+      try {
+        const r = await fetch(`${BASE}/counter/${encodeURIComponent(p)}.json${q}`);
+        if (r.ok) return num((await r.json()).count);
+        if (r.status !== 404) failed++;
+      } catch (e) { failed++; }
+    }
+    return 0;
+  }
+  const bar = (n, max) => `<div class="bar"><i style="width:${max ? Math.round(n / max * 120) : 0}px"></i>${n}</div>`;
+
+  async function load() {
+    failed = 0;
+    document.getElementById('updated').textContent = 'yükleniyor…';
+    const [total, rows, dls] = await Promise.all([
+      count('TOTAL'),
+      Promise.all(PROJECTS.map(async ([id, name]) => [name, await count('view-' + id), await count('open-' + id), await count('details-' + id)])),
+      Promise.all(FILES.map(async ([id, name]) => [name, await count('download-' + id)])),
+    ]);
+    const views = rows.reduce((s, r) => s + r[1], 0), dl = dls.reduce((s, r) => s + r[1], 0);
+    const top = [...rows].sort((a, b) => b[1] - a[1])[0];
+    document.getElementById('c-total').textContent = total;
+    document.getElementById('c-views').textContent = views;
+    document.getElementById('c-dl').textContent = dl;
+    document.getElementById('c-top').textContent = top && top[1] ? top[0] : '–';
+    document.getElementById('c-top-n').textContent = top && top[1] ? top[1] + ' görüntüleme' : 'henüz veri yok';
+    const mx = Math.max(1, ...rows.flatMap(r => r.slice(1)));
+    document.getElementById('projects').innerHTML = rows.map(r => `<tr><td>${r[0]}</td><td>${bar(r[1], mx)}</td><td>${bar(r[2], mx)}</td><td>${bar(r[3], mx)}</td></tr>`).join('');
+    const md = Math.max(1, ...dls.map(r => r[1]));
+    document.getElementById('downloads').innerHTML = dls.map(r => `<tr><td>${r[0]}</td><td>${bar(r[1], md)}</td></tr>`).join('');
+    document.getElementById('updated').textContent = 'son yükleme ' + new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+    const err = document.getElementById('err');
+    err.hidden = !failed;
+    err.textContent = failed ? 'Bazı sayılar okunamadı. GoatCounter ayarlarında “Allow adding visitor counts on your website” açık mı?' : '';
+  }
+  document.querySelectorAll('.range button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.range button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    start = b.dataset.start; load();
+  }));
+  load();
+</script>
+</body>
+</html>

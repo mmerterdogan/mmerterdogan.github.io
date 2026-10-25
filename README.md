@@ -1,12 +1,16 @@
-# Muhammet Mert Erdoğan · personal site and portfolio
+# Muhammet Mert Erdoğan: personal site and portfolio
 
 Mechanical engineering site: design, structural analysis (FEA) and manufacturing projects.
 
 ```
-index.html                           single page: hero, case studies, about, experience, skills, contact
+index.html                           single page: 3D tour, case studies, about, experience, skills, contact
                                      (also the source of the portfolio PDF, print styles in site.css)
+assets/scene3d.js                    3D tour (three.js from jsDelivr): simplified models, scroll-driven camera
+assets/motion.css, motion.js         layout and screen effects (off in print and with reduced motion)
+assets/analytics.js                  GoatCounter events (project views, case opens, PDF downloads)
+dashboard.html                       visitor dashboard, reads mmerterdogan.goatcounter.com (not linked, noindex)
 portfolio.html                       redirect to index.html#work (old links)
-assets/site.css                      shared styles (screen + A4 landscape print)
+assets/site.css                      palette, base styles and A4 landscape print
 assets/img/<project>/                figures
 Muhammet_Mert_Erdogan_CV.pdf         CV (public copy, no references)
 Muhammet_Mert_Erdogan_Portfolio.pdf  portfolio PDF (index.html?print)
