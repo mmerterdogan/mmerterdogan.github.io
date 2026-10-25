@@ -205,6 +205,34 @@
  "Istanbul, 2026": "İstanbul, 2026"
 };
   Object.assign(T, {
+  "Skip to projects": "Projelere geç",
+  "Menu": "Menü",
+  "<b>Looking for</b> design, analysis or manufacturing engineering roles. Available now, in Istanbul or open to relocation.": "<b>Aradığım:</b> tasarım, analiz veya üretim mühendisliği pozisyonları. Hemen başlayabilirim, İstanbul'da ya da taşınmaya açığım.",
+  "Download CV": "CV'yi indir",
+  "See projects": "Projelere bak",
+  "Pressure vessel, rendered from my ANSYS model and coloured by its von Mises result": "Basınçlı kap, ANSYS modelimden render edildi ve von Mises sonucuna göre renklendirildi",
+  "Structural analysis, individual, 2025 - 2026": "Yapısal analiz, bireysel, 2025 - 2026",
+  "The head-flange zone sets the margin: safety factor 3.05 at the head against 11.2 in the shell.": "Emniyet payını kapak-flanş bölgesi belirliyor: kapakta 3,05, gövdede 11,2 emniyet katsayısı.",
+  "My part: hand calculation, FE model and its interpretation": "Benim payım: el hesabı, FE modeli ve yorumu",
+  "Design and manufacturing, team, 2024 - 2025": "Tasarım ve üretim, takım, 2024 - 2025",
+  "Skid landing gear for a 7 kg quadcopter, 50% under the weight target, built and flown.": "7 kg'lık quadkopter için kızaklı iniş takımı, ağırlık hedefinin %50 altında, üretildi ve uçtu.",
+  "My part: the landing gear, from CAD to printed parts": "Benim payım: iniş takımı, CAD'den baskı parçalara",
+  "Machine learning, individual, 2025": "Makine öğrenmesi, bireysel, 2025",
+  "Seven classifiers compared, a voting ensemble names the fault type with 91.3% accuracy.": "Yedi sınıflandırıcı karşılaştırıldı, oylama modeli hata türünü %91,3 doğrulukla buluyor.",
+  "My part: all of it, in R": "Benim payım: tamamı, R ile",
+  "Formula Student, team, 2023 - 2026": "Formula Student, takım, 2023 - 2026",
+  "Designed in SolidWorks, checked in ANSYS, bracket revised for 15% less weight.": "SolidWorks'te tasarlandı, ANSYS'te doğrulandı, braket %15 daha hafif olacak şekilde revize edildi.",
+  "My part: chain guard and bracket": "Benim payım: zincir koruması ve braket",
+  "From the ANSYS model": "ANSYS modelinden",
+  "Scroll: the bolted head lifts off, then the surface takes the colours of the von Mises result.": "Kaydır: cıvatalı kapak yerinden kalkıyor, ardından yüzey von Mises sonucunun renklerini alıyor.",
+  "Rendered in Blender from the mesh and results of my ANSYS model.": "ANSYS modelimin ağı ve sonuçlarından Blender'da render edildi.",
+  "minimum safety factor at the head (yield / max principal stress 85.3 MPa)": "kapakta en düşük emniyet katsayısı (akma / maks. asal gerilme 85,3 MPa)",
+  "safety factor of the shell (von Mises, thin-wall theory)": "gövdenin emniyet katsayısı (von Mises, ince cidar teorisi)",
+  "peak von Mises stress (FEA)": "en yüksek von Mises gerilmesi (FEA)",
+  "Internships, school and leadership, newest first. The projects are above.": "Stajlar, okul ve liderlik, en yenisi üstte. Projeler yukarıda.",
+  "I am doing a <strong>thesis MSc</strong> at İÜC, which takes one day a week. The rest of the week is free for full-time work.": "İÜC'de <strong>tezli yüksek lisans</strong> yapıyorum, haftada bir günümü alıyor. Haftanın geri kalanında tam zamanlı çalışabilirim."
+});
+  Object.assign(T, {
     "Built: carbon legs, printed T-joints and pads on the skids": "Üretilmiş hali: karbon bacaklar, baskı T-bağlantılar ve kızaklarda takozlar",
     "Flight test: the UAV hovering on its landing gear": "Uçuş testi: İHA iniş takımıyla havada",
     "The TEKNOFEST team with the UAV at the exhibition": "TEKNOFEST takımı, İHA ile sergide",
@@ -223,7 +251,8 @@
     "industrial internships": "endüstriyel staj",
   });
   const SEL = 'h1 .ln, h2, h3, p, li, figcaption, dt, dd, summary, .btn, .lnk, .nav__cv, .chip, .kpi span, .chap__n span, ' +
-    '.contact-row a, .tl__go, .chap__go, .skip-tour, footer span, .facts dd b, .meta, .stat span, .hero2__stats span, .seq__uav span, .bar span';
+    '.contact-row a, .tl__go, .chap__go, .skip-tour, footer span, .facts dd b, .meta, .stat span, .hero2__stats span, .seq__uav span, .bar span, ' +
+    '.skip, .nav__menu, .card__k, .card__t, .card__r, .card__me, .tag';
   const norm = h => h.replace(/\s+/g, ' ').replace(/<br\/?>/g, '<br>').trim();
   document.querySelectorAll(SEL).forEach(el => {
     if (el.closest('.print-only')) return;
@@ -244,6 +273,7 @@
   document.querySelectorAll('.chap__k').forEach(el => { if (chap[el.textContent]) el.textContent = chap[el.textContent]; });
 
   // attributes and page metadata
+  document.querySelectorAll('.cv-link').forEach(l => { l.href = 'Muhammet_Mert_Erdogan_CV_TR.pdf'; });
   document.documentElement.lang = 'tr';
   document.title = 'Muhammet Mert Erdoğan, Makine Mühendisi';
   const d = document.querySelector('meta[name="description"]');

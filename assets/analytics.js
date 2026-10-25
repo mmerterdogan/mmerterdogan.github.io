@@ -36,6 +36,7 @@
     if (href.endsWith('.pdf')) send('download-' + href.split('/').pop().replace('.pdf', '').replace('Muhammet_Mert_Erdogan_', '').toLowerCase());
     else if (href.endsWith('.vcf')) send('download-vcard');
     else if (a.classList.contains('chap__go') && caseId(href)) send('open-' + caseId(href));
+    else if (a.classList.contains('card') && a.dataset.case) send('open-' + a.dataset.case);
   });
   document.querySelectorAll('details.more').forEach(d => d.addEventListener('toggle', () => {
     const id = d.querySelector('.sheet')?.id || '';

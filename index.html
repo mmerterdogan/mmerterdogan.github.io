@@ -8,7 +8,9 @@
 <meta name="author" content="Muhammet Mert Erdoğan" />
 <meta property="og:title" content="Muhammet Mert Erdoğan, Mechanical Engineer" />
 <meta property="og:description" content="Design, structural analysis (FEA) and manufacturing. Engineering portfolio and CV." />
-<meta property="og:image" content="https://mmerterdogan.github.io/assets/img/pressure-vessel/von-mises.jpg" />
+<meta property="og:image" content="https://mmerterdogan.github.io/assets/img/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <link rel="canonical" href="https://mmerterdogan.github.io/" />
 <link rel="alternate" hreflang="en" href="https://mmerterdogan.github.io/" />
 <link rel="alternate" hreflang="tr" href="https://mmerterdogan.github.io/?lang=tr" />
@@ -21,20 +23,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=22">
-<link rel="stylesheet" href="assets/motion.css?v=22">
+<link rel="stylesheet" href="assets/site.css?v=24">
+<link rel="stylesheet" href="assets/motion.css?v=24">
 </head>
 <body>
+<a class="skip screen-only" href="#work">Skip to projects</a>
 
 <header class="nav screen-only">
   <div class="nav__in">
     <a class="nav__brand" href="#top">Mert Erdoğan</a>
-    <a class="lnk" href="#about">About</a>
-    <a class="lnk" href="#experience">Experience</a>
-    <a class="lnk" href="#work">Work</a>
-    <a class="lnk" href="#contact">Contact</a>
+    <button type="button" class="nav__menu" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <nav class="nav__links" id="navlinks" aria-label="Sections">
+      <a class="lnk" href="#work">Work</a>
+      <a class="lnk" href="#experience">Experience</a>
+      <a class="lnk" href="#about">About</a>
+      <a class="lnk" href="#contact">Contact</a>
+    </nav>
     <a class="lang-switch" href="?lang=tr" hreflang="tr">TR</a>
-    <a class="nav__cv" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV</a>
+    <a class="nav__cv cv-link" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV</a>
   </div>
 </header>
 
@@ -54,284 +60,81 @@
     </div>
   </section>
 
-  <!-- Hero, About, Experience (screen) -->
+  <!-- Hero and project cards (screen) -->
   <div class="before screen-only">
   <section class="hero2" aria-label="Introduction">
-    <p class="hx__role">Muhammet Mert Erdoğan, mechanical engineer in Istanbul</p>
-    <h1 class="hx__name split" aria-label="Mert Erdoğan"><span class="ln">Mert Erdoğan</span></h1>
-    <p class="hx__lead">I design parts in SolidWorks, check them in ANSYS and follow them onto the shop floor.
-      BSc Mechanical Engineering, thesis MSc in progress, Certified SOLIDWORKS Professional.</p>
-    <div class="hx__cta">
-      <a class="btn btn--solid" href="#work">Walk through my work</a>
-      <a class="btn btn--line" href="Muhammet_Mert_Erdogan_Portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF</a>
-      <a class="btn btn--line" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV</a>
-    </div>
-    <div class="hero2__stats">
-      <div><b>3.05</b><span>local safety factor found by FEA, against 11.2 from shell theory</span></div>
-      <div><b>50%</b><span>under the weight target, UAV landing gear</span></div>
-      <div><b>91.3%</b><span>accuracy, steel defect classifier</span></div>
-      <div><b>4</b><span>industrial internships</span></div>
-    </div>
-  </section>
-
-  <section id="about" class="screen-only">
-    <h2 class="split">About</h2>
-    <div class="about about--photo">
-      <figure class="portrait"><img src="assets/img/profile.jpg" alt="Muhammet Mert Erdoğan" loading="lazy" width="500" height="600"></figure>
-      <div>
-        <p>I trust a result once two different routes agree on it, and I want to understand why they disagree when they don't.
-          A design is not finished for me until I know how it will be built.</p>
-        <p>Four internships took me from a design office (Midas) to a machine shop (Yılmaz Redüktör), an assembly line (BEKO)
-          and on-site troubleshooting (FESTO). I am now doing a <strong>thesis MSc</strong> in Mechanical Engineering and looking
-          for a team where I can keep learning by building real things.</p>
-        <dl class="facts">
-          <div><dt>Now</dt><dd><b>MSc (Thesis), İÜC, 2026 -</b></dd></div>
-          <div><dt>Languages</dt><dd>Turkish, English (C1)</dd></div>
-          <div><dt>Based in</dt><dd>Istanbul, open to relocation</dd></div>
-        </dl>
+    <div class="hero2__text">
+      <p class="hx__role">Muhammet Mert Erdoğan, mechanical engineer in Istanbul</p>
+      <h1 class="hx__name split" aria-label="Mert Erdoğan"><span class="ln">Mert Erdoğan</span></h1>
+      <p class="hx__lead">I design parts in SolidWorks, check them in ANSYS and follow them onto the shop floor.
+        BSc Mechanical Engineering, thesis MSc in progress, Certified SOLIDWORKS Professional.</p>
+      <p class="hx__seek"><b>Looking for</b> design, analysis or manufacturing engineering roles. Available now, in Istanbul or open to relocation.</p>
+      <div class="hx__cta">
+        <a class="btn btn--solid cv-link" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn btn--line" href="#work">See projects</a>
+        <a class="btn btn--line" href="Muhammet_Mert_Erdogan_Portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF</a>
       </div>
     </div>
+    <figure class="hero2__fig">
+      <img src="assets/img/hero-vessel.webp" width="1280" height="720" alt="Pressure vessel rendered from my ANSYS model, coloured by von Mises stress">
+      <figcaption>Pressure vessel, rendered from my ANSYS model and coloured by its von Mises result</figcaption>
+    </figure>
   </section>
 
-  <section id="experience" class="screen-only">
-    <h2 class="split">Experience</h2>
-    <p class="tl__intro">Internships, projects and school on one line, newest first. Pick a skill to see where I used it.</p>
-    <div class="tl__filters" role="group" aria-label="Filter">
-      <button type="button" class="chip on" data-filter="all">All</button>
-      <button type="button" class="chip" data-filter="work">Internships</button>
-      <button type="button" class="chip" data-filter="project">Projects</button>
-      <button type="button" class="chip" data-filter="edu">Education and leadership</button>
+  <section id="work" class="work" aria-labelledby="work-h">
+    <h2 id="work-h">Projects</h2>
+    <div class="cards">
+      <a class="card" href="#pressure-vessel" data-case="pressure-vessel">
+        <span class="card__img"><img loading="lazy" decoding="async" src="assets/img/pressure-vessel/von-mises.jpg" alt=""></span>
+        <span class="card__body">
+          <span class="card__k">Structural analysis, individual, 2025 - 2026</span>
+          <span class="card__t">Pressure vessel</span>
+          <span class="card__r">The head-flange zone sets the margin: safety factor 3.05 at the head against 11.2 in the shell.</span>
+          <span class="card__me">My part: hand calculation, FE model and its interpretation</span>
+        </span>
+      </a>
+      <a class="card" href="#uav" data-case="uav">
+        <span class="card__img"><img loading="lazy" decoding="async" src="assets/img/uav/built-gear.jpg" alt=""></span>
+        <span class="card__body">
+          <span class="card__k">Design and manufacturing, team, 2024 - 2025</span>
+          <span class="card__t">UAV landing gear</span>
+          <span class="card__r">Skid landing gear for a 7 kg quadcopter, 50% under the weight target, built and flown.</span>
+          <span class="card__me">My part: the landing gear, from CAD to printed parts</span>
+        </span>
+      </a>
+      <a class="card" href="#ml" data-case="ml">
+        <span class="card__img card__img--white"><img loading="lazy" decoding="async" src="assets/img/ml/model-accuracy.png" alt=""></span>
+        <span class="card__body">
+          <span class="card__k">Machine learning, individual, 2025</span>
+          <span class="card__t">Steel plate defects</span>
+          <span class="card__r">Seven classifiers compared, a voting ensemble names the fault type with 91.3% accuracy.</span>
+          <span class="card__me">My part: all of it, in R</span>
+        </span>
+      </a>
+      <a class="card" href="#more" data-case="formula-student">
+        <span class="card__img card__img--white"><img loading="lazy" decoding="async" src="assets/img/fs/powertrain.jpg" alt=""></span>
+        <span class="card__body">
+          <span class="card__k">Formula Student, team, 2023 - 2026</span>
+          <span class="card__t">Chain guard</span>
+          <span class="card__r">Designed in SolidWorks, checked in ANSYS, bracket revised for 15% less weight.</span>
+          <span class="card__me">My part: chain guard and bracket</span>
+        </span>
+      </a>
     </div>
-    <ol class="tl">
-        <li class="tl__year" aria-hidden="true">2026</li>
-        <li class="tl__item" data-kind="edu" data-skills="SolidWorks">
-          <div class="tl__when">Oct 2026</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="CSWP">CSWP</span>
-            <div class="tl__body">
-              <h3>Certified SOLIDWORKS Professional</h3>
-              <p class="tl__org">Dassault Systèmes</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="SolidWorks">SolidWorks</button></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="edu" data-skills="">
-          <div class="tl__when">Sep 2026 - present</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="Istanbul University-Cerrahpaşa"></span>
-            <div class="tl__body">
-              <h3>MSc in Mechanical Engineering (Thesis)</h3>
-              <p class="tl__org">Istanbul University-Cerrahpaşa</p>
-            </div>
-          </div>
-        </li>
-        <li class="tl__year" aria-hidden="true">2025</li>
-        <li class="tl__item" data-kind="project" data-skills="ANSYS Mechanical|Static FEA|Hand calculation">
-          <div class="tl__when">Oct 2025 - Jan 2026</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="Pressure vessel">PV</span>
-            <div class="tl__body">
-              <h3>Stress analysis of a pressure vessel</h3>
-              <p class="tl__org">Mechanical System Design project, İÜC <span>Individual</span></p>
-              <p class="tl__text">Hand calculation and an ANSYS model of the vessel and its bolted head. The head-flange zone sets the safety margin: 3.05 against 11.2 in the shell.</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="ANSYS Mechanical">ANSYS Mechanical</button><button type="button" class="chip" data-skill="Static FEA">Static FEA</button><button type="button" class="chip" data-skill="Hand calculation">Hand calculation</button></div>
-              <a class="tl__go" href="#pressure-vessel">Read the case</a>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="work" data-skills="Root cause analysis|Pneumatics|Commissioning">
-          <div class="tl__when">Aug - Sep 2025</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/festo.svg)" role="img" aria-label="FESTO"></span>
-            <div class="tl__body">
-              <h3>Intern</h3>
-              <p class="tl__org">FESTO <span>Industrial automation</span></p>
-              <p class="tl__text">Traced mechanical, pneumatic, electrical and software faults in an out-of-service robotic system through root cause analysis and recommissioned it.</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="Root cause analysis">Root cause analysis</button><button type="button" class="chip" data-skill="Pneumatics">Pneumatics</button><button type="button" class="chip" data-skill="Commissioning">Commissioning</button></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="work" data-skills="Lean manufacturing|Root cause analysis|Assembly lines">
-          <div class="tl__when">Jul - Aug 2025</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/beko.svg)" role="img" aria-label="BEKO"></span>
-            <div class="tl__body">
-              <h3>Manufacturing Intern</h3>
-              <p class="tl__org">BEKO <span>Home appliances</span></p>
-              <p class="tl__text">Found loss sources at 5 critical assembly line stations through waste and root cause analysis and proposed 2 improvements with R&amp;D and Production.</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="Lean manufacturing">Lean manufacturing</button><button type="button" class="chip" data-skill="Root cause analysis">Root cause analysis</button><button type="button" class="chip" data-skill="Assembly lines">Assembly lines</button></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="project" data-skills="R|Machine learning">
-          <div class="tl__when">Feb - Jun 2025</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="Machine learning">ML</span>
-            <div class="tl__body">
-              <h3>Steel plate defect classification</h3>
-              <p class="tl__org">Machine learning course project <span>Individual</span></p>
-              <p class="tl__text">Seven classifiers compared in R. A voting ensemble names the fault type with 91.3% accuracy.</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="R">R</button><button type="button" class="chip" data-skill="Machine learning">Machine learning</button></div>
-              <a class="tl__go" href="#ml">Read the case</a>
-            </div>
-          </div>
-        </li>
-        <li class="tl__year" aria-hidden="true">2024</li>
-        <li class="tl__item" data-kind="project" data-skills="SolidWorks|Static FEA|3D printing">
-          <div class="tl__when">Aug 2024 - Aug 2025</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="UAV">UAV</span>
-            <div class="tl__body">
-              <h3>UAV landing gear</h3>
-              <p class="tl__org">TEKNOFEST International UAV Competition <span>Team project</span></p>
-              <p class="tl__text">I designed the skid landing gear: carbon tubes and 3D-printed joints, 50% under the weight target.</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="SolidWorks">SolidWorks</button><button type="button" class="chip" data-skill="Static FEA">Static FEA</button><button type="button" class="chip" data-skill="3D printing">3D printing</button></div>
-              <a class="tl__go" href="#uav">Read the case</a>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="edu" data-skills="Leadership">
-          <div class="tl__when">Aug 2024 - Aug 2025</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="İÜC"></span>
-            <div class="tl__body">
-              <h3>Chair of the Board</h3>
-              <p class="tl__org">İÜC Career Club <span>300+ members</span></p>
-              <p class="tl__text">Planned the year of the club and delivered 8+ events.</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="Leadership">Leadership</button></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="work" data-skills="SolidWorks|Technical drawing|Tolerancing">
-          <div class="tl__when">Aug - Sep 2024</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="Midas Makina Sanayi">M</span>
-            <div class="tl__body">
-              <h3>Design Intern</h3>
-              <p class="tl__org">Midas Makina Sanayi <span>Machinery</span></p>
-              <p class="tl__text">Revised 3D models of existing parts in SolidWorks and prepared manufacturing drawings to dimensioning and tolerancing standards.</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="SolidWorks">SolidWorks</button><button type="button" class="chip" data-skill="Technical drawing">Technical drawing</button><button type="button" class="chip" data-skill="Tolerancing">Tolerancing</button></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__item" data-kind="work" data-skills="CNC machining|Heat treatment|Quality control">
-          <div class="tl__when">Jul 2024</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="Yılmaz Redüktör">YR</span>
-            <div class="tl__body">
-              <h3>Workshop Intern</h3>
-              <p class="tl__org">Yılmaz Redüktör <span>Gearboxes</span></p>
-              <p class="tl__text">Observed CNC turning, milling, heat treatment and grinding operations and gear quality control on a gearbox production line.</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="CNC machining">CNC machining</button><button type="button" class="chip" data-skill="Heat treatment">Heat treatment</button><button type="button" class="chip" data-skill="Quality control">Quality control</button></div>
-            </div>
-          </div>
-        </li>
-        <li class="tl__year" aria-hidden="true">2023</li>
-        <li class="tl__item" data-kind="project" data-skills="SolidWorks|Static FEA|Lightweighting">
-          <div class="tl__when">Sep 2023 - Jul 2026</div>
-          <div class="tl__card">
-            <span class="tl__logo tl__logo--mono" role="img" aria-label="Formula Student">FS</span>
-            <div class="tl__body">
-              <h3>Powertrain team</h3>
-              <p class="tl__org">İÜC Racing Formula Student <span>Team project</span></p>
-              <p class="tl__text">Designed the chain guard in SolidWorks, checked it in ANSYS and revised the bracket for a 15% weight reduction.</p>
-              <div class="tl__chips"><button type="button" class="chip" data-skill="SolidWorks">SolidWorks</button><button type="button" class="chip" data-skill="Static FEA">Static FEA</button><button type="button" class="chip" data-skill="Lightweighting">Lightweighting</button></div>
-              <a class="tl__go" href="#more">Read more</a>
-            </div>
-          </div>
-        </li>
-        <li class="tl__year" aria-hidden="true">2021</li>
-        <li class="tl__item" data-kind="edu" data-skills="">
-          <div class="tl__when">Sep 2021 - Jul 2026</div>
-          <div class="tl__card">
-            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="Istanbul University-Cerrahpaşa"></span>
-            <div class="tl__body">
-              <h3>BSc in Mechanical Engineering</h3>
-              <p class="tl__org">Istanbul University-Cerrahpaşa <span>30% English-medium</span></p>
-            </div>
-          </div>
-        </li>
-    </ol>
-    <p class="tl__note">Company and university logos are trademarks of their owners, shown only to identify where I studied and worked.</p>
   </section>
 
   </div>
-
-  <section class="journey screen-only" aria-label="Selected work">
-    <div class="seq" aria-hidden="true">
-      <canvas class="seq__vessel"></canvas>
-      <div class="seq__panel seq__uav"><canvas width="480" height="400"></canvas><span>Flight test footage</span></div>
-      <div class="seq__panel seq__ml">
-        <div class="bars">
-          <div class="bar" style="--v:.786"><span>Decision tree</span><b>78.6%</b></div>
-          <div class="bar" style="--v:.821"><span>k-NN</span><b>82.1%</b></div>
-          <div class="bar" style="--v:.829"><span>Naive Bayes</span><b>82.9%</b></div>
-          <div class="bar" style="--v:.841"><span>Logistic reg.</span><b>84.1%</b></div>
-          <div class="bar top" style="--v:.877"><span>SVM</span><b>87.7%</b></div>
-          <div class="bar top" style="--v:.905"><span>Random forest</span><b>90.5%</b></div>
-          <div class="bar top" style="--v:.909"><span>XGBoost</span><b>90.9%</b></div>
-          <div class="bar ens" style="--v:.913"><span>Voting ensemble</span><b>91.3%</b></div>
-        </div>
-      </div>
-      <div class="seq__panel seq__fs">
-        <img src="assets/img/fs/powertrain.jpg" alt="" class="fs__main">
-        <img src="assets/img/fs/chain-guard-open.jpg" alt="" class="fs__a">
-        <img src="assets/img/fs/chain-guard-ring.jpg" alt="" class="fs__b">
-      </div>
-    </div>
-    <span class="journey__mark" id="work" style="top:0"></span>
-
-    <div class="chap chap--intro" data-at="0-.06">
-      <p class="chap__k">Selected work</p>
-      <h2 class="chap__title">Four projects, from model to result</h2>
-      <p>Scroll through each project. Every stop links to the full case study further down.</p>
-      <p class="chap__hint">Scroll to enter</p>
-    </div>
-
-    <div class="chap" data-id="pressure-vessel" data-at=".08-.4">
-      <p class="chap__k">Structural analysis, 2025 - 2026</p>
-      <h2>Pressure vessel</h2>
-      <p>Hand calculation and an ANSYS model of the vessel and its bolted head. The head-flange zone, not the shell, sets the safety margin.</p>
-      <div class="chap__n"><div><b>3.05</b><span>minimum safety factor, at the head</span></div><div><b>11.2</b><span>safety factor of the shell</span></div><div><b>68.9 MPa</b><span>peak von Mises stress</span></div></div>
-      <a class="chap__go" href="#pressure-vessel">Read the case</a>
-    </div>
-
-    <div class="chap" data-id="uav" data-at=".42-.63">
-      <p class="chap__k">Design and manufacturing, 2024 - 2025, team</p>
-      <h2>UAV landing gear</h2>
-      <p>I designed the skid landing gear of a 7 kg TEKNOFEST quadcopter: carbon tubes, 3D-printed T-joints and rubber pads, checked with static FEA.</p>
-      <div class="chap__n"><div><b>50%</b><span>under the weight target</span></div><div><b>7.05 kg</b><span>take-off mass</span></div><div><b>292 mm</b><span>gear height</span></div></div>
-      <a class="chap__go" href="#uav">Read the case</a>
-    </div>
-
-    <div class="chap" data-id="ml" data-at=".65-.81">
-      <p class="chap__k">Machine learning, 2025</p>
-      <h2>Steel plate defects</h2>
-      <p>Seven classifiers on steel plate inspection data. The best three, combined by majority vote, name the fault type.</p>
-      <div class="chap__n"><div><b>91.3%</b><span>ensemble accuracy</span></div><div><b>0.895</b><span>macro F1-score</span></div><div><b>7</b><span>models compared</span></div></div>
-      <a class="chap__go" href="#ml">Read the case</a>
-    </div>
-
-    <div class="chap" data-id="formula-student" data-at=".83-1.01">
-      <p class="chap__k">Formula Student, 2023 - 2026, team</p>
-      <h2>Chain guard</h2>
-      <p>For İÜC Racing's powertrain team I designed the chain guard in SolidWorks, checked it with static analysis in ANSYS and revised the bracket.</p>
-      <div class="chap__n"><div><b>15%</b><span>lighter bracket</span></div></div>
-      <a class="chap__go" href="#more">Read more</a>
-    </div>
-
-    <p class="journey__tag">Vessel rendered from my ANSYS model, coloured by its von Mises result. UAV: flight test footage.</p>
-    <div class="journey__bar"><i></i></div>
-    <nav class="journey__dots" aria-label="Projects">
-      <a href="#" data-p=".2" aria-label="Pressure vessel"></a><a href="#" data-p=".52" aria-label="UAV landing gear"></a><a href="#" data-p=".73" aria-label="Steel plate defects"></a><a href="#" data-p=".92" aria-label="Formula Student"></a>
-    </nav>
-    <a class="skip-tour" href="#pressure-vessel">Skip the tour</a>
-  </section>
 
   <div class="after">
-  <div class="mq screen-only" aria-hidden="true">
-    <div class="mq__track"><span>SolidWorks</span><span>ANSYS Mechanical</span><span>Finite element analysis</span><span>Design for manufacturing</span><span>Topology optimisation</span><span>3D printing</span><span>GD&amp;T</span><span>Machine learning</span></div>
-  </div>
+  <section class="journey screen-only" aria-label="Pressure vessel, rendered from the ANSYS model">
+    <div class="seq" aria-hidden="true"><canvas class="seq__vessel"></canvas></div>
+    <div class="chap" data-id="pressure-vessel" data-at="0-1.01">
+      <p class="chap__k">From the ANSYS model</p>
+      <p class="chap__lead">Scroll: the bolted head lifts off, then the surface takes the colours of the von Mises result.</p>
+    </div>
+    <p class="journey__tag">Rendered in Blender from the mesh and results of my ANSYS model.</p>
+  </section>
+
 
   <!-- ═════════ 01 Pressure vessel ═════════ -->
   <div class="case-block" data-case="pv">
@@ -342,9 +145,9 @@
     </div>
     <p class="lead">I calculated the stresses of a pressure vessel by hand, built an ANSYS model of the vessel and its bolted head and showed that the head-flange region, not the shell, sets the safety margin.</p>
     <div class="kpis">
-      <div class="kpi"><b>3.05</b><span>minimum safety factor (FEA, at the head)</span></div>
-      <div class="kpi"><b>11.2</b><span>safety factor of the shell membrane (theory)</span></div>
-      <div class="kpi"><b>68.9 MPa</b><span>peak von Mises stress</span></div>
+      <div class="kpi"><b>3.05</b><span>minimum safety factor at the head (yield / max principal stress 85.3 MPa)</span></div>
+      <div class="kpi"><b>11.2</b><span>safety factor of the shell (von Mises, thin-wall theory)</span></div>
+      <div class="kpi"><b>68.9 MPa</b><span>peak von Mises stress (FEA)</span></div>
       <div class="kpi"><b>45.8 m</b><span>worst-case blast safety distance</span></div>
     </div>
     <div class="duo">
@@ -551,8 +354,128 @@
   </section>
 
   <!-- ═════════ Screen-only sections ═════════ -->
+  <section id="experience" class="screen-only">
+    <h2>Experience</h2>
+    <p class="tl__intro">Internships, school and leadership, newest first. The projects are above.</p>
+    <ol class="tl">
+        <li class="tl__year" aria-hidden="true">2026</li>
+        <li class="tl__item" data-kind="edu" data-skills="SolidWorks">
+          <div class="tl__when">Oct 2026</div>
+          <div class="tl__card">
+            <span class="tl__logo tl__logo--mono" role="img" aria-label="CSWP">CSWP</span>
+            <div class="tl__body">
+              <h3>Certified SOLIDWORKS Professional</h3>
+              <p class="tl__org">Dassault Systèmes</p>
+              <div class="tl__chips"><span class="tag">SolidWorks</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__item" data-kind="edu" data-skills="">
+          <div class="tl__when">Sep 2026 - present</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="Istanbul University-Cerrahpaşa"></span>
+            <div class="tl__body">
+              <h3>MSc in Mechanical Engineering (Thesis)</h3>
+              <p class="tl__org">Istanbul University-Cerrahpaşa</p>
+            </div>
+          </div>
+        </li>
+        <li class="tl__year" aria-hidden="true">2025</li>
+        <li class="tl__item" data-kind="work" data-skills="Root cause analysis|Pneumatics|Commissioning">
+          <div class="tl__when">Aug - Sep 2025</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/festo.svg)" role="img" aria-label="FESTO"></span>
+            <div class="tl__body">
+              <h3>Intern</h3>
+              <p class="tl__org">FESTO <span>Industrial automation</span></p>
+              <p class="tl__text">Traced mechanical, pneumatic, electrical and software faults in an out-of-service robotic system through root cause analysis and recommissioned it.</p>
+              <div class="tl__chips"><span class="tag">Root cause analysis</span><span class="tag">Pneumatics</span><span class="tag">Commissioning</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__item" data-kind="work" data-skills="Lean manufacturing|Root cause analysis|Assembly lines">
+          <div class="tl__when">Jul - Aug 2025</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/beko.svg)" role="img" aria-label="BEKO"></span>
+            <div class="tl__body">
+              <h3>Manufacturing Intern</h3>
+              <p class="tl__org">BEKO <span>Home appliances</span></p>
+              <p class="tl__text">Found loss sources at 5 critical assembly line stations through waste and root cause analysis and proposed 2 improvements with R&amp;D and Production.</p>
+              <div class="tl__chips"><span class="tag">Lean manufacturing</span><span class="tag">Root cause analysis</span><span class="tag">Assembly lines</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__year" aria-hidden="true">2024</li>
+        <li class="tl__item" data-kind="edu" data-skills="Leadership">
+          <div class="tl__when">Aug 2024 - Aug 2025</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="İÜC"></span>
+            <div class="tl__body">
+              <h3>Chair of the Board</h3>
+              <p class="tl__org">İÜC Career Club <span>300+ members</span></p>
+              <p class="tl__text">Planned the year of the club and delivered 8+ events.</p>
+              <div class="tl__chips"><span class="tag">Leadership</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__item" data-kind="work" data-skills="SolidWorks|Technical drawing|Tolerancing">
+          <div class="tl__when">Aug - Sep 2024</div>
+          <div class="tl__card">
+            <span class="tl__logo tl__logo--mono" role="img" aria-label="Midas Makina Sanayi">M</span>
+            <div class="tl__body">
+              <h3>Design Intern</h3>
+              <p class="tl__org">Midas Makina Sanayi <span>Machinery</span></p>
+              <p class="tl__text">Revised 3D models of existing parts in SolidWorks and prepared manufacturing drawings to dimensioning and tolerancing standards.</p>
+              <div class="tl__chips"><span class="tag">SolidWorks</span><span class="tag">Technical drawing</span><span class="tag">Tolerancing</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__item" data-kind="work" data-skills="CNC machining|Heat treatment|Quality control">
+          <div class="tl__when">Jul 2024</div>
+          <div class="tl__card">
+            <span class="tl__logo tl__logo--mono" role="img" aria-label="Yılmaz Redüktör">YR</span>
+            <div class="tl__body">
+              <h3>Workshop Intern</h3>
+              <p class="tl__org">Yılmaz Redüktör <span>Gearboxes</span></p>
+              <p class="tl__text">Observed CNC turning, milling, heat treatment and grinding operations and gear quality control on a gearbox production line.</p>
+              <div class="tl__chips"><span class="tag">CNC machining</span><span class="tag">Heat treatment</span><span class="tag">Quality control</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="tl__year" aria-hidden="true">2021</li>
+        <li class="tl__item" data-kind="edu" data-skills="">
+          <div class="tl__when">Sep 2021 - Jul 2026</div>
+          <div class="tl__card">
+            <span class="tl__logo" style="--logo:url(/assets/img/logos/iuc-mask.svg)" role="img" aria-label="Istanbul University-Cerrahpaşa"></span>
+            <div class="tl__body">
+              <h3>BSc in Mechanical Engineering</h3>
+              <p class="tl__org">Istanbul University-Cerrahpaşa <span>30% English-medium</span></p>
+            </div>
+          </div>
+        </li>
+    </ol>
+    <p class="tl__note">Company and university logos are trademarks of their owners, shown only to identify where I studied and worked.</p>
+  </section>
+
+  <section id="about" class="screen-only">
+    <h2>About</h2>
+    <div class="about about--photo">
+      <figure class="portrait"><img src="assets/img/profile.jpg" alt="Muhammet Mert Erdoğan" loading="lazy" width="500" height="600"></figure>
+      <div>
+        <p>I trust a result once two different routes agree on it, and I want to understand why they disagree when they don't.
+          A design is not finished for me until I know how it will be built.</p>
+        <p>I am doing a <strong>thesis MSc</strong> at İÜC, which takes one day a week. The rest of the week is free for full-time work.</p>
+        <dl class="facts">
+          <div><dt>Now</dt><dd><b>MSc (Thesis), İÜC, 2026 -</b></dd></div>
+          <div><dt>Languages</dt><dd>Turkish, English (C1)</dd></div>
+          <div><dt>Based in</dt><dd>Istanbul, open to relocation</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
   <section id="skills" class="screen-only">
-    <h2 class="split">Skills and certifications</h2>
+    <h2>Skills and certifications</h2>
     <div class="skills">
       <div><h3>Design</h3><ul><li>SolidWorks <span>CSWP</span></li><li>AutoCAD</li><li>Siemens NX</li><li>CATIA</li><li>Fusion 360</li></ul></div>
       <div><h3>Analysis</h3><ul><li>ANSYS Mechanical</li><li>Static and modal FEA</li><li>Topology optimisation</li><li>MATLAB / Simulink</li></ul></div>
@@ -578,7 +501,7 @@
   </section>
 
   <section id="contact" class="screen-only" style="border-bottom:none;">
-    <h2 class="split">Contact</h2>
+    <h2>Contact</h2>
     <div class="mail-row">
       <a class="mail" href="mailto:mmert1erdogan@gmail.com">mmert1erdogan@gmail.com</a>
       <button type="button" class="btn btn--line copy" data-copy="mmert1erdogan@gmail.com">Copy email</button>
@@ -586,7 +509,7 @@
     <div class="contact-row">
       <a href="https://www.linkedin.com/in/mmerterdogan/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mert-erdogan.vcf" download>Save contact (vCard)</a>
-      <a href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      <a class="cv-link" href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
       <a href="Muhammet_Mert_Erdogan_Portfolio.pdf" target="_blank" rel="noopener">Portfolio (PDF)</a>
       <a href="Muhammet_Mert_Erdogan_Portfolio_Design.pdf" target="_blank" rel="noopener">Portfolio, design first (PDF)</a>
     </div>
@@ -624,13 +547,12 @@
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + (e.target.dataset.nav || e.target.id)));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['about', 'experience', 'contact'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
-  const tour = document.querySelector('.journey'); if (tour) { tour.dataset.nav = 'work'; io.observe(tour); }
+  ['work', 'experience', 'about', 'contact'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
 </script>
-<script src="assets/i18n.js?v=4"></script>
-<script src="assets/motion.js?v=22"></script>
-<script src="assets/analytics.js?v=2"></script>
+<script src="assets/i18n.js?v=5"></script>
+<script src="assets/motion.js?v=24"></script>
+<script src="assets/analytics.js?v=3"></script>
 <script data-goatcounter="https://mmerterdogan.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script src="assets/sequence.js?v=2"></script>
+<script src="assets/sequence.js?v=4"></script>
 </body>
 </html>

@@ -5,15 +5,15 @@ Mechanical engineering site: design, structural analysis (FEA) and manufacturing
 ```
 index.html                           single page: 3D tour, case studies, about, experience, skills, contact
                                      (also the source of the portfolio PDF, print styles in site.css)
-assets/sequence.js                   Selected work as a scroll-scrubbed sequence (no libraries)
+assets/sequence.js                   pressure vessel scene above its case study, scroll-scrubbed frames (no libraries)
 assets/seq/vessel/                   96 frames rendered in Blender from the ANSYS model (scripts: portfolio-work/render)
-assets/seq/uav/                      frames of the flight test clip (ffmpeg, 10 fps)
 assets/motion.css, motion.js         layout and screen effects (off in print and with reduced motion)
 assets/analytics.js                  GoatCounter events (project views, case opens, PDF downloads)
 dashboard.html                       visitor dashboard, reads mmerterdogan.goatcounter.com (not linked, noindex)
 assets/i18n.js                       Turkish version (?lang=tr): English text -> Turkish dictionary, runs before motion.js
 assets/img/logos/                    employer and university logos (masks in the site colour)
-favicon.svg, robots.txt, sitemap.xml, 404.html, mert-erdogan.vcf
+favicon.svg, robots.txt, sitemap.xml, 404.html, mert-erdogan.vcf, assets/img/og-image.jpg (1200x630 link preview)
+Muhammet_Mert_Erdogan_CV_TR.pdf      Turkish CV, linked when the page is in Turkish
 portfolio.html                       redirect to index.html#work (old links)
 assets/site.css                      palette, base styles and A4 landscape print
 assets/img/<project>/                figures
