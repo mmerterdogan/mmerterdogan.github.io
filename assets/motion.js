@@ -39,7 +39,7 @@
   fit(); document.fonts.ready.then(fit); addEventListener('resize', fit);
 
   // reveals
-  document.querySelectorAll('.sheet, #about .about, .jobs, .skills, .edu, .contact-row').forEach(e => e.classList.add('rv'));
+  document.querySelectorAll('.sheet, #about .about, .tl__item, .skills, .edu, .contact-row').forEach(e => e.classList.add('rv'));
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { threshold: .12, rootMargin: '0px 0px -8% 0px' });
@@ -49,10 +49,12 @@
 
   // count numbers up when their sheet appears
   const count = el => {
-    const m = el.textContent.match(/^([\d.]+)(.*)$/); if (!m || reduce) return;
-    const end = parseFloat(m[1]), dec = (m[1].split('.')[1] || '').length, t0 = performance.now();
+    // handles 3.05, 68.9 MPa, 91.3% and the Turkish forms 3,05 and %91,3
+    const m = el.textContent.match(/^(%?)([\d.,]+)(.*)$/); if (!m || reduce) return;
+    const comma = m[2].includes(','), raw = m[2].replace(',', '.');
+    const end = parseFloat(raw), dec = (raw.split('.')[1] || '').length, t0 = performance.now();
     const step = t => { const k = Math.min(1, (t - t0) / 1400), v = end * (1 - Math.pow(1 - k, 4));
-      el.textContent = v.toFixed(dec) + m[2]; if (k < 1) requestAnimationFrame(step); };
+      const n = v.toFixed(dec); el.textContent = m[1] + (comma ? n.replace('.', ',') : n) + m[3]; if (k < 1) requestAnimationFrame(step); };
     requestAnimationFrame(step);
   };
   const io2 = new IntersectionObserver(es => es.forEach(e => {
@@ -132,6 +134,44 @@
     });
   };
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // timeline: the gold line follows the scroll, filters and skill chips highlight entries
+  const tl = document.querySelector('.tl');
+  if (tl) {
+    const draw = () => {
+      const r = tl.getBoundingClientRect();
+      tl.style.setProperty('--draw', Math.min(1, Math.max(0, (innerHeight * .65 - r.top) / r.height)).toFixed(3));
+    };
+    addEventListener('scroll', draw, { passive: true }); draw();
+    const items = [...tl.querySelectorAll('.tl__item')], years = [...tl.querySelectorAll('.tl__year')];
+    const filters = [...document.querySelectorAll('.tl__filters .chip')];
+    let skill = '';
+    const apply = (kind) => {
+      items.forEach(i => i.classList.toggle('gone', kind !== 'all' && i.dataset.kind !== kind));
+      years.forEach(y => { let n = y.nextElementSibling, any = false;
+        while (n && !n.classList.contains('tl__year')) { if (!n.classList.contains('gone')) any = true; n = n.nextElementSibling; }
+        y.style.display = any ? '' : 'none'; });
+      draw();
+    };
+    filters.forEach(f => f.addEventListener('click', () => {
+      filters.forEach(x => x.classList.toggle('on', x === f)); apply(f.dataset.filter);
+    }));
+    tl.addEventListener('click', e => {
+      const c = e.target.closest('.chip[data-skill]'); if (!c) return;
+      skill = skill === c.dataset.skill ? '' : c.dataset.skill;
+      tl.classList.toggle('filtering', !!skill);
+      items.forEach(i => i.classList.toggle('hit', !!skill && i.dataset.skills.split('|').includes(skill)));
+      tl.querySelectorAll('.chip[data-skill]').forEach(x => x.classList.toggle('on', x.dataset.skill === skill));
+    });
+  }
+
+  // copy email
+  document.querySelectorAll('.copy[data-copy]').forEach(b => b.addEventListener('click', async () => {
+    const label = b.textContent;
+    try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = b.dataset.done || 'Copied'; }
+    catch (e) { location.href = 'mailto:' + b.dataset.copy; return; }
+    b.classList.add('done'); setTimeout(() => { b.textContent = label; b.classList.remove('done'); }, 1800);
+  }));
 
   // custom cursor
   if (fine && !reduce) {

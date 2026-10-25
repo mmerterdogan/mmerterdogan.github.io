@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Erdoğan;Muhammet Mert;;;
+FN:Muhammet Mert Erdoğan
+TITLE:Mechanical Engineer
+EMAIL;TYPE=INTERNET:mmert1erdogan@gmail.com
+URL:https://mmerterdogan.github.io/?ref=vcard
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/mmerterdogan/
+ADR;TYPE=WORK:;;;Istanbul;;;Türkiye
+END:VCARD

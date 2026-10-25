@@ -3,6 +3,7 @@
 //   open-<project>     "Read the case" was clicked
 //   details-<project>  "Method and details" was opened
 //   download-<file>    a PDF was opened
+//   ref-<source>       the visit came through a link with ?ref=<source>
 // The numbers are read back by dashboard.html. Localhost visits are ignored by GoatCounter.
 (() => {
   if (location.search.includes('print')) return;
@@ -19,6 +20,10 @@
     send(path);
   };
 
+  // source of the visit: links I share carry ?ref=<source>
+  const ref = new URLSearchParams(location.search).get('ref');
+  if (ref && /^[a-z0-9-]{1,30}$/i.test(ref)) once('ref-' + ref.toLowerCase());
+
   // project chapters of the 3D tour
   document.querySelectorAll('.chap[data-id]').forEach(c => new MutationObserver(() => {
     if (c.classList.contains('on')) once('view-' + c.dataset.id);
@@ -29,6 +34,7 @@
     const a = e.target.closest('a'); if (!a) return;
     const href = a.getAttribute('href') || '';
     if (href.endsWith('.pdf')) send('download-' + href.split('/').pop().replace('.pdf', '').replace('Muhammet_Mert_Erdogan_', '').toLowerCase());
+    else if (href.endsWith('.vcf')) send('download-vcard');
     else if (a.classList.contains('chap__go') && caseId(href)) send('open-' + caseId(href));
   });
   document.querySelectorAll('details.more').forEach(d => d.addEventListener('toggle', () => {

@@ -152,7 +152,7 @@ function init() {
     // exhibit 4: chain runs, guard closes
     ex4.update(t, band(p, .79, .9));
 
-    chaps.forEach(c => { const [a, b] = c.dataset.at.split('-').map(Number); c.classList.toggle('on', p >= a && p < b); });
+    chaps.forEach(c => { const [a, b] = c.dataset.at.split('-').map(Number), on = p >= a && p < b; c.classList.toggle('on', on); c.inert = !on; });
     if (bar) bar.style.setProperty('--p', p);
     renderer.render(scene, camera);
   };

@@ -36,6 +36,7 @@
   .note{ color:var(--faint); font-size:13px; margin-top:18px; }
   .note a{ color:var(--gold); }
   .err{ color:#e8a06a; }
+  code{ color:var(--gold); font-size:12.5px; }
   @media (max-width:760px){ .cards{ grid-template-columns:1fr 1fr; } .card--wide{ grid-column:span 2; } }
 </style>
 </head>
@@ -76,6 +77,15 @@
     </table>
   </div>
 
+  <div class="panel">
+    <h2>Nereden geldiler</h2>
+    <table>
+      <thead><tr><th>Kaynak</th><th>Ziyaret</th></tr></thead>
+      <tbody id="refs"></tbody>
+    </table>
+    <p class="note" style="margin-top:10px">Paylaştığın bağlantıların sonuna <code>?ref=kaynak</code> ekle, ör. LinkedIn'e <code>mmerterdogan.github.io/?ref=linkedin</code>, başvuru formlarına <code>?ref=basvuru</code>.</p>
+  </div>
+
   <p class="note">Sayılar GoatCounter'dan gelir ve en fazla 4 saat gecikmeli güncellenir. Ayrıntılı istatistik (ülke, tarayıcı, nereden gelindiği):
     <a href="https://mmerterdogan.goatcounter.com" target="_blank" rel="noopener">mmerterdogan.goatcounter.com</a></p>
   <p class="note err" id="err" hidden></p>
@@ -84,7 +94,8 @@
 <script>
   const BASE = 'https://mmerterdogan.goatcounter.com';
   const PROJECTS = [['pressure-vessel', 'Basınçlı kap'], ['uav', 'İHA iniş takımı'], ['ml', 'Çelik hata sınıflandırma'], ['formula-student', 'Formula Student']];
-  const FILES = [['cv', 'CV'], ['portfolio', 'Portfolyo'], ['portfolio_design', 'Portfolyo (tasarım önce)']];
+  const FILES = [['cv', 'CV'], ['portfolio', 'Portfolyo'], ['portfolio_design', 'Portfolyo (tasarım önce)'], ['vcard', 'Kişi kartı (vCard)']];
+  const REFS = [['linkedin', 'LinkedIn profili'], ['cv', 'CV'], ['portfolio-pdf', 'Portfolyo PDF'], ['vcard', 'Kişi kartı'], ['basvuru', 'Başvuru formu']];
   const num = s => parseInt(String(s).replace(/\D/g, ''), 10) || 0;
   let start = '', failed = 0;
 
@@ -104,10 +115,11 @@
   async function load() {
     failed = 0;
     document.getElementById('updated').textContent = 'yükleniyor…';
-    const [total, rows, dls] = await Promise.all([
+    const [total, rows, dls, refs] = await Promise.all([
       count('TOTAL'),
       Promise.all(PROJECTS.map(async ([id, name]) => [name, await count('view-' + id), await count('open-' + id), await count('details-' + id)])),
       Promise.all(FILES.map(async ([id, name]) => [name, await count('download-' + id)])),
+      Promise.all(REFS.map(async ([id, name]) => [name, await count('ref-' + id)])),
     ]);
     const views = rows.reduce((s, r) => s + r[1], 0), dl = dls.reduce((s, r) => s + r[1], 0);
     const top = [...rows].sort((a, b) => b[1] - a[1])[0];
@@ -120,6 +132,8 @@
     document.getElementById('projects').innerHTML = rows.map(r => `<tr><td>${r[0]}</td><td>${bar(r[1], mx)}</td><td>${bar(r[2], mx)}</td><td>${bar(r[3], mx)}</td></tr>`).join('');
     const md = Math.max(1, ...dls.map(r => r[1]));
     document.getElementById('downloads').innerHTML = dls.map(r => `<tr><td>${r[0]}</td><td>${bar(r[1], md)}</td></tr>`).join('');
+    const mr = Math.max(1, ...refs.map(r => r[1]));
+    document.getElementById('refs').innerHTML = refs.map(r => `<tr><td>${r[0]}</td><td>${bar(r[1], mr)}</td></tr>`).join('');
     document.getElementById('updated').textContent = 'son yükleme ' + new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
     const err = document.getElementById('err');
     err.hidden = !failed;

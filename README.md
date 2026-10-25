@@ -9,6 +9,9 @@ assets/scene3d.js                    3D tour (three.js from jsDelivr): simplifie
 assets/motion.css, motion.js         layout and screen effects (off in print and with reduced motion)
 assets/analytics.js                  GoatCounter events (project views, case opens, PDF downloads)
 dashboard.html                       visitor dashboard, reads mmerterdogan.goatcounter.com (not linked, noindex)
+assets/i18n.js                       Turkish version (?lang=tr): English text -> Turkish dictionary, runs before motion.js
+assets/img/logos/                    employer and university logos (masks in the site colour)
+favicon.svg, robots.txt, sitemap.xml, 404.html, mert-erdogan.vcf
 portfolio.html                       redirect to index.html#work (old links)
 assets/site.css                      palette, base styles and A4 landscape print
 assets/img/<project>/                figures
@@ -23,5 +26,8 @@ Regenerate the PDF after editing `index.html` (serve the folder, then print with
 python -m http.server 8790
 chrome --headless=new --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf=Muhammet_Mert_Erdogan_Portfolio.pdf "http://localhost:8790/index.html?print"
 ```
+
+When you change English text in `index.html`, add the Turkish line to `assets/i18n.js` (key = the English innerHTML).
+Links shared elsewhere can carry `?ref=<source>` (linkedin, cv, basvuru ...), the dashboard counts them.
 
 Published with GitHub Pages: every push to `main` goes live.

@@ -295,7 +295,7 @@ footer{ padding:30px 0 40px; display:flex; justify-content:space-between;
 .points strong{ color:var(--fg); font-weight:600; }
 .note{ font-size:13px; color:var(--fg-faint); border-left:2px solid var(--rule); padding-left:10px; margin-top:12px; }
 .cover{ min-height:76vh; display:flex; flex-direction:column; justify-content:center; padding:48px 0; border-bottom:1px solid var(--rule); }
-.cover h1{ font-family:var(--serif); font-weight:380; font-size:clamp(44px,6.4vw,72px); line-height:1.05; letter-spacing:-.02em; }
+.cover h1, .cover .cover__name{ font-family:var(--serif); font-weight:380; font-size:clamp(44px,6.4vw,72px); line-height:1.05; letter-spacing:-.02em; }
 .cover .sub{ font-size:19px; color:var(--fg-dim); margin:20px 0 28px; max-width:60ch; }
 .cover .contact{ font-size:15px; color:var(--fg-dim); display:flex; gap:24px; flex-wrap:wrap; }
 .cover .contact a{ border-bottom:1px solid var(--rule); }
