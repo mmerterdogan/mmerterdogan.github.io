@@ -71,9 +71,10 @@
   </div>
 
   <!-- ═════════ 01 Pressure vessel ═════════ -->
+  <div class="case-block" data-case="pv">
   <section class="sheet sheet--first" id="pressure-vessel">
     <div class="sheet__head">
-      <div><p class="kicker">01 · Pressure vessel · structural analysis</p><h2>Shell theory said 11.2. The real head said 3.05.</h2></div>
+      <div><p class="kicker num">Pressure vessel · structural analysis</p><h2>Shell theory said 11.2. The real head said 3.05.</h2></div>
       <div class="meta">Mechanical System Design project, İÜC · Oct 2025 - Jan 2026<br>Advisor: Dr. Murat Bozkurt · individual work</div>
     </div>
     <p class="lead">I calculated the stresses of a pressure vessel by hand, built an ANSYS model of the vessel and its bolted head and showed that the head-flange region, not the shell, sets the safety margin.</p>
@@ -98,7 +99,7 @@
   <details class="more">
     <summary class="screen-only">Method and details</summary>
     <section class="sheet" id="pressure-vessel-method">
-      <div class="sheet__head"><div><p class="kicker">01 · Pressure vessel · method</p><h2>Two routes, compared at the right level</h2></div></div>
+      <div class="sheet__head"><div><p class="kicker num">Pressure vessel · method</p><h2>Two routes, compared at the right level</h2></div></div>
       <ol class="flow">
         <li><b>1 · Hand calculation</b>Hoop, axial and von Mises stress, radial growth</li>
         <li><b>2 · FEA model</b>Vessel and bolted head, linear static, refined mesh</li>
@@ -128,11 +129,13 @@
       </div>
     </section>
   </details>
+  </div>
 
   <!-- ═════════ 02 UAV ═════════ -->
+  <div class="case-block" data-case="uav">
   <section class="sheet sheet--first" id="uav">
     <div class="sheet__head">
-      <div><p class="kicker">02 · TEKNOFEST UAV · design and manufacturing</p><h2>A landing gear 50% under its weight target</h2></div>
+      <div><p class="kicker num">TEKNOFEST UAV · design and manufacturing</p><h2>A landing gear 50% under its weight target</h2></div>
       <div class="meta">TEKNOFEST International UAV Competition · Aug 2024 - Aug 2025<br>Team project · I designed the landing gear</div>
     </div>
     <p class="lead">For a 7 kg quadcopter I designed a skid landing gear from carbon-fibre tubes and 3D-printed joints, checked it with static FEA and brought it in 50% below the specification weight target.</p>
@@ -157,7 +160,7 @@
   <details class="more">
     <summary class="screen-only">Method and details</summary>
     <section class="sheet" id="uav-design">
-      <div class="sheet__head"><div><p class="kicker">02 · TEKNOFEST UAV · method</p><h2>Light, stiff and easy to fit</h2></div></div>
+      <div class="sheet__head"><div><p class="kicker num">TEKNOFEST UAV · method</p><h2>Light, stiff and easy to fit</h2></div></div>
       <ol class="flow">
         <li><b>1 · Requirements</b>7 kg take-off mass, camera clearance, hard landings</li>
         <li><b>2 · Parametric CAD</b>Skid legs, T-joints and flanges in SolidWorks</li>
@@ -188,11 +191,13 @@
       </div>
     </section>
   </details>
+  </div>
 
   <!-- ═════════ 03 ML ═════════ -->
+  <div class="case-block" data-case="ml">
   <section class="sheet sheet--first" id="ml">
     <div class="sheet__head">
-      <div><p class="kicker">03 · Machine learning · quality</p><h2>Telling steel plate defects apart at 91.3%</h2></div>
+      <div><p class="kicker num">Machine learning · quality</p><h2>Telling steel plate defects apart at 91.3%</h2></div>
       <div class="meta">Machine learning course project · Feb 2025 - Jun 2025<br>Individual work · R</div>
     </div>
     <p class="lead">I compared seven classifiers on steel plate inspection data and combined the best three into a voting ensemble that identifies the fault type with 91.3% accuracy.</p>
@@ -203,13 +208,13 @@
       <div class="kpi"><b>27</b><span>input features</span></div>
     </div>
     <div class="duo">
-      <figure class="fig fig--hero"><div class="frame"><img src="assets/img/ml/model-accuracy.jpg" alt="Model accuracy comparison"></div>
+      <figure class="fig fig--hero"><div class="frame"><img src="assets/img/ml/model-accuracy.png" alt="Model accuracy comparison"></div>
         <figcaption>Test accuracy of the seven models</figcaption></figure>
       <div class="stack">
-        <figure class="fig"><div class="frame"><img src="assets/img/ml/confusion-matrix.jpg" alt="Confusion matrix"></div>
-          <figcaption>Confusion matrix (XGBoost)</figcaption></figure>
-        <figure class="fig"><div class="frame"><img src="assets/img/ml/feature-importance.jpg" alt="Feature importance"></div>
-          <figcaption>Random forest feature importance</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/ml/confusion-matrix.png" alt="Confusion matrix"></div>
+          <figcaption>Confusion matrix (XGBoost, test set)</figcaption></figure>
+        <figure class="fig"><div class="frame"><img src="assets/img/ml/feature-importance.png" alt="Feature importance"></div>
+          <figcaption>Top 12 features (random forest)</figcaption></figure>
       </div>
     </div>
   </section>
@@ -217,7 +222,7 @@
   <details class="more">
     <summary class="screen-only">Method and details</summary>
     <section class="sheet" id="ml-method">
-      <div class="sheet__head"><div><p class="kicker">03 · Machine learning · method</p><h2>From raw measurements to a voting ensemble</h2></div></div>
+      <div class="sheet__head"><div><p class="kicker num">Machine learning · method</p><h2>From raw measurements to a voting ensemble</h2></div></div>
       <ol class="flow">
         <li><b>1 · Data</b>UCI Steel Plates Faults, 27 features per plate</li>
         <li><b>2 · Preparation</b>80/20 split, scaling, oversampling, Boruta selection</li>
@@ -234,21 +239,22 @@
             <li><strong>Combined</strong> XGBoost (91%), random forest (90%) and SVM (88%) by majority vote: 91.3%, precision 0.909, recall 0.891.</li>
           </ul>
           <h3>What it says about the process</h3>
-          <p>K-scratch and bumps are recognised well, Z-scratch is often confused. Conveyor length ranks highest, so the model leans on line and geometry measurements.</p>
+          <p>K-scratch, Z-scratch and stains are recognised almost perfectly. The pair the model mixes up most is bumps and pastry. Conveyor length ranks highest, so the model leans on line and plate geometry measurements, and the fault mix differs clearly between the two steel grades.</p>
         </div>
         <div class="stack">
-          <figure class="fig"><div class="frame"><img src="assets/img/ml/pca.jpg" alt="PCA plot"></div>
-            <figcaption>PCA view: K-scratch separates, other faults overlap</figcaption></figure>
-          <figure class="fig"><div class="frame"><img src="assets/img/ml/radar.jpg" alt="Fault types by steel type"></div>
-            <figcaption>Fault profile by steel type (A300 vs A400)</figcaption></figure>
+          <figure class="fig"><div class="frame"><img src="assets/img/ml/pca.png" alt="PCA plot"></div>
+            <figcaption>PCA view of the training data</figcaption></figure>
+          <figure class="fig"><div class="frame"><img src="assets/img/ml/fault-by-steel.png" alt="Fault types by steel type"></div>
+            <figcaption>Fault types by steel grade: K-scratch appears almost only on A400</figcaption></figure>
         </div>
       </div>
     </section>
   </details>
+  </div>
 
   <!-- ═════════ 04 More work (print summary + screen) ═════════ -->
   <section class="sheet" id="more">
-    <div class="sheet__head"><div><p class="kicker">04 · More work</p><h2>Formula Student</h2></div></div>
+    <div class="sheet__head"><div><p class="kicker">More work</p><h2>Formula Student</h2></div></div>
     <div class="duo duo--even">
       <div class="points">
         <h3>İÜC Racing Formula Student · powertrain team · 2023 - 2026</h3>
@@ -339,6 +345,7 @@
       <a href="https://www.linkedin.com/in/mmerterdogan/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="Muhammet_Mert_Erdogan_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
       <a href="Muhammet_Mert_Erdogan_Portfolio.pdf" target="_blank" rel="noopener">Portfolio (PDF)</a>
+      <a href="Muhammet_Mert_Erdogan_Portfolio_Design.pdf" target="_blank" rel="noopener">Portfolio, design first (PDF)</a>
     </div>
   </section>
 
@@ -348,7 +355,22 @@
   </footer>
 </main>
 
+<div id="lb" class="lightbox screen-only" hidden><img alt=""><p></p></div>
 <script>
+  // click a figure to enlarge it
+  const lb = document.getElementById('lb');
+  document.addEventListener('click', e => {
+    const img = e.target.closest('.fig img');
+    if (img) { lb.querySelector('img').src = img.src; lb.querySelector('p').textContent = img.closest('figure').querySelector('figcaption')?.textContent || ''; lb.hidden = false; return; }
+    if (e.target.closest('#lb')) lb.hidden = true;
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.hidden = true; });
+  // ?print&focus=design puts the UAV case first (design-focused PDF)
+  const focus = new URLSearchParams(location.search).get('focus');
+  if (focus === 'design') {
+    const more = document.getElementById('more');
+    ['uav', 'pv', 'ml'].forEach(k => more.before(document.querySelector(`.case-block[data-case="${k}"]`)));
+  }
   // open all "Method and details" blocks for printing (and for ?print, used to build the PDF)
   const openAll = () => document.querySelectorAll('details.more').forEach(d => d.open = true);
   if (location.search.includes('print')) openAll();

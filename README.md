@@ -9,7 +9,8 @@ portfolio.html                       redirect to index.html#work (old links)
 assets/site.css                      shared styles (screen + A4 landscape print)
 assets/img/<project>/                figures
 Muhammet_Mert_Erdogan_CV.pdf         CV (public copy, no references)
-Muhammet_Mert_Erdogan_Portfolio.pdf  portfolio PDF
+Muhammet_Mert_Erdogan_Portfolio.pdf  portfolio PDF (index.html?print)
+Muhammet_Mert_Erdogan_Portfolio_Design.pdf  same, UAV case first (index.html?print&focus=design)
 ```
 
 Regenerate the PDF after editing `index.html` (serve the folder, then print with Chrome):
