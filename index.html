@@ -21,8 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20">
-<link rel="stylesheet" href="assets/motion.css?v=20">
+<link rel="stylesheet" href="assets/site.css?v=22">
+<link rel="stylesheet" href="assets/motion.css?v=22">
 </head>
 <body>
 
@@ -257,18 +257,38 @@
 
   </div>
 
-  <section class="journey screen-only" aria-label="Selected work, 3D tour">
-    <canvas class="journey__cv" aria-hidden="true"></canvas>
+  <section class="journey screen-only" aria-label="Selected work">
+    <div class="seq" aria-hidden="true">
+      <canvas class="seq__vessel"></canvas>
+      <div class="seq__panel seq__uav"><canvas width="480" height="400"></canvas><span>Flight test footage</span></div>
+      <div class="seq__panel seq__ml">
+        <div class="bars">
+          <div class="bar" style="--v:.786"><span>Decision tree</span><b>78.6%</b></div>
+          <div class="bar" style="--v:.821"><span>k-NN</span><b>82.1%</b></div>
+          <div class="bar" style="--v:.829"><span>Naive Bayes</span><b>82.9%</b></div>
+          <div class="bar" style="--v:.841"><span>Logistic reg.</span><b>84.1%</b></div>
+          <div class="bar top" style="--v:.877"><span>SVM</span><b>87.7%</b></div>
+          <div class="bar top" style="--v:.905"><span>Random forest</span><b>90.5%</b></div>
+          <div class="bar top" style="--v:.909"><span>XGBoost</span><b>90.9%</b></div>
+          <div class="bar ens" style="--v:.913"><span>Voting ensemble</span><b>91.3%</b></div>
+        </div>
+      </div>
+      <div class="seq__panel seq__fs">
+        <img src="assets/img/fs/powertrain.jpg" alt="" class="fs__main">
+        <img src="assets/img/fs/chain-guard-open.jpg" alt="" class="fs__a">
+        <img src="assets/img/fs/chain-guard-ring.jpg" alt="" class="fs__b">
+      </div>
+    </div>
     <span class="journey__mark" id="work" style="top:0"></span>
 
-    <div class="chap chap--intro" data-at="0-.07">
+    <div class="chap chap--intro" data-at="0-.06">
       <p class="chap__k">Selected work</p>
-      <h2 class="chap__title">Four projects, one walk through the hall</h2>
-      <p>Scroll to move from exhibit to exhibit. Each stop links to the full case study further down.</p>
+      <h2 class="chap__title">Four projects, from model to result</h2>
+      <p>Scroll through each project. Every stop links to the full case study further down.</p>
       <p class="chap__hint">Scroll to enter</p>
     </div>
 
-    <div class="chap" data-id="pressure-vessel" data-at=".09-.3">
+    <div class="chap" data-id="pressure-vessel" data-at=".08-.4">
       <p class="chap__k">Structural analysis, 2025 - 2026</p>
       <h2>Pressure vessel</h2>
       <p>Hand calculation and an ANSYS model of the vessel and its bolted head. The head-flange zone, not the shell, sets the safety margin.</p>
@@ -276,7 +296,7 @@
       <a class="chap__go" href="#pressure-vessel">Read the case</a>
     </div>
 
-    <div class="chap" data-id="uav" data-at=".32-.53">
+    <div class="chap" data-id="uav" data-at=".42-.63">
       <p class="chap__k">Design and manufacturing, 2024 - 2025, team</p>
       <h2>UAV landing gear</h2>
       <p>I designed the skid landing gear of a 7 kg TEKNOFEST quadcopter: carbon tubes, 3D-printed T-joints and rubber pads, checked with static FEA.</p>
@@ -284,7 +304,7 @@
       <a class="chap__go" href="#uav">Read the case</a>
     </div>
 
-    <div class="chap" data-id="ml" data-at=".55-.76">
+    <div class="chap" data-id="ml" data-at=".65-.81">
       <p class="chap__k">Machine learning, 2025</p>
       <h2>Steel plate defects</h2>
       <p>Seven classifiers on steel plate inspection data. The best three, combined by majority vote, name the fault type.</p>
@@ -292,7 +312,7 @@
       <a class="chap__go" href="#ml">Read the case</a>
     </div>
 
-    <div class="chap" data-id="formula-student" data-at=".78-.97">
+    <div class="chap" data-id="formula-student" data-at=".83-1.01">
       <p class="chap__k">Formula Student, 2023 - 2026, team</p>
       <h2>Chain guard</h2>
       <p>For İÜC Racing's powertrain team I designed the chain guard in SolidWorks, checked it with static analysis in ANSYS and revised the bracket.</p>
@@ -300,8 +320,11 @@
       <a class="chap__go" href="#more">Read more</a>
     </div>
 
-    <p class="journey__tag">Simplified 3D models of my projects. Stress colours are illustrative.</p>
+    <p class="journey__tag">Vessel rendered from my ANSYS model, coloured by its von Mises result. UAV: flight test footage.</p>
     <div class="journey__bar"><i></i></div>
+    <nav class="journey__dots" aria-label="Projects">
+      <a href="#" data-p=".2" aria-label="Pressure vessel"></a><a href="#" data-p=".52" aria-label="UAV landing gear"></a><a href="#" data-p=".73" aria-label="Steel plate defects"></a><a href="#" data-p=".92" aria-label="Formula Student"></a>
+    </nav>
     <a class="skip-tour" href="#pressure-vessel">Skip the tour</a>
   </section>
 
@@ -604,10 +627,10 @@
   ['about', 'experience', 'contact'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
   const tour = document.querySelector('.journey'); if (tour) { tour.dataset.nav = 'work'; io.observe(tour); }
 </script>
-<script src="assets/i18n.js?v=3"></script>
-<script src="assets/motion.js?v=20"></script>
+<script src="assets/i18n.js?v=4"></script>
+<script src="assets/motion.js?v=22"></script>
 <script src="assets/analytics.js?v=2"></script>
 <script data-goatcounter="https://mmerterdogan.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="module" src="assets/scene3d.js?v=9"></script>
+<script src="assets/sequence.js?v=2"></script>
 </body>
 </html>

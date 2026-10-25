@@ -5,7 +5,9 @@ Mechanical engineering site: design, structural analysis (FEA) and manufacturing
 ```
 index.html                           single page: 3D tour, case studies, about, experience, skills, contact
                                      (also the source of the portfolio PDF, print styles in site.css)
-assets/scene3d.js                    3D tour (three.js from jsDelivr): simplified models, scroll-driven camera
+assets/sequence.js                   Selected work as a scroll-scrubbed sequence (no libraries)
+assets/seq/vessel/                   96 frames rendered in Blender from the ANSYS model (scripts: portfolio-work/render)
+assets/seq/uav/                      frames of the flight test clip (ffmpeg, 10 fps)
 assets/motion.css, motion.js         layout and screen effects (off in print and with reduced motion)
 assets/analytics.js                  GoatCounter events (project views, case opens, PDF downloads)
 dashboard.html                       visitor dashboard, reads mmerterdogan.goatcounter.com (not linked, noindex)
