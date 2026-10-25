@@ -69,9 +69,11 @@ function init() {
   hang(IMG + 'pressure-vessel/von-mises.jpg', -.6, 2.2, 1.35);
   hang(IMG + 'pressure-vessel/safety-factor.jpg', -3.1, 2.0, 1.1);
   hang(IMG + 'uav/uav-render.jpg', -GAP - .6, 2.2, 1.35);
-  hang(IMG + 'uav/landing-gear.jpg', -GAP - 3.1, 2.0, 1.1);
+  hang(IMG + 'uav/built-gear.jpg', -GAP - 3.1, 2.1, 1.3);
   hang(IMG + 'ml/confusion-matrix.png', -2 * GAP - .6, 2.2, 1.35);
   hang(IMG + 'ml/fault-by-steel.png', -2 * GAP - 3.1, 2.0, 1.1);
+  hang(IMG + 'fs/powertrain.jpg', -3 * GAP - .6, 2.2, 1.35);
+  hang(IMG + 'fs/chain-guard-open.jpg', -3 * GAP - 3.1, 2.0, 1.0);
 
   // ── exhibit 1: pressure vessel with bolted head ──
   const metal = new THREE.Color('#c3c7cf');

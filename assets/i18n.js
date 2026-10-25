@@ -204,6 +204,14 @@
  "Muhammet Mert Erdoğan, mechanical engineer": "Muhammet Mert Erdoğan, makine mühendisi",
  "Istanbul, 2026": "İstanbul, 2026"
 };
+  Object.assign(T, {
+    "Built: carbon legs, printed T-joints and pads on the skids": "Üretilmiş hali: karbon bacaklar, baskı T-bağlantılar ve kızaklarda takozlar",
+    "Flight test: the UAV hovering on its landing gear": "Uçuş testi: İHA iniş takımıyla havada",
+    "The TEKNOFEST team with the UAV at the exhibition": "TEKNOFEST takımı, İHA ile sergide",
+    "Powertrain assembly with the chain guards, SolidWorks": "Zincir korumalarıyla güç aktarma montajı, SolidWorks",
+    "Open guard with bolted flange": "Cıvatalı flanşlı açık koruma",
+    "Closed ring guard": "Kapalı halka koruma",
+  });
   const SEL = 'h1 .ln, h2, h3, p, li, figcaption, dt, dd, summary, .btn, .lnk, .nav__cv, .chip, .kpi span, .chap__n span, ' +
     '.contact-row a, .tl__go, .chap__go, .skip-tour, footer span, .facts dd b, .meta, .stat span';
   const norm = h => h.replace(/\s+/g, ' ').replace(/<br\/?>/g, '<br>').trim();

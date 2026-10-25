@@ -21,8 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=16">
-<link rel="stylesheet" href="assets/motion.css?v=16">
+<link rel="stylesheet" href="assets/site.css?v=18">
+<link rel="stylesheet" href="assets/motion.css?v=18">
 </head>
 <body>
 
@@ -193,10 +193,10 @@
       <figure class="fig fig--hero"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/uav/uav-render.jpg" alt="Quadcopter render"></div>
         <figcaption>The whole system: UAV assembly in SolidWorks</figcaption></figure>
       <div class="stack">
+        <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/uav/built-gear.jpg" alt="The built UAV on a workbench with printed T-joints and pads on the landing gear"></div>
+          <figcaption>Built: carbon legs, printed T-joints and pads on the skids</figcaption></figure>
         <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/uav/landing-gear.jpg" alt="Landing gear legs"></div>
           <figcaption>My subsystem: skid legs, carbon tubes, printed T-joints</figcaption></figure>
-        <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/uav/drawing.jpg" alt="Technical drawing"></div>
-          <figcaption>Drawing sheet with gear dimensions</figcaption></figure>
       </div>
     </div>
   </section>
@@ -225,12 +225,14 @@
           <div class="skills-bar"><span>Parametric CAD</span><span>Static FEA</span><span>FDM printing</span><span>Material selection</span><span>Drawings</span></div>
         </div>
         <div class="stack">
-          <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/uav/arm-clamp.jpg" alt="Printed joint"></div>
-            <figcaption>3D-printed joint detail</figcaption></figure>
+          <figure class="fig fig--video"><div class="frame">
+            <video class="screen-only" src="assets/video/uav-flight.mp4" poster="assets/img/uav/uav-flight-poster.jpg" muted loop playsinline preload="none" aria-label="The UAV hovering outdoors on its landing gear"></video>
+            <img class="print-only" src="assets/img/uav/uav-flight-poster.jpg" alt="The UAV hovering outdoors"></div>
+            <figcaption>Flight test: the UAV hovering on its landing gear</figcaption></figure>
           <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/uav/assembly-bom.jpg" alt="Assembly drawing with bill of materials"></div>
             <figcaption>Assembly drawing with bill of materials</figcaption></figure>
-          <!-- Photo of the printed landing gear goes here when available:
-          <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/uav/printed-gear.jpg" alt="Printed landing gear"></div><figcaption>Printed and assembled landing gear</figcaption></figure> -->
+          <figure class="fig screen-only"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/uav/team.jpg" alt="The TEKNOFEST team with the UAV at the exhibition stand"></div>
+            <figcaption>The TEKNOFEST team with the UAV at the exhibition</figcaption></figure>
         </div>
       </div>
     </section>
@@ -304,8 +306,14 @@
         <h3>İÜC Racing Formula Student, powertrain team, 2023 - 2026</h3>
         <p><strong>Designed</strong> the chain guard in SolidWorks and verified its strength with static analysis in ANSYS. Revised the bracket design for a <strong>15% weight reduction</strong>.</p>
         <div class="skills-bar"><span>SolidWorks</span><span>Static FEA</span><span>Lightweighting</span></div>
-        <!-- Formula Student photo goes here when available:
-        <figure class="fig" style="margin-top:14px"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/fs/car.jpg" alt="İÜC Racing car"></div><figcaption>İÜC Racing car</figcaption></figure> -->
+        <figure class="fig fs-fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/fs/powertrain.jpg" alt="Powertrain assembly with sprockets and chain guards"></div>
+          <figcaption>Powertrain assembly with the chain guards, SolidWorks</figcaption></figure>
+        <div class="fs-pair">
+          <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/fs/chain-guard-open.jpg" alt="Open chain guard with a bolted mounting flange"></div>
+            <figcaption>Open guard with bolted flange</figcaption></figure>
+          <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/fs/chain-guard-ring.jpg" alt="Closed ring chain guard"></div>
+            <figcaption>Closed ring guard</figcaption></figure>
+        </div>
       </div>
       <div class="points print-only">
         <h3>Internships</h3>
@@ -580,10 +588,10 @@
   }), { rootMargin: '-45% 0px -50% 0px' });
   ['work', 'about', 'experience', 'contact'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
 </script>
-<script src="assets/i18n.js?v=1"></script>
-<script src="assets/motion.js?v=16"></script>
+<script src="assets/i18n.js?v=2"></script>
+<script src="assets/motion.js?v=18"></script>
 <script src="assets/analytics.js?v=2"></script>
 <script data-goatcounter="https://mmerterdogan.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="module" src="assets/scene3d.js?v=7"></script>
+<script type="module" src="assets/scene3d.js?v=8"></script>
 </body>
 </html>

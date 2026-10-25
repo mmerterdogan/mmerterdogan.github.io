@@ -325,3 +325,19 @@ h1, h2, h3, .nav__brand, .kpi b, .stat b, .job .who, .ei .t, .mail, .cover h1, .
     transition:border-color .25s, color .25s; }
   .lang-switch:hover{ border-color:var(--pop); color:var(--pop) !important; }
 }
+
+/* ── video figure, Formula Student figures ── */
+.fig--video video{ display:block; width:100%; height:auto; aspect-ratio:480/400; object-fit:cover; background:#000; }
+.fs-fig{ margin-top:16px; }
+.fs-pair{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
+@media print{
+  #more .fs-fig, #more .fs-pair{ margin-top:8px; }
+  #more .fs-fig .frame{ height:66mm; }
+  #more .fs-pair .frame{ height:40mm; }
+  #more .fig .frame img{ height:100%; width:100%; object-fit:contain; }
+  #more .fig figcaption{ font-size:10px; padding:3px 8px; }
+}
+@media screen{
+  .fig .frame img.print-only{ display:none; }
+  #more .fs-fig, #more .fs-pair{ max-width:760px; }
+}

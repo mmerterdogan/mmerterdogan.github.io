@@ -165,6 +165,12 @@
     });
   }
 
+  // flight clip plays while visible (stays on its poster with reduced motion)
+  document.querySelectorAll('.fig--video video').forEach(v => {
+    if (reduce) { v.controls = true; return; }
+    new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) v.play().catch(() => {}); else v.pause(); }), { threshold: .3 }).observe(v);
+  });
+
   // copy email
   document.querySelectorAll('.copy[data-copy]').forEach(b => b.addEventListener('click', async () => {
     const label = b.textContent;
