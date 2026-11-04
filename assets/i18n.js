@@ -21,7 +21,7 @@
  "Experience": "Deneyim",
  "Contact": "İletişim",
  "Muhammet Mert Erdoğan, mechanical engineer in Istanbul": "Muhammet Mert Erdoğan, İstanbul'da makine mühendisi",
- "I design parts in SolidWorks, check them in ANSYS and follow them onto the shop floor. BSc Mechanical Engineering, thesis MSc in progress, Certified SOLIDWORKS Professional.": "Parçaları SolidWorks'te tasarlıyor, ANSYS'te doğruluyor ve atölyeye kadar takip ediyorum. Makine Mühendisliği lisans, tezli yüksek lisans devam ediyor, Certified SOLIDWORKS Professional.",
+ "I design parts in SolidWorks, check them in ANSYS and follow them onto the shop floor. BSc Mechanical Engineering, thesis MSc in progress, SOLIDWORKS Design Associate (CSWA).": "Parçaları SolidWorks'te tasarlıyor, ANSYS'te doğruluyor ve atölyeye kadar takip ediyorum. Makine Mühendisliği lisans, tezli yüksek lisans devam ediyor, SOLIDWORKS Design Associate (CSWA).",
  "Walk through my work": "Çalışmalarımı gez",
  "Portfolio PDF": "Portfolyo PDF",
  "Scroll to enter": "Girmek için kaydır",
@@ -44,7 +44,7 @@
  "ensemble accuracy": "birleşik model doğruluğu",
  "macro F1-score": "makro F1 skoru",
  "models compared": "karşılaştırılan model",
- "Formula Student, 2023 - 2026, team": "Formula Student, 2023 - 2026, takım",
+ "Formula Student, 2022 - 2026, team": "Formula Student, 2022 - 2026, takım",
  "Chain guard": "Zincir koruması",
  "For İÜC Racing's powertrain team I designed the chain guard in SolidWorks, checked it with static analysis in ANSYS and revised the bracket.": "İÜC Racing güç aktarma ekibinde zincir korumasını SolidWorks'te tasarladım, ANSYS statik analiziyle doğruladım ve braketi revize ettim.",
  "lighter bracket": "daha hafif braket",
@@ -53,7 +53,7 @@
  "Skip the tour": "Turu atla",
  "Structural analysis": "Yapısal analiz",
  "Stress analysis of a pressure vessel": "Basınçlı kabın gerilme analizi",
- "Mechanical System Design project, İÜC, Oct 2025 - Jan 2026<br>Advisor: Dr. Murat Bozkurt. Individual work.": "Makine Sistem Tasarımı projesi, İÜC, Eki 2025 - Oca 2026<br>Danışman: Dr. Murat Bozkurt. Bireysel çalışma.",
+ "Mechanical System Design project, İÜC, Oct 2025 - Jul 2026<br>Advisor: Dr. Murat Bozkurt. Individual work.": "Makine Sistem Tasarımı projesi, İÜC, Eki 2025 - Tem 2026<br>Danışman: Dr. Murat Bozkurt. Bireysel çalışma.",
  "I calculated the stresses of a pressure vessel by hand, built an ANSYS model of the vessel and its bolted head and showed that the head-flange region, not the shell, sets the safety margin.": "Basınçlı bir kabın gerilmelerini elle hesapladım, kabın ve cıvatalı kapağın ANSYS modelini kurdum ve emniyet payını gövdenin değil, kapak-flanş bölgesinin belirlediğini gösterdim.",
  "minimum safety factor (FEA, at the head)": "en düşük emniyet katsayısı (FEA, kapakta)",
  "safety factor of the shell membrane (theory)": "gövde membranının emniyet katsayısı (teori)",
@@ -124,7 +124,7 @@
  "PCA view of the training data": "Eğitim verisinin PCA görünümü",
  "Fault types by steel grade: K-scratch appears almost only on A400": "Çelik türüne göre hata tipleri: K-scratch neredeyse yalnızca A400'de",
  "More work": "Diğer çalışmalar",
- "İÜC Racing Formula Student, powertrain team, 2023 - 2026": "İÜC Racing Formula Student, güç aktarma ekibi, 2023 - 2026",
+ "İÜC Racing Formula Student, powertrain team, 2022 - 2026 (vice president 2025 - 2026)": "İÜC Racing Formula Student, güç aktarma ekibi, 2022 - 2026 (2025 - 2026 başkan yardımcısı)",
  "<strong>Designed</strong> the chain guard in SolidWorks and verified its strength with static analysis in ANSYS. Revised the bracket design for a <strong>15% weight reduction</strong>.": "Zincir korumasını SolidWorks'te <strong>tasarladım</strong> ve dayanımını ANSYS statik analiziyle doğruladım. Braket tasarımını revize ederek <strong>%15 ağırlık azaltma</strong> sağladım.",
  "I trust a result once two different routes agree on it, and I want to understand why they disagree when they don't. A design is not finished for me until I know how it will be built.": "Bir sonuca ancak iki farklı yol aynı yere vardığında güvenirim, varmadığında da nedenini anlamak isterim. Bir tasarım, nasıl üretileceğini bilmeden benim için bitmiş sayılmaz.",
  "Four internships took me from a design office (Midas) to a machine shop (Yılmaz Redüktör), an assembly line (BEKO) and on-site troubleshooting (FESTO). I am now doing a <strong>thesis MSc</strong> in Mechanical Engineering and looking for a team where I can keep learning by building real things.": "Dört staj beni bir tasarım ofisinden (Midas) talaşlı imalat atölyesine (Yılmaz Redüktör), montaj hattına (BEKO) ve sahada arıza gidermeye (FESTO) götürdü. Şimdi Makine Mühendisliği'nde <strong>tezli yüksek lisans</strong> yapıyorum ve gerçek şeyler üreterek öğrenmeye devam edebileceğim bir ekip arıyorum.",
@@ -164,7 +164,7 @@
  "3D printing": "3B baskı",
  "Chair of the Board": "Yönetim Kurulu Başkanı",
  "İÜC Career Club <span>300+ members</span>": "İÜC Kariyer Kulübü <span>300+ üye</span>",
- "Planned the year of the club and delivered 8+ events.": "Kulübün yıllık planını yaptım ve 8'den fazla etkinlik düzenledim.",
+ "Planned the year of the club and delivered 8+ events. Board member in 2022 - 2023, chair of the audit committee in 2024 - 2025.": "Kulübün yıllık planını yaptım ve 8'den fazla etkinlik düzenledim. 2022 - 2023'te yönetim kurulu üyesi, 2024 - 2025'te denetleme kurulu başkanıydım.",
  "Leadership": "Liderlik",
  "Design Intern": "Tasarım Stajyeri",
  "Midas Makina Sanayi <span>Machinery</span>": "Midas Makina Sanayi <span>Makine</span>",
@@ -192,8 +192,10 @@
  "Manufacturing and data": "Üretim ve veri",
  "Design for manufacturability": "Üretilebilirlik için tasarım",
  "Certifications and training": "Sertifikalar ve eğitimler",
- "CSWP - Certified SOLIDWORKS Professional <em>(Oct 2026)</em>": "CSWP - Certified SOLIDWORKS Professional <em>(Eki 2026)</em>",
- "UAV Design and Build Training - TEİ Aviation Engine Schools": "İHA Tasarım ve Üretim Eğitimi - TEİ Havacılık Motor Okulları",
+ "CSWA - SOLIDWORKS Design Associate <em>(Oct 2026)</em>": "CSWA - SOLIDWORKS Design Associate <em>(Eki 2026)</em>",
+ "ANSYS Mechanical (MECH 101) and SpaceClaim (WB101) training, Numesys <em>(Jul 2026)</em>": "ANSYS Mechanical (MECH 101) ve SpaceClaim (WB101) eğitimi, Numesys <em>(Tem 2026)</em>",
+ "Aviation Engine School, TEİ": "Havacılık Motorları Okulu, TEİ",
+ "UAV Construction and Training, Udemy": "İHA Yapımı ve Eğitimi, Udemy",
  "McKinsey &amp; Company Forward Program": "McKinsey &amp; Company Forward Programı",
  "Turkish <em>(native)</em>": "Türkçe <em>(ana dil)</em>",
  "English <em>(C1)</em>": "İngilizce <em>(C1)</em>",
@@ -220,7 +222,7 @@
   "Machine learning, individual, 2025": "Makine öğrenmesi, bireysel, 2025",
   "Seven classifiers compared, a voting ensemble names the fault type with 91.3% accuracy.": "Yedi sınıflandırıcı karşılaştırıldı, oylama modeli hata türünü %91,3 doğrulukla buluyor.",
   "My part: all of it, in R": "Benim payım: tamamı, R ile",
-  "Formula Student, team, 2023 - 2026": "Formula Student, takım, 2023 - 2026",
+  "Formula Student, team, 2022 - 2026": "Formula Student, takım, 2022 - 2026",
   "Designed in SolidWorks, checked in ANSYS, bracket revised for 15% less weight.": "SolidWorks'te tasarlandı, ANSYS'te doğrulandı, braket %15 daha hafif olacak şekilde revize edildi.",
   "My part: chain guard and bracket": "Benim payım: zincir koruması ve braket",
   "From the ANSYS model": "ANSYS modelinden",
@@ -230,7 +232,7 @@
   "safety factor of the shell (von Mises, thin-wall theory)": "gövdenin emniyet katsayısı (von Mises, ince cidar teorisi)",
   "peak von Mises stress (FEA)": "en yüksek von Mises gerilmesi (FEA)",
   "Internships, school and leadership, newest first. The projects follow below.": "Stajlar, okul ve liderlik, en yenisi üstte. Projeler aşağıda.",
-  "I am doing a <strong>thesis MSc</strong> at İÜC, which takes one day a week. The rest of the week is free for full-time work.": "İÜC'de <strong>tezli yüksek lisans</strong> yapıyorum, haftada bir günümü alıyor. Haftanın geri kalanında tam zamanlı çalışabilirim."
+  "Project Student": "Proje Öğrencisi"
 });
   Object.assign(T, {
     "Built: carbon legs, printed T-joints and pads on the skids": "Üretilmiş hali: karbon bacaklar, baskı T-bağlantılar ve kızaklarda takozlar",
@@ -269,7 +271,7 @@
     el.textContent = el.textContent.replace(/(\d)\.(\d)/g, '$1,$2').replace(/^([\d,]+)%$/, '%$1');
   });
   const chap = { 'Structural analysis, 2025 - 2026': 'Yapısal analiz, 2025 - 2026', 'Design and manufacturing, 2024 - 2025, team': 'Tasarım ve üretim, 2024 - 2025, takım',
-    'Machine learning, 2025': 'Makine öğrenmesi, 2025', 'Formula Student, 2023 - 2026, team': 'Formula Student, 2023 - 2026, takım' };
+    'Machine learning, 2025': 'Makine öğrenmesi, 2025', 'Formula Student, 2022 - 2026, team': 'Formula Student, 2022 - 2026, takım' };
   document.querySelectorAll('.chap__k').forEach(el => { if (chap[el.textContent]) el.textContent = chap[el.textContent]; });
 
   // attributes and page metadata
