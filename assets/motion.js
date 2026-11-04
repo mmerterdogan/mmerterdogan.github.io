@@ -29,6 +29,30 @@
     fit(); document.fonts.ready.then(fit); addEventListener('resize', fit);
     requestAnimationFrame(() => name.classList.add('in'));
   }
+  // hero: scroll progress through the pinned stage -> --p (0..1); without motion the intro simply shows
+  const hx = document.querySelector('.hx');
+  if (hx) {
+    // long words (dönüştürüyorum) must not run past the edge on narrow screens
+    const st = hx.querySelector('.hx__statement'), pin = hx.querySelector('.hx__pin');
+    const fitSt = () => {
+      st.style.fontSize = '';
+      if (st.scrollWidth > pin.clientWidth) st.style.fontSize = parseFloat(getComputedStyle(st).fontSize) * pin.clientWidth / st.scrollWidth * .98 + 'px';
+    };
+    fitSt(); document.fonts.ready.then(fitSt); addEventListener('resize', fitSt);
+    if (reduce) hx.classList.add('hx--in');
+    else {
+      let ticking = false;
+      const set = () => {
+        ticking = false;
+        const span = hx.offsetHeight - innerHeight;
+        const p = span > 0 ? Math.min(1, Math.max(0, -hx.getBoundingClientRect().top / span)) : 1;
+        hx.style.setProperty('--p', p.toFixed(3));
+        hx.classList.toggle('hx--in', p > .55);
+      };
+      addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(set); } }, { passive: true });
+      addEventListener('resize', set); set();
+    }
+  }
 
   // fade-in on scroll
   const rv = document.querySelectorAll('.card, .sheet, #about .about, .tl__item, .skills, .edu, .contact-row');

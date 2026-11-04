@@ -21,7 +21,6 @@
  "Experience": "Deneyim",
  "Contact": "İletişim",
  "Muhammet Mert Erdoğan, mechanical engineer in Istanbul": "Muhammet Mert Erdoğan, İstanbul'da makine mühendisi",
- "I design parts in SolidWorks, check them in ANSYS and follow them onto the shop floor. BSc Mechanical Engineering, thesis MSc in progress, SOLIDWORKS Design Associate (CSWA).": "Parçaları SolidWorks'te tasarlıyor, ANSYS'te doğruluyor ve atölyeye kadar takip ediyorum. Makine Mühendisliği lisans, tezli yüksek lisans devam ediyor, SOLIDWORKS Design Associate (CSWA).",
  "Walk through my work": "Çalışmalarımı gez",
  "Portfolio PDF": "Portfolyo PDF",
  "Scroll to enter": "Girmek için kaydır",
@@ -209,7 +208,9 @@
   Object.assign(T, {
   "Skip to projects": "Projelere geç",
   "Menu": "Menü",
-  "<b>Looking for</b> design, analysis or manufacturing engineering roles. Available now, in Istanbul or open to relocation.": "<b>Aradığım:</b> tasarım, analiz veya üretim mühendisliği pozisyonları. Hemen başlayabilirim, İstanbul'da ya da taşınmaya açığım.",
+  "I turn ideas into systems that work.": "Fikirleri çalışan sistemlere dönüştürüyorum.",
+  "Mechanical engineer in Istanbul, working on design and structural analysis (FEA). Looking for a full-time graduate or junior role in Türkiye or abroad.": "İstanbul'da tasarım ve yapısal analiz (FEA) üzerine çalışan bir makine mühendisiyim. Türkiye'de ya da yurt dışında tam zamanlı yeni mezun veya junior pozisyon arıyorum.",
+  "Scroll": "Kaydır",
   "Download CV": "CV'yi indir",
   "See projects": "Projelere bak",
   "Pressure vessel, rendered from my ANSYS model and coloured by its von Mises result": "Basınçlı kap, ANSYS modelimden render edildi ve von Mises sonucuna göre renklendirildi",
@@ -281,5 +282,4 @@
   const d = document.querySelector('meta[name="description"]');
   if (d) d.content = 'Tasarım, yapısal analiz (FEA) ve üretim üzerine çalışan makine mühendisi. Portfolyo: basınçlı kap FEA ve patlama değerlendirmesi, İHA iniş takımı, çelik hata sınıflandırması.';
   document.querySelectorAll('.copy').forEach(b => b.dataset.done = 'Kopyalandı');
-  const f = document.querySelector('.tl__filters'); if (f) f.setAttribute('aria-label', 'Filtre');
-})();
+  const f = document.querySelector('.tl__filters'); if (f) f.setAttribute('aria-label', 'Filtre');})();
