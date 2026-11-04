@@ -407,6 +407,7 @@ h1, h2, h3, .nav__brand, .kpi b, .stat b, .job .who, .ei .t, .mail, .cover h1, .
   .skip:focus{ top:12px; }
   /* nav */
   .nav__links{ display:contents; }
+  .nav__links .lnk:first-child{ margin-left:auto; }   /* no brand on the left: links sit on the right */
   .nav__menu{ display:none; font:600 13px/1 var(--sans); color:var(--fg); background:none; border:1px solid var(--rule); border-radius:999px; padding:8px 14px; cursor:pointer; }
   /* calmer figures: no curtain, no parallax, no zoom */
   .fig .frame{ clip-path:none !important; }
@@ -425,6 +426,8 @@ h1, h2, h3, .nav__brand, .kpi b, .stat b, .job .who, .ei .t, .mail, .cover h1, .
   .hx__statement{ font-family:var(--serif); font-size:clamp(46px,calc(6.6vw + 18px),124px); font-weight:800; font-stretch:112%; line-height:.94;
     letter-spacing:-.02em; color:var(--fg); max-width:12ch; transform-origin:0 0;
     transform:translateY(calc(var(--p) * -13svh)) scale(calc(1 - var(--p) * .5)); opacity:calc(1 - var(--p) * .7); }
+  /* Turkish has one 15-character word (dönüştürüyorum.), about 9.3 em wide: cap the size so it fits the column */
+  html[lang="tr"] .hx__statement{ font-size:min(clamp(46px,calc(6.6vw + 18px),124px), calc((min(100vw,1080px) - 100px) / 9.4)); }
   .hx__intro{ position:absolute; left:0; right:0; bottom:clamp(48px,12svh,120px); max-width:640px; pointer-events:none;
     opacity:clamp(0, calc((var(--p) - .38) * 2.6), 1); transform:translateY(calc((1 - clamp(0, calc((var(--p) - .38) * 2.6), 1)) * 32px)); }
   .hx--in .hx__intro{ pointer-events:auto; }
@@ -432,11 +435,10 @@ h1, h2, h3, .nav__brand, .kpi b, .stat b, .job .who, .ei .t, .mail, .cover h1, .
   .hx .hx__lead{ font-size:clamp(16px,1.4vw,18px); line-height:1.55; color:var(--fg-dim); max-width:54ch; margin-bottom:22px; }
   .hx__hint{ position:absolute; left:0; bottom:28px; font-size:13px; color:var(--fg-faint); opacity:calc(1 - var(--p) * 5); }
   .hx__hint::after{ content:""; display:block; width:1px; height:34px; margin:10px 0 0 4px; background:var(--fg-faint); }
+  /* reduced motion (also Windows with animation effects off): same scroll stage, a cross-fade instead of the shrink */
   @media (prefers-reduced-motion:reduce){
-    .hx{ height:auto; } .hx__pin{ position:relative; height:auto; min-height:100svh; }
-    .hx__statement, .hx__role{ transform:none; opacity:1; }
-    .hx__intro{ position:static; opacity:1; transform:none; margin-top:clamp(32px,6vh,64px); }
-    .hx__hint{ display:none; }
+    .hx__statement{ transform:none; opacity:clamp(0, calc(1 - var(--p) * 1.8), 1); }
+    .hx__intro{ transform:none; }
   }
   /* project cards */
   .work{ padding:clamp(28px,5vh,48px) 0 clamp(44px,7vh,72px); border-bottom:1px solid var(--rule); }
@@ -470,7 +472,7 @@ h1, h2, h3, .nav__brand, .kpi b, .stat b, .job .who, .ei .t, .mail, .cover h1, .
   .nav__links{ display:none; }
   .menu-open .nav__links{ display:flex; flex-direction:column; position:fixed; left:0; right:0; top:58px; z-index:50; background:var(--bg);
     border-bottom:1px solid var(--rule); padding:8px 20px 18px; }
-  .menu-open .nav__links a.lnk{ display:block; font-size:18px; padding:12px 0; border-bottom:1px solid var(--rule); }
+  .menu-open .nav__links a.lnk{ display:block; font-size:18px; padding:12px 0; border-bottom:1px solid var(--rule); margin-left:0; }
   .journey{ height:200vh; }
 }
 @media (prefers-reduced-motion:reduce){ .rv{ opacity:1; transform:none; } }
