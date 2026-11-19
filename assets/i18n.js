@@ -79,7 +79,7 @@
  "Design and manufacturing": "Tasarım ve üretim",
  "Landing gear for a TEKNOFEST quadcopter": "TEKNOFEST quadkopteri için iniş takımı",
  "TEKNOFEST International UAV Competition, Aug 2024 - Aug 2025<br>Team project. I designed the landing gear.": "TEKNOFEST Uluslararası İHA Yarışması, Ağu 2024 - Ağu 2025<br>Takım projesi. İniş takımını ben tasarladım.",
- "For a 7 kg quadcopter I designed a skid landing gear from carbon-fibre tubes and 3D-printed joints, checked it with static FEA and brought it in 50% below the specification weight target.": "7 kg'lık bir quadkopter için karbon fiber borulardan ve 3B baskı bağlantılardan kızaklı bir iniş takımı tasarladım, statik FEA ile doğruladım ve şartnamedeki ağırlık hedefinin %50 altına indirdim.",
+ "For a 7 kg quadcopter I designed a skid landing gear from carbon-fibre tubes and 3D-printed joints, checked it with static FEA and brought it in 10% below the specification weight target.": "7 kg'lık bir quadkopter için karbon fiber borulardan ve 3B baskı bağlantılardan kızaklı bir iniş takımı tasarladım, statik FEA ile doğruladım ve şartnamedeki ağırlık hedefinin %10 altına indirdim.",
  "below the specification weight target": "şartnamedeki ağırlık hedefinin altında",
  "take-off mass of the UAV": "İHA'nın kalkış ağırlığı",
  "landing gear height": "iniş takımı yüksekliği",
@@ -142,7 +142,6 @@
  "MSc in Mechanical Engineering (Thesis)": "Makine Mühendisliği Tezli Yüksek Lisans",
  "Istanbul University-Cerrahpaşa": "İstanbul Üniversitesi-Cerrahpaşa",
  "Mechanical System Design project, İÜC <span>Individual</span>": "Makine Sistem Tasarımı projesi, İÜC <span>Bireysel</span>",
- "Hand calculation and an ANSYS model of the vessel and its bolted head. The head-flange zone sets the safety margin: 3.05 against 11.2 in the shell.": "Kabın ve cıvatalı kapağın el hesabı ve ANSYS modeli. Emniyet payını kapak-flanş bölgesi belirliyor: gövdedeki 11,2'ye karşı 3,05.",
  "Static FEA": "Statik FEA",
  "Hand calculation": "El hesabı",
  "Intern": "Stajyer",
@@ -159,7 +158,7 @@
  "Machine learning course project <span>Individual</span>": "Makine öğrenmesi dersi projesi <span>Bireysel</span>",
  "Seven classifiers compared in R. A voting ensemble names the fault type with 91.3% accuracy.": "R ile yedi sınıflandırıcı karşılaştırıldı. Oylama modeli hata türünü %91,3 doğrulukla buluyor.",
  "TEKNOFEST International UAV Competition <span>Team project</span>": "TEKNOFEST Uluslararası İHA Yarışması <span>Takım projesi</span>",
- "I designed the skid landing gear: carbon tubes and 3D-printed joints, 50% under the weight target.": "Kızaklı iniş takımını tasarladım: karbon borular ve 3B baskı bağlantılar, ağırlık hedefinin %50 altında.",
+ "I designed the skid landing gear: carbon tubes and 3D-printed joints, 10% under the weight target.": "Kızaklı iniş takımını tasarladım: karbon borular ve 3B baskı bağlantılar, ağırlık hedefinin %10 altında.",
  "3D printing": "3B baskı",
  "Chair of the Board": "Yönetim Kurulu Başkanı",
  "İÜC Career Club <span>300+ members</span>": "İÜC Kariyer Kulübü <span>300+ üye</span>",
@@ -215,10 +214,10 @@
   "See projects": "Projelere bak",
   "Pressure vessel, rendered from my ANSYS model and coloured by its von Mises result": "Basınçlı kap, ANSYS modelimden render edildi ve von Mises sonucuna göre renklendirildi",
   "Structural analysis, individual, 2025 - 2026": "Yapısal analiz, bireysel, 2025 - 2026",
-  "The head-flange zone sets the margin: safety factor 3.05 at the head against 11.2 in the shell.": "Emniyet payını kapak-flanş bölgesi belirliyor: kapakta 3,05, gövdede 11,2 emniyet katsayısı.",
+  "Hand calculation against an ANSYS model: the head-flange zone, not the shell, sets the safety margin.": "El hesabı ve ANSYS modeli karşılaştırıldı: emniyet payını gövde değil, kapak-flanş bölgesi belirliyor.",
   "My part: hand calculation, FE model and its interpretation": "Benim payım: el hesabı, FE modeli ve yorumu",
   "Design and manufacturing, team, 2024 - 2025": "Tasarım ve üretim, takım, 2024 - 2025",
-  "Skid landing gear for a 7 kg quadcopter, 50% under the weight target, built and flown.": "7 kg'lık quadkopter için kızaklı iniş takımı, ağırlık hedefinin %50 altında, üretildi ve uçtu.",
+  "Skid landing gear for a 7 kg quadcopter, 10% under the weight target, built and flown.": "7 kg'lık quadkopter için kızaklı iniş takımı, ağırlık hedefinin %10 altında, üretildi ve uçtu.",
   "My part: the landing gear, from CAD to printed parts": "Benim payım: iniş takımı, CAD'den baskı parçalara",
   "Machine learning, individual, 2025": "Makine öğrenmesi, bireysel, 2025",
   "Seven classifiers compared, a voting ensemble names the fault type with 91.3% accuracy.": "Yedi sınıflandırıcı karşılaştırıldı, oylama modeli hata türünü %91,3 doğrulukla buluyor.",
@@ -229,8 +228,6 @@
   "From the ANSYS model": "ANSYS modelinden",
   "Scroll: the bolted head lifts off, then the surface takes the colours of the von Mises result.": "Kaydır: cıvatalı kapak yerinden kalkıyor, ardından yüzey von Mises sonucunun renklerini alıyor.",
   "Rendered in Blender from the mesh and results of my ANSYS model.": "ANSYS modelimin ağı ve sonuçlarından Blender'da render edildi.",
-  "minimum safety factor at the head (yield / max principal stress 85.3 MPa)": "kapakta en düşük emniyet katsayısı (akma / maks. asal gerilme 85,3 MPa)",
-  "safety factor of the shell (von Mises, thin-wall theory)": "gövdenin emniyet katsayısı (von Mises, ince cidar teorisi)",
   "peak von Mises stress (FEA)": "en yüksek von Mises gerilmesi (FEA)",
   "Internships, school and leadership, newest first. The projects follow below.": "Stajlar, okul ve liderlik, en yenisi üstte. Projeler aşağıda.",
   "Project Student": "Proje Öğrencisi"
@@ -248,7 +245,6 @@
     "Vessel rendered from my ANSYS model, coloured by its von Mises result. UAV: flight test footage.": "Kap, ANSYS modelimden render edildi ve von Mises sonucuna göre renklendirildi. İHA: uçuş testi görüntüsü.",
     "Flight test footage": "Uçuş testi görüntüsü",
     "Voting ensemble": "Oylama modeli",
-    "local safety factor found by FEA, against 11.2 from shell theory": "FEA ile bulunan yerel emniyet katsayısı, kabuk teorisinde 11,2",
     "under the weight target, UAV landing gear": "ağırlık hedefinin altında, İHA iniş takımı",
     "accuracy, steel defect classifier": "doğruluk, çelik hata sınıflandırıcı",
     "industrial internships": "endüstriyel staj",
@@ -263,7 +259,7 @@
     if (t) el.innerHTML = t;
   });
 
-  // dates and numbers: Aug 2025 -> Ağu 2025, 3.05 -> 3,05, 91.3% -> %91,3
+  // dates and numbers: Aug 2025 -> Ağu 2025, 68.9 -> 68,9, 91.3% -> %91,3
   const M = { Jan: 'Oca', Feb: 'Şub', Mar: 'Mar', Apr: 'Nis', May: 'May', Jun: 'Haz', Jul: 'Tem', Aug: 'Ağu', Sep: 'Eyl', Oct: 'Eki', Nov: 'Kas', Dec: 'Ara' };
   document.querySelectorAll('.tl__when, .meta, .chap__k').forEach(el => {
     el.innerHTML = el.innerHTML.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g, m => M[m]).replace('present', 'devam ediyor');

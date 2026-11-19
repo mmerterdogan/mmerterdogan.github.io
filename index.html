@@ -224,7 +224,7 @@
         <span class="card__body">
           <span class="card__k">Structural analysis, individual, 2025 - 2026</span>
           <span class="card__t">Pressure vessel</span>
-          <span class="card__r">The head-flange zone sets the margin: safety factor 3.05 at the head against 11.2 in the shell.</span>
+          <span class="card__r">Hand calculation against an ANSYS model: the head-flange zone, not the shell, sets the safety margin.</span>
           <span class="card__me">My part: hand calculation, FE model and its interpretation</span>
         </span>
       </a>
@@ -233,7 +233,7 @@
         <span class="card__body">
           <span class="card__k">Design and manufacturing, team, 2024 - 2025</span>
           <span class="card__t">UAV landing gear</span>
-          <span class="card__r">Skid landing gear for a 7 kg quadcopter, 50% under the weight target, built and flown.</span>
+          <span class="card__r">Skid landing gear for a 7 kg quadcopter, 10% under the weight target, built and flown.</span>
           <span class="card__me">My part: the landing gear, from CAD to printed parts</span>
         </span>
       </a>
@@ -270,8 +270,6 @@
     </div>
     <p class="lead">I calculated the stresses of a pressure vessel by hand, built an ANSYS model of the vessel and its bolted head and showed that the head-flange region, not the shell, sets the safety margin.</p>
     <div class="kpis">
-      <div class="kpi"><b>3.05</b><span>minimum safety factor at the head (yield / max principal stress 85.3 MPa)</span></div>
-      <div class="kpi"><b>11.2</b><span>safety factor of the shell (von Mises, thin-wall theory)</span></div>
       <div class="kpi"><b>68.9 MPa</b><span>peak von Mises stress (FEA)</span></div>
       <div class="kpi"><b>45.8 m</b><span>worst-case blast safety distance</span></div>
     </div>
@@ -279,8 +277,6 @@
       <figure class="fig fig--hero"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/pressure-vessel/von-mises.jpg" alt="Von Mises stress map with annotations"></div>
         <figcaption>Equivalent stress, ANSYS Mechanical 2022 R1</figcaption></figure>
       <div class="stack">
-        <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/pressure-vessel/safety-factor.jpg" alt="Safety factor map"></div>
-          <figcaption>Safety factor map</figcaption></figure>
         <figure class="fig"><div class="frame"><img loading="lazy" decoding="async" src="assets/img/pressure-vessel/global-vs-local.png" alt="Theory vs FEA stresses"></div>
           <figcaption>Shell theory against FEA peak values</figcaption></figure>
       </div>
@@ -329,9 +325,9 @@
       <div><p class="kicker">Design and manufacturing</p><h2>Landing gear for a TEKNOFEST quadcopter</h2></div>
       <div class="meta">TEKNOFEST International UAV Competition, Aug 2024 - Aug 2025<br>Team project. I designed the landing gear.</div>
     </div>
-    <p class="lead">For a 7 kg quadcopter I designed a skid landing gear from carbon-fibre tubes and 3D-printed joints, checked it with static FEA and brought it in 50% below the specification weight target.</p>
+    <p class="lead">For a 7 kg quadcopter I designed a skid landing gear from carbon-fibre tubes and 3D-printed joints, checked it with static FEA and brought it in 10% below the specification weight target.</p>
     <div class="kpis">
-      <div class="kpi"><b>50%</b><span>below the specification weight target</span></div>
+      <div class="kpi"><b>10%</b><span>below the specification weight target</span></div>
       <div class="kpi"><b>7.05 kg</b><span>take-off mass of the UAV</span></div>
       <div class="kpi"><b>292 mm</b><span>landing gear height</span></div>
       <div class="kpi"><b>415 mm</b><span>landing gear width</span></div>
@@ -471,7 +467,7 @@
           <li><strong>Yılmaz Redüktör</strong>, workshop, 2024: machining, heat treatment and gear quality control on site.</li>
         </ul>
         <h3>Skills</h3>
-        <p>SolidWorks (CSWA), ANSYS Mechanical, AutoCAD, Siemens NX, CATIA, Fusion 360, MATLAB/Simulink, R, MS Excel. Static and modal FEA, topology optimisation, GD&amp;T, design for manufacturability, injection moulding and sheet metal design, root cause analysis, lean manufacturing.</p>
+        <p>SolidWorks (CSWA), ANSYS Mechanical, AutoCAD, Fusion 360, MATLAB/Simulink, R, MS Excel. Static and modal FEA, topology optimisation, GD&amp;T, design for manufacturability, design for injection moulding, root cause analysis, lean manufacturing.</p>
         <h3>Contact</h3>
         <p>mmert1erdogan@gmail.com<br>linkedin.com/in/mmerterdogan<br>mmerterdogan.github.io</p>
       </div>
@@ -482,7 +478,7 @@
   <section id="skills" class="screen-only">
     <h2>Skills and certifications</h2>
     <div class="skills">
-      <div><h3>Design</h3><ul><li>SolidWorks <span>CSWA</span></li><li>AutoCAD</li><li>Siemens NX</li><li>CATIA</li><li>Fusion 360</li></ul></div>
+      <div><h3>Design</h3><ul><li>SolidWorks <span>CSWA</span></li><li>AutoCAD</li><li>Fusion 360</li></ul></div>
       <div><h3>Analysis</h3><ul><li>ANSYS Mechanical</li><li>Static and modal FEA</li><li>Topology optimisation</li><li>MATLAB / Simulink</li></ul></div>
       <div><h3>Manufacturing and data</h3><ul><li>Design for manufacturability</li><li>Root cause analysis</li><li>Lean manufacturing</li><li>R, MS Excel</li></ul></div>
     </div>
