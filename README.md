@@ -14,6 +14,8 @@ assets/img/logos/                    employer and university logos (masks in the
 favicon.svg, robots.txt, sitemap.xml, 404.html, mert-erdogan.vcf, assets/img/og-image.jpg (1200x630 link preview)
 Muhammet_Mert_Erdogan_CV_TR.pdf      Turkish CV, linked when the page is in Turkish
 portfolio.html                       redirect to index.html#work (old links)
+p/<project>/index.html               share links for LinkedIn Featured: own og tags, redirect to /?ref=linkedin#<anchor>
+                                     (LinkedIn keeps only the page's og:url, so anchors on index.html are lost)
 assets/site.css                      palette, base styles and A4 landscape print
 assets/img/<project>/                figures
 Muhammet_Mert_Erdogan_CV.pdf         CV (public copy, no references)
